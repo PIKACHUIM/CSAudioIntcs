@@ -1,0 +1,185 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_MYTESTRESOURCES MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_MYTESTRESOURCES ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 309, 332
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_TOOLWINDOW
+CAPTION "License Key Generator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "User's Information",IDC_STATIC,17,13,268,65
+    GROUPBOX        "Key Expiration Information",IDC_STATIC,17,86,268,66
+    LTEXT           "Number Days:",IDC_STATIC,32,103,46,8
+    LTEXT           "Max Executions:",IDC_STATIC,25,116,54,8
+    LTEXT           "Expiration Date:",IDC_STATIC,26,132,53,8
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,82,131,69,11
+    GROUPBOX        "Type Generated Key",IDC_STATIC,18,156,267,163
+    LTEXT           "Name:",IDC_STATIC,52,28,22,8
+    LTEXT           "Organization:",IDC_STATIC,29,43,44,8
+    LTEXT           "Hardware ID:",IDC_STATIC,30,59,44,8
+    EDITTEXT        IDC_EDITNAME,78,25,69,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITORGANIZATION,78,41,69,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITHARDID,78,57,69,12,ES_AUTOHSCROLL
+    LTEXT           "Custom Data:",IDC_STATIC,161,28,45,8
+    EDITTEXT        IDC_EDITCUSTOM,208,26,67,43,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN
+    CONTROL         "Enable Expiration Date",IDC_CHECK_DATEENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,158,132,87,10
+    EDITTEXT        IDC_EDITNUMDAYS,81,100,104,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITMAXEXEC,81,115,104,12,ES_AUTOHSCROLL
+    GROUPBOX        "File Key",IDC_STATIC,30,172,111,53
+    LTEXT           "File Name:",IDC_STATIC,39,185,34,8
+    EDITTEXT        IDC_EDITFILENAME,75,183,55,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Generate File Key",IDC_BUTTON_GENFILE,48,204,69,11
+    GROUPBOX        "Registry Key",IDC_STATIC,154,172,124,75
+    LTEXT           "Key Name:",IDC_STATIC,161,185,36,8
+    EDITTEXT        IDC_EDITHKLM,197,183,28,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDITKEYNAME,226,183,49,12,ES_AUTOHSCROLL
+    LTEXT           "Key Value Name:",IDC_STATIC,162,200,55,8
+    EDITTEXT        IDC_EDITKEYVALUENAME,217,198,58,12,ES_AUTOHSCROLL
+    LTEXT           "File Name (*.reg)",IDC_STATIC,162,214,56,8
+    EDITTEXT        IDC_EDITREGNAME,219,213,56,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Generate Reg  Key File",IDC_BUTTON_GENREGFILE,178,230,
+                    82,11
+    GROUPBOX        "Text Key",IDC_STATIC,31,232,108,81
+    PUSHBUTTON      "Generate Text Key",IDC_BUTTON_GENTEXT,48,244,69,12
+    EDITTEXT        IDC_EDITTEXTKEY,38,262,91,44,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_WANTRETURN
+    GROUPBOX        "Smart Activate Key",IDC_STATIC,155,253,121,60
+    PUSHBUTTON      "Generate Smart Key",IDC_BUTTONGENSMART,176,266,80,11
+    EDITTEXT        IDC_EDIT_SMARTKEY,161,290,110,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 302
+        BOTTOMMARGIN, 305
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "MytestResources"
+    IDC_MYTESTRESOURCES     "MYTESTRESOURCES"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

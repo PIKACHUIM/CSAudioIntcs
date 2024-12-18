@@ -1,0 +1,3480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RBProject version="2020r1" FormatVersion="2" MinIDEVersion="20070100">
+<block type="Project" ID="0">
+ <ProjectSavedInVers>2020.01</ProjectSavedInVers>
+ <IDEVersion>0</IDEVersion>
+ <MajorVersion>0</MajorVersion>
+ <MinorVersion>0</MinorVersion>
+ <SubVersion>1</SubVersion>
+ <Release>0</Release>
+ <NonRelease>0</NonRelease>
+ <Region></Region>
+ <ShortVersion></ShortVersion>
+ <LongVersion></LongVersion>
+ <InfoVersion></InfoVersion>
+ <AutoIncVersion>0</AutoIncVersion>
+ <DefaultViewID>1385771007</DefaultViewID>
+ <ProjectType>0</ProjectType>
+ <DefaultLanguage>0</DefaultLanguage>
+ <CurrentLanguage>0</CurrentLanguage>
+ <DefaultEncoding>0</DefaultEncoding>
+ <BuildFlags>2064</BuildFlags>
+ <UseBuildsFolder>1</UseBuildsFolder>
+ <WebApp>0</WebApp>
+ <Icon>
+ </Icon>
+ <MacCreator></MacCreator>
+ <BuildCarbonMachOName></BuildCarbonMachOName>
+ <BundleIdentifier></BundleIdentifier>
+ <WinMDICaption></WinMDICaption>
+ <BuildWinName></BuildWinName>
+ <BuildWinMDI>0</BuildWinMDI>
+ <BuildWinCompanyName></BuildWinCompanyName>
+ <BuildWinProductName></BuildWinProductName>
+ <BuildWinInternalName></BuildWinInternalName>
+ <BuildWinFileDescription></BuildWinFileDescription>
+ <UseGDIPlus>0</UseGDIPlus>
+ <BuildLinuxX86Name></BuildLinuxX86Name>
+ <DebuggerCommandLine></DebuggerCommandLine>
+ <MacArchitecture>1</MacArchitecture>
+ <OptimizationLevel>0</OptimizationLevel>
+ <CopyWindowsRedist>0</CopyWindowsRedist>
+ <WindowsVersions>{35138b9a-5d96-4fbd-8e2d-a2440225f93a}|{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}|{1f676c76-80e1-4239-95bb-83d0f6d0da78}|{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}</WindowsVersions>
+ <WindowsRunAs>0</WindowsRunAs>
+</block>
+<block type="Module" ID="1">
+ <ObjName>WinLicense</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseDynSmartKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>65329151</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseDynSmartKey Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseFileKeyEx</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1734103039</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseFileKeyEx Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseRegistryKeyEx</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1532786687</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseRegistryKeyEx Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseTextKeyEx</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1516929023</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseTextKeyEx Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,pLicenseFeatures As sLicenseFeatures,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenTrialExtensionFileKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>334247935</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenTrialExtensionFileKey Lib "WinlicenseSDK.dll" (TrialHash As WString,Level As Integer,NumDays As Integer,NumExec As Integer,NewDate As WString,NumMinutes As Integer,TimeRuntime As Integer,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>TrialHash As WString,Level As Integer,NumDays As Integer,NumExec As Integer,NewDate As WString,NumMinutes As Integer,TimeRuntime As Integer,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenTrialExtensionRegistryKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1372960767</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenTrialExtensionRegistryKey Lib "WinlicenseSDK.dll" (TrialHash As WString,Level As Integer,NumDays As Integer,NumExec As Integer,NewDate As WString,NumMinutes As Integer,TimeRuntime As Integer,pKeyName As WString,pKeyValueName As WString,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>TrialHash As WString,Level As Integer,NumDays As Integer,NumExec As Integer,NewDate As WString,NumMinutes As Integer,TimeRuntime As Integer,pKeyName As WString,pKeyValueName As WString,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenPassword</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>620412927</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenPassword Lib "WinlicenseSDK.dll" (PasswordHash As WString,UserName As WString,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>PasswordHash As WString,UserName As WString,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseTextKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>439670783</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseTextKey Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseTextKeyW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>411269119</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseTextKeyW Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseSmartKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1873934335</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseSmartKey Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseSmartKeyW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2067267583</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseSmartKeyW Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseFileKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1068871679</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseFileKey Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseFileKeyW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>558821375</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseFileKeyW Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseRegistryKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1638569983</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseRegistryKey Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,RegName As WString,RegValueName As WString,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,RegName As WString,RegValueName As WString,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGenLicenseRegistryKeyW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1423276031</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGenLicenseRegistryKeyW Lib "WinlicenseSDK.dll" (LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,RegName As WString,RegValueName As WString,BufferOut As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>LicenseHash As WString,UserName As WString,Organization As WString,CustomData As WString,MachineID As WString,NumDays As Integer,NumExec As Integer,NewDate As WString,CountryId As Integer,Runtime As Integer,GlobalMinutes As Integer,RegName As WString,RegValueName As WString,BufferOut As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetStatus</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1270235135</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetStatus Lib "WinlicenseSDK.dll" (ExtendedInfo As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ExtendedInfo As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialGetStatus</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2013259775</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialGetStatus Lib "WinlicenseSDK.dll" (ExtendedInfo As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ExtendedInfo As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialExtGetStatus</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>182341631</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialExtGetStatus Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetLicenseInfo</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1454065663</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetLicenseInfo Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetLicenseInfoW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>499398655</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetLicenseInfoW Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialTotalDays</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>316542975</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialTotalDays Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialTotalExecutions</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1953325055</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialTotalExecutions Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialDaysLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>738050047</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialDaysLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialExecutionsLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1520783359</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialExecutionsLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialExpirationDate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>91269119</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialExpirationDate Lib "WinlicenseSDK.dll" (ExpDate As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ExpDate As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialGlobalTimeLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>372727807</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialGlobalTimeLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialRuntimeLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>636579839</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialRuntimeLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialLockedCountry</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>295565311</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialLockedCountry Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegDaysLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>353869823</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegDaysLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegExecutionsLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1200242687</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegExecutionsLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegExpirationDate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>698443775</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegExpirationDate Lib "WinlicenseSDK.dll" (ExpDate As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ExpDate As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegTotalExecutions</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1506015231</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegTotalExecutions Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegTotalDays</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1695176703</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegTotalDays Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareGetID</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>707704831</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareGetID Lib "WinlicenseSDK.dll" (HardId As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>HardId As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetLicenseHardwareID</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>14106623</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetLicenseHardwareID Lib "WinlicenseSDK.dll" (HardId As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>HardId As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareCheckID</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>835905535</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareCheckID Lib "WinlicenseSDK.dll" (HardId As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>HardId As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyCheck</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>475654143</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyCheck Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyCheckW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>737769471</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyCheckW Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegNormalKeyCheck</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>270792703</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegNormalKeyCheck Lib "WinlicenseSDK.dll" (AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegNormalKeyInstallToFile</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>498233343</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegNormalKeyInstallToFile Lib "WinlicenseSDK.dll" (AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegNormalKeyInstallToRegistry</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1154539519</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegNormalKeyInstallToRegistry Lib "WinlicenseSDK.dll" (AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyInstallToFile</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2049591295</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyInstallToFile Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyInstallToFileW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>812959743</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyInstallToFileW Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyInstallToFileInFolder</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>699959295</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyInstallToFileInFolder Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString,FilePath As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString,FilePath As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyInstallToRegistry</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1032478719</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyInstallToRegistry Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegSmartKeyInstallToRegistryW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>598816767</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegSmartKeyInstallToRegistryW Lib "WinlicenseSDK.dll" (UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Organization As WString,CustomData As WString,AsciiKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLLoadWinlicenseDll</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>958775295</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLLoadWinlicenseDll Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialCustomCounterInc</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1539229695</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialCustomCounterInc Lib "WinlicenseSDK.dll" (Value As Integer,CounterID As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Value As Integer,CounterID As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialCustomCounterDec</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1691830271</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialCustomCounterDec Lib "WinlicenseSDK.dll" (Value As Integer,CounterID As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Value As Integer,CounterID As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialCustomCounter</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>266422271</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialCustomCounter Lib "WinlicenseSDK.dll" (CounterID As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>CounterID As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialCustomCounterSet</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1353517055</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialCustomCounterSet Lib "WinlicenseSDK.dll" (Value As Integer,CounterID As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Value As Integer,CounterID As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRestartApplication</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1499994111</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRestartApplication Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegLockedCountry</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1647177727</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegLockedCountry Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegRuntimeLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2111678463</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegRuntimeLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGlobalTimeLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1802973183</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGlobalTimeLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegDisableCurrentKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>791183359</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegDisableCurrentKey Lib "WinlicenseSDK.dll" (DisableFlags As Integer) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>DisableFlags As Integer</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegRemoveCurrentKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>295366655</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegRemoveCurrentKey Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareGetFormattedID</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>162928639</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareGetFormattedID Lib "WinlicenseSDK.dll" (NumCharBlock As Integer,Uppercase As Integer,Buffer As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>NumCharBlock As Integer,Uppercase As Integer,Buffer As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLPasswordCheck</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1377744895</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLPasswordCheck Lib "WinlicenseSDK.dll" (UserName As WString,Password As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>UserName As WString,Password As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialExpireTrial</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1430099967</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialExpireTrial Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegLicenseName</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>171087871</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegLicenseName Lib "WinlicenseSDK.dll" (FileKeyName As WString,RegKeyName As WString,RegKeyValueName As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>FileKeyName As WString,RegKeyName As WString,RegKeyValueName As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRestartApplicationArgs</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>330006527</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRestartApplicationArgs Lib "WinlicenseSDK.dll" (pArgs As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>pArgs As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLActGetInfo</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>464164863</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLActGetInfo Lib "WinlicenseSDK.dll" (Custom1 As Integer,Custom2 As Integer,Custom3 As Integer) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Custom1 As Integer,Custom2 As Integer,Custom3 As Integer</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLActCheck</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>116566015</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLActCheck Lib "WinlicenseSDK.dll" (ActivationCode As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ActivationCode As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLActInstall</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>866019327</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLActInstall Lib "WinlicenseSDK.dll" (ActivationCode As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ActivationCode As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLActExpirationDate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>546707455</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLActExpirationDate Lib "WinlicenseSDK.dll" (ExpDate As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>ExpDate As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLActDaysToActivate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1333436415</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLActDaysToActivate Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLActUninstall</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>772190207</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLActUninstall Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGetCurrentCountry</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1950013439</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGetCurrentCountry Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialExtGetLevel</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1192364031</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialExtGetLevel Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLProtectCheckDebugger</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>923219967</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLProtectCheckDebugger Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialExtendExpiration</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1882251263</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialExtendExpiration Lib "WinlicenseSDK.dll" (NumDays As Integer,NumExec As Integer,NewDate As WString,NumMinutes As Integer,TimeRuntime As Integer) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>NumDays As Integer,NumExec As Integer,NewDate As WString,NumMinutes As Integer,TimeRuntime As Integer</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialFirstRun</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1982924799</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialFirstRun Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegFirstRun</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>158693375</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegFirstRun Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegCheckMachineLocked</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1121013759</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegCheckMachineLocked Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLSplashHide</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1243983871</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLSplashHide Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLBufferCrypt</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>514736127</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLBufferCrypt Lib "WinlicenseSDK.dll" (Buffer As WString,BufferLength As Integer,Password As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Buffer As WString,BufferLength As Integer,Password As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLBufferDecrypt</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1526259711</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLBufferDecrypt Lib "WinlicenseSDK.dll" (Buffer As WString,BufferLength As Integer,Password As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Buffer As WString,BufferLength As Integer,Password As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialDateDaysLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1702090751</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialDateDaysLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegDateDaysLeft</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1588443135</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegDateDaysLeft Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetDynSmartKey</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1575444479</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetDynSmartKey Lib "WinlicenseSDK.dll" (SmartKey As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>SmartKey As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegDisableKeyCurrentInstance</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1484875775</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegDisableKeyCurrentInstance Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareRuntimeCheckU3</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2028941311</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareRuntimeCheckU3 Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGetVersion</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2066692095</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGetVersion Lib "WinlicenseSDK.dll" (Buffer As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Buffer As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegNetInstancesGet</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1954095103</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegNetInstancesGet Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegNetInstancesMax</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>2066464767</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegNetInstancesMax Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGetProtectionDate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1551996927</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGetProtectionDate Lib "WinlicenseSDK.dll" (pProtectionDate As WString) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>pProtectionDate As WString</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLProtectCheckCodeIntegrity</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1127483391</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLProtectCheckCodeIntegrity Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareGetIdType</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1773144063</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareGetIdType Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialWStringRead</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>473538559</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialWStringRead Lib "WinlicenseSDK.dll" (WStringName As WString,WStringValue As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>WStringName As WString,WStringValue As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialWStringWrite</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>221048831</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialWStringWrite Lib "WinlicenseSDK.dll" (WStringName As WString,WStringValue As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>WStringName As WString,WStringValue As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialDebugCheck</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1051611135</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialDebugCheck Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetLicenseRestrictions</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1385326591</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetLicenseRestrictions Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegGetLicenseType</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1002141695</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegGetLicenseType Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLCheckVirtualPC</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1220909055</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLCheckVirtualPC Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLTrialGetTrialRestrictions</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>278661119</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLTrialGetTrialRestrictions Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegActivateSoftware</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1428418559</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegActivateSoftware Lib "WinlicenseSDK.dll" (pActivationKey As WString, OutWinsockErrorCode As Integer, OutServerOutput As WString, OutWinsockErrorCode2 As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>pActivationKey As WString, OutWinsockErrorCode As Integer, OutServerOutput As WString, OutWinsockErrorCode2 As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLRegDeactivateSoftware</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>282097663</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLRegDeactivateSoftware Lib "WinlicenseSDK.dll" (pActivationKey As WString, OutWinsockErrorCode As Integer, OutServerOutput As WString, OutWinsockErrorCode2 As Integer) As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>pActivationKey As WString, OutWinsockErrorCode As Integer, OutServerOutput As WString, OutWinsockErrorCode2 As Integer</ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareGetNumberUsbDrives</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>131788799</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareGetNumberUsbDrives Lib "WinlicenseSDK.dll" () As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareGetUsbIdAt</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1744410623</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareGetUsbIdAt Lib "WinlicenseSDK.dll" (Index As Integer,HardId As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Index As Integer,HardId As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLHardwareGetUsbNameAt</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1218486271</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLHardwareGetUsbNameAt Lib "WinlicenseSDK.dll" (Index As Integer,UsbName As WString) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Index As Integer,UsbName As WString</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <ExternalMethod>
+  <ItemName>WLGetLastError</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1957355519</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Declare Function WLGetLastError Lib "WinlicenseSDK.dll" () As Integer</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>Integer</ItemResult>
+  <LibraryName>WinlicenseSDK.dll</LibraryName>
+  <SoftLink>0</SoftLink>
+  <ObjectiveC>0</ObjectiveC>
+ </ExternalMethod>
+ <Note>
+  <ItemName>Module1</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1552181247</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <NoteLine>Module1</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Type SYSTEMTIME</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>    wYear As Integer</NoteLine>
+   <NoteLine>    wMonth As Integer</NoteLine>
+   <NoteLine>    wDayOfWeek As Integer</NoteLine>
+   <NoteLine>    wDay As Integer</NoteLine>
+   <NoteLine>    wHour As Integer</NoteLine>
+   <NoteLine>    wMinute As Integer</NoteLine>
+   <NoteLine>    wSecond As Integer</NoteLine>
+   <NoteLine>    wMilliseconds As Integer</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>End Type</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Type sLicenseFeatures</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>     cb As Long</NoteLine>
+   <NoteLine>     NumDays As Long</NoteLine>
+   <NoteLine>     NumExec As Long</NoteLine>
+   <NoteLine>     ExpDate As SYSTEMTIME</NoteLine>
+   <NoteLine>     CountryId As Long</NoteLine>
+   <NoteLine>     Runtime As Long</NoteLine>
+   <NoteLine>     GlobalMinutes As Long</NoteLine>
+   <NoteLine>     InstallDate As SYSTEMTIME</NoteLine>
+   <NoteLine>     NetInstances As Long</NoteLine>
+   <NoteLine>     EmbedLicenseInfoInKey As Long</NoteLine>
+   <NoteLine>     EmbedCreationDate As Long</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>End Type</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseDynSmartKey Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByRef pLicenseFeatures As sLicenseFeatures, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseFileKeyEx Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByRef pLicenseFeatures As sLicenseFeatures, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseRegistryKeyEx Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByRef pLicenseFeatures As sLicenseFeatures, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseTextKeyEx Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByRef pLicenseFeatures As sLicenseFeatures, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Declare Function WLGenTrialExtensionFileKey Lib "WinlicenseSDK.dll" (ByVal TrialHash As WString, ByVal Level As Integer, ByVal NumDays As Integer, ByVal NumExec As Integer, NewDate As WString, ByVal NumMinutes As Integer, ByVal TimeRuntime As Integer, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenTrialExtensionRegistryKey Lib "WinlicenseSDK.dll" (ByVal TrialHash As WString, ByVal Level As Integer, ByVal NumDays As Integer, ByVal NumExec As Integer, NewDate As WString, ByVal NumMinutes As Integer, ByVal TimeRuntime As Integer, ByVal pKeyName As WString, ByVal pKeyValueName As WString, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenPassword Lib "WinlicenseSDK.dll" (ByVal PasswordHash As WString, ByVal UserName As WString, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseTextKey Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal CountryId As Integer, ByVal Runtime As Integer, ByVal GlobalMinutes As Integer, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseTextKeyW Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal CountryId As Integer, ByVal Runtime As Integer, ByVal GlobalMinutes As Integer, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseSmartKey Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseSmartKeyW Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseFileKey Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal CountryId As Integer, ByVal Runtime As Integer, ByVal GlobalMinutes As Integer, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseFileKeyW Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal CountryId As Integer, ByVal Runtime As Integer, ByVal GlobalMinutes As Integer, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseRegistryKey Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal CountryId As Integer, ByVal Runtime As Integer, ByVal GlobalMinutes As Integer, ByVal RegName As WString, ByVal RegValueName As WString, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGenLicenseRegistryKeyW Lib "WinlicenseSDK.dll" (ByVal LicenseHash As WString, ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal MachineID As WString, ByVal NumDays As Integer, ByVal NumExec As Integer, ByVal NewDate As WString, ByVal CountryId As Integer, ByVal Runtime As Integer, ByVal GlobalMinutes As Integer, ByVal RegName As WString, ByVal RegValueName As WString, ByVal BufferOut As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetStatus Lib "WinlicenseSDK.dll" (ByVal ExtendedInfo As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialGetStatus Lib "WinlicenseSDK.dll" (ByVal ExtendedInfo As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialExtGetStatus Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetLicenseInfo Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetLicenseInfoW Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialTotalDays Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialTotalExecutions Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialDaysLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialExecutionsLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialExpirationDate Lib "WinlicenseSDK.dll" (ExpDate As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialGlobalTimeLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialRuntimeLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialLockedCountry Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegDaysLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegExecutionsLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegExpirationDate Lib "WinlicenseSDK.dll" (ExpDate As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegTotalExecutions Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegTotalDays Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareGetID Lib "WinlicenseSDK.dll" (ByVal HardId As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetLicenseHardwareID Lib "WinlicenseSDK.dll" (ByVal HardId As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareCheckID Lib "WinlicenseSDK.dll" (ByVal HardId As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyCheck Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyCheckW Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegNormalKeyCheck Lib "WinlicenseSDK.dll" (ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegNormalKeyInstallToFile Lib "WinlicenseSDK.dll" (ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegNormalKeyInstallToRegistry Lib "WinlicenseSDK.dll" (ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyInstallToFile Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyInstallToFileW Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyInstallToFileInFolder Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString, ByVal FilePath As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyInstallToRegistry Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegSmartKeyInstallToRegistryW Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Organization As WString, ByVal CustomData As WString, ByVal AsciiKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLLoadWinlicenseDll Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialCustomCounterInc Lib "WinlicenseSDK.dll" (ByVal Value As Integer, ByVal CounterID As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialCustomCounterDec Lib "WinlicenseSDK.dll" (ByVal Value As Integer, ByVal CounterID As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialCustomCounter Lib "WinlicenseSDK.dll" (ByVal CounterID As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialCustomCounterSet Lib "WinlicenseSDK.dll" (ByVal Value As Integer, ByVal CounterID As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRestartApplication Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegLockedCountry Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegRuntimeLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegGlobalTimeLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegDisableCurrentKey Lib "WinlicenseSDK.dll" (ByVal DisableFlags As Integer) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegRemoveCurrentKey Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareGetFormattedID Lib "WinlicenseSDK.dll" (ByVal NumCharBlock As Integer, ByVal Uppercase As Integer, ByVal Buffer As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLPasswordCheck Lib "WinlicenseSDK.dll" (ByVal UserName As WString, ByVal Password As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialExpireTrial Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegLicenseName Lib "WinlicenseSDK.dll" (ByVal FileKeyName As WString, ByVal RegKeyName As WString, ByVal RegKeyValueName As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRestartApplicationArgs Lib "WinlicenseSDK.dll" (ByVal pArgs As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLActGetInfo Lib "WinlicenseSDK.dll" (ByRef Custom1 As Integer, ByRef Custom2 As Integer, ByRef Custom3 As Integer) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLActCheck Lib "WinlicenseSDK.dll" (ByVal ActivationCode As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLActInstall Lib "WinlicenseSDK.dll" (ByVal ActivationCode As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLActExpirationDate Lib "WinlicenseSDK.dll" (ExpDate As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLActDaysToActivate Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLActUninstall Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLGetCurrentCountry Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialExtGetLevel Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLProtectCheckDebugger Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialExtendExpiration Lib "WinlicenseSDK.dll" (ByVal NumDays As Integer, ByVal NumExec As Integer, NewDate As WString, ByVal NumMinutes As Integer, ByVal TimeRuntime As Integer) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialFirstRun Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegFirstRun Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegCheckMachineLocked Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLSplashHide Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLBufferCrypt Lib "WinlicenseSDK.dll" (Buffer As WString, BufferLength As Integer, ByVal Password As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLBufferDecrypt Lib "WinlicenseSDK.dll" (Buffer As WString, BufferLength As Integer, ByVal Password As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialDateDaysLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegDateDaysLeft Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetDynSmartKey Lib "WinlicenseSDK.dll" (ByVal SmartKey As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegDisableKeyCurrentInstance Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareRuntimeCheckU3 Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLGetVersion Lib "WinlicenseSDK.dll" (ByVal Buffer As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegNetInstancesGet Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegNetInstancesMax Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLGetProtectionDate Lib "WinlicenseSDK.dll" (pProtectionDate As WString) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLProtectCheckCodeIntegrity Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareGetIdType Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLTrialWStringRead Lib "WinlicenseSDK.dll" (ByVal WStringName As WString, ByVal WStringValue As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialWStringWrite Lib "WinlicenseSDK.dll" (ByVal WStringName As WString, ByVal WStringValue As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialDebugCheck Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetLicenseRestrictions Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegGetLicenseType Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLCheckVirtualPC Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLTrialGetTrialRestrictions Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegActivateSoftware Lib "WinlicenseSDK.dll" (ByVal pActivationKey As WString, OutWinsockErrorCode As Variant, ByVal OutServerOutput As WString, ByVal OutWinsockErrorCode As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLRegDeactivateSoftware Lib "WinlicenseSDK.dll" (ByVal pActivationKey As WString, OutWinsockErrorCode As Variant, ByVal OutServerOutput As WString, ByVal OutWinsockErrorCode As Integer) As Integer</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareGetNumberUsbDrives Lib "WinlicenseSDK.dll" () As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareGetUsbIdAt Lib "WinlicenseSDK.dll" (Index As Integer, ByVal HardId As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLHardwareGetUsbNameAt Lib "WinlicenseSDK.dll" (Index As Integer, ByVal UsbName As WString) As Boolean</NoteLine>
+   <NoteLine>Public Declare Function WLGetLastError Lib "WinlicenseSDK.dll" () As Integer</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlNoTrialExt = 0</NoteLine>
+   <NoteLine>Public Const wlAppExtended = 1</NoteLine>
+   <NoteLine>Public Const wlInvalidTrialExt = 2</NoteLine>
+   <NoteLine>Public Const wlNoMoreExt = 3</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlTrialOk = 0</NoteLine>
+   <NoteLine>Public Const wlTrialDaysExpired = 1</NoteLine>
+   <NoteLine>Public Const wlTrialExecExpired = 2</NoteLine>
+   <NoteLine>Public Const wlTrialDateExpired = 3</NoteLine>
+   <NoteLine>Public Const wlTrialRuntimExpired = 4</NoteLine>
+   <NoteLine>Public Const wlTrialGlobalExpired = 5</NoteLine>
+   <NoteLine>Public Const wlTrialInvalidCountry = 6</NoteLine>
+   <NoteLine>Public Const wlTrialManipulated = 7</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlIsTrial = 0</NoteLine>
+   <NoteLine>Public Const wlIsRegistered = 1</NoteLine>
+   <NoteLine>Public Const wlInvalidLicense = 2</NoteLine>
+   <NoteLine>Public Const wlInvalidHardwareLicense = 3</NoteLine>
+   <NoteLine>Public Const wlNoMoreHwdChanges = 4</NoteLine>
+   <NoteLine>Public Const wlLicenseExpired = 5</NoteLine>
+   <NoteLine>Public Const wlInvalidCountryLicense = 6</NoteLine>
+   <NoteLine>Public Const wlLicenseStolen = 7</NoteLine>
+   <NoteLine>Public Const wlWrongLicenseExp = 8</NoteLine>
+   <NoteLine>Public Const wlWrongLicenseHardware = 9</NoteLine>
+   <NoteLine>Public Const wlIsRegisteredNotActivated = 10</NoteLine>
+   <NoteLine>Public Const wlIsRegisteredAndActivated = wlIsRegistered</NoteLine>
+   <NoteLine>Public Const wlNoMoreInstancesAllowed = 12</NoteLine>
+   <NoteLine>Public Const wlNetworkNoServerRunning = 13</NoteLine>
+   <NoteLine>Public Const wlInstallLicenseDateExpired = 14</NoteLine>
+   <NoteLine>Public Const wlLicenseDisabledInInstance = 15</NoteLine>
+   <NoteLine>Public Const wlTrialModeNotSupported = 16</NoteLine>
+   <NoteLine>Public Const wlNetworkCannotStartServer = 17</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlLicenseDaysExpired = 1</NoteLine>
+   <NoteLine>Public Const wlLicenseExecExpired = 2</NoteLine>
+   <NoteLine>Public Const wlLicenseDateExpired = 3</NoteLine>
+   <NoteLine>Public Const wlLicenseGlobalExpired = 4</NoteLine>
+   <NoteLine>Public Const wlLicenseRuntimeExpired = 5</NoteLine>
+   <NoteLine>Public Const wlLicenseActivationExpired = 6</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlMarkStolenKey = 0</NoteLine>
+   <NoteLine>Public Const wlMarkInvalidKey = 1</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlRegRestrictionDays = 2 ^ 0</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionExec = 2 ^ 1</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionDate = 2 ^ 2</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionRuntime = 2 ^ 3</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionGlobalTime = 2 ^ 4</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionCountry = 2 ^ 5</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionHardwareId = 2 ^ 6</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionNetwork = 2 ^ 7</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionInstallDate = 2 ^ 8</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionCreationDate = 2 ^ 9</NoteLine>
+   <NoteLine>Public Const wlRegRestrictionEmbedUserInfo = 2 ^ 10</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionUnlimited = 0</NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionDays = 2 ^ 0</NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionExec = 2 ^ 1</NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionDate = 2 ^ 2</NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionRuntime = 2 ^ 3</NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionGlobalTime = 2 ^ 4</NoteLine>
+   <NoteLine>Public Const wlTrialRestrictionCountry = 2 ^ 5</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlPermKey = -1</NoteLine>
+   <NoteLine>Public Const wlNoKey = -2</NoteLine>
+   <NoteLine>Public Const wlNoTrialDate = -1</NoteLine>
+   <NoteLine>Public Const wlInvalidCounter = -1</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlHardwareTypePC = 0</NoteLine>
+   <NoteLine>Public Const wlHardwareTypeU3 = 1</NoteLine>
+   <NoteLine>Public Const wlHardwareTypeCustom = 2</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const WL_ERROR_SUCCESS = 0</NoteLine>
+   <NoteLine>Public Const WL_ERROR_NOT_MATCHING_HARDWARE_ID = 1</NoteLine>
+   <NoteLine>Public Const WL_ERROR_NOT_MATCHING_USER_INFO = 2</NoteLine>
+   <NoteLine>Public Const WL_ERROR_INVALID_KEY = 3</NoteLine>
+   <NoteLine>Public Const WL_ERROR_REQUIRED_EXPIRATION = 5</NoteLine>
+   <NoteLine>Public Const WL_ERROR_WRONG_KEY_SIZE = 6</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Global GlobalBuffer As WString * 4000</NoteLine>
+   <NoteLine>Global RegName As WString * 200</NoteLine>
+   <NoteLine>Global RegCompWString As WString * 200</NoteLine>
+   <NoteLine>Global RegCustom As WString * 200</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine>Public Const wlActivationOk = 0</NoteLine>
+   <NoteLine>Public Const wlActivationErrorKeyNotFound = 1</NoteLine>
+   <NoteLine>Public Const wlActivationErrorDeviceRevoked = 2</NoteLine>
+   <NoteLine>Public Const wlActivationErrorMaxDevicesReached = 3</NoteLine>
+   <NoteLine>Public Const wlActivationErrorDeviceReactivationExcedeed = 4</NoteLine>
+   <NoteLine>Public Const wlActivationErrorNoMoreRevokeAllowed = 5</NoteLine>
+   <NoteLine>Public Const wlActivationErrorDeviceNotFound = 6</NoteLine>
+   <NoteLine>Public Const wlActivationErrorWrongServerDataReceived = 7</NoteLine>
+   <NoteLine>Public Const wlActivationErrorKeyDisabledBySeller = 8</NoteLine>
+   <NoteLine>Public Const wlActivationErrorKeyExpired = 9</NoteLine>
+   <NoteLine>Public Const wlActivationErrorCannotInstallLicense = 50</NoteLine>
+   <NoteLine>Public Const wlActivationErrorWinsockError = 100</NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine></NoteLine>
+   <NoteLine></NoteLine>
+  </ItemSource>
+  <ItemFlags>0</ItemFlags>
+ </Note>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+ <Constant>
+  <ItemName>wlNoTrialExt</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1707972607</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlAppExtended</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>408014847</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlInvalidTrialExt</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1546637311</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNoMoreExt</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1623791615</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>3</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialOk</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>342769663</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialDaysExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1253697535</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialExecExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>4945919</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialDateExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>2086625279</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>3</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRuntimExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1982255103</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>4</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialGlobalExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1790459903</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>5</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialInvalidCountry</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>2144262143</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>6</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialManipulated</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1680959487</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>7</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlIsTrial</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>235077631</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlIsRegistered</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1839415295</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlInvalidLicense</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1069756415</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlInvalidHardwareLicense</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>260827135</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>3</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNoMoreHwdChanges</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1031974911</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>4</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>543727615</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>5</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlInvalidCountryLicense</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>928794623</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>6</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseStolen</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>819488767</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>7</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlWrongLicenseExp</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>914044927</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>8</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlWrongLicenseHardware</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>938299391</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>9</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlIsRegisteredNotActivated</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>825462783</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>10</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlIsRegisteredAndActivated</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1992734719</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>wlIsRegistered</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNoMoreInstancesAllowed</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1222076415</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>12</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNetworkNoServerRunning</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>412190719</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>13</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlInstallLicenseDateExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1919889407</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>14</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseDisabledInInstance</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1208596479</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>15</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialModeNotSupported</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1275830271</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>16</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNetworkCannotStartServer</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1503039487</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>17</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseDaysExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>795901951</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseExecExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1793583103</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseDateExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>294553599</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>3</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseGlobalExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>357263359</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>4</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseRuntimeExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>346554367</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>5</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlLicenseActivationExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>719222783</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>6</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlMarkStolenKey</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>593530879</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlMarkInvalidKey</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>125974527</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionDays</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>758806527</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionExec</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>851441663</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionDate</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1086705663</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>4</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionRuntime</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>4370431</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>8</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionGlobalTime</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>326617087</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>16</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionCountry</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1159679999</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>32</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionHardwareId</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>571441151</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>64</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionNetwork</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1673277439</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>128</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionInstallDate</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1170950143</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>256</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionCreationDate</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>94115839</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>512</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlRegRestrictionEmbedUserInfo</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>652685311</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>1024</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionUnlimited</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>39708671</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionDays</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1889740799</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionExec</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>655382527</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionDate</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1148579839</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>4</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionRuntime</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>947566591</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>8</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionGlobalTime</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>120985599</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>16</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlTrialRestrictionCountry</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>587225087</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>2</ItemType>
+  <ItemDef>32</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlPermKey</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1217165311</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>-1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNoKey</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>730623999</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>-2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlNoTrialDate</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>351617023</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>-1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlInvalidCounter</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>361082879</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>-1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlHardwareTypePC</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>296685567</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlHardwareTypeU3</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1691699199</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlHardwareTypeCustom</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>166377471</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>WL_ERROR_SUCCESS</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1953609727</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>WL_ERROR_NOT_MATCHING_HARDWARE_ID</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>568434687</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>WL_ERROR_NOT_MATCHING_USER_INFO</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1136500735</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>WL_ERROR_INVALID_KEY</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>253120511</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>3</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>WL_ERROR_REQUIRED_EXPIRATION</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>617598975</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>5</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>WL_ERROR_WRONG_KEY_SIZE</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>530477055</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>6</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationOk</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>609146879</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>0</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorKeyNotFound</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1859756031</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>1</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorDeviceRevoked</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>334618623</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>2</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorMaxDevicesReached</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>384845823</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>3</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorDeviceReactivationExcedeed</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>404924415</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>4</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorNoMoreRevokeAllowed</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>371982335</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>5</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorDeviceNotFound</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>674553855</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>6</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorWrongServerDataReceived</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>455389183</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>7</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorKeyDisabledBySeller</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>844685311</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>8</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorKeyExpired</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1765212159</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>9</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorCannotInstallLicense</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>56406015</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>50</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Constant>
+  <ItemName>wlActivationErrorWinsockError</ItemName>
+  <Compatibility>true</Compatibility>
+  <Visible>1</Visible>
+  <PartID>1229127679</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>1</ItemType>
+  <ItemDef>100</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
+ <Structure>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemName>SYSTEMTIME</ItemName>
+  <ItemFlags>33</ItemFlags>
+  <ItemName>SYSTEMTIME</ItemName>
+  <Compatibility></Compatibility>
+  <Attributes>StructureAlignment = 1</Attributes>
+  <Visible>1</Visible>
+  <PartID>108736511</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>wYear As Integer</SourceLine>
+   <SourceLine>wMonth As Integer</SourceLine>
+   <SourceLine>wDayOfWeek As Integer</SourceLine>
+   <SourceLine>wDay As Integer</SourceLine>
+   <SourceLine>wHour As Integer</SourceLine>
+   <SourceLine>wMinute As Integer</SourceLine>
+   <SourceLine>wSecond As Integer</SourceLine>
+   <SourceLine>wMilliseconds As Integer</SourceLine>
+  </ItemSource>
+ </Structure>
+ <Structure>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemName>sLicenseFeatures</ItemName>
+  <ItemFlags>33</ItemFlags>
+  <ItemName>sLicenseFeatures</ItemName>
+  <Compatibility></Compatibility>
+  <Attributes>StructureAlignment = 1</Attributes>
+  <Visible>1</Visible>
+  <PartID>2008541183</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>cb As Integer</SourceLine>
+   <SourceLine>NumDays As Integer</SourceLine>
+   <SourceLine>NumExec As Integer</SourceLine>
+   <SourceLine>ExpDate As SYSTEMTIME</SourceLine>
+   <SourceLine>CountryId As Integer</SourceLine>
+   <SourceLine>Runtime As Integer</SourceLine>
+   <SourceLine>GlobalMinutes As Integer</SourceLine>
+   <SourceLine>InstallDate As SYSTEMTIME</SourceLine>
+   <SourceLine>NetInstances As Integer</SourceLine>
+   <SourceLine>EmbedLicenseInfoInKey As Integer</SourceLine>
+   <SourceLine>EmbedCreationDate As Integer</SourceLine>
+  </ItemSource>
+ </Structure>
+</block>
+<block type="Module" ID="998057983">
+ <ObjName>App</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>Application</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <IsApplicationObject>1</IsApplicationObject>
+ <Compatibility></Compatibility>
+ <PropertyVal Name="MenuBar">0</PropertyVal>
+ <ViewBehavior>
+ </ViewBehavior>
+</block>
+<block type="BuildAutomation" ID="1382414335">
+ <ObjName>Build Automation</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+</block>
+<block type="BuildStepsList" ID="2146820095">
+ <ObjName>Linux</ObjName>
+ <ObjContainerID>1382414335</ObjContainerID>
+</block>
+<block type="BuildProjectStep" ID="2038120447">
+ <ObjName>Build</ObjName>
+ <ObjContainerID>2146820095</ObjContainerID>
+</block>
+<block type="BuildStepsList" ID="945790975">
+ <ObjName>Mac OS X</ObjName>
+ <ObjContainerID>1382414335</ObjContainerID>
+</block>
+<block type="BuildProjectStep" ID="1357154303">
+ <ObjName>Build</ObjName>
+ <ObjContainerID>945790975</ObjContainerID>
+</block>
+<block type="BuildStepsList" ID="954935295">
+ <ObjName>Windows</ObjName>
+ <ObjContainerID>1382414335</ObjContainerID>
+</block>
+<block type="BuildProjectStep" ID="1915271167">
+ <ObjName>Build</ObjName>
+ <ObjContainerID>954935295</ObjContainerID>
+</block>
+<block type="Window" ID="1385771007">
+ <ObjName>Window1</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>Window</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <PropertyVal Name="MenuBarVisible">True</PropertyVal>
+ <PropertyVal Name="MenuBar">0</PropertyVal>
+ <PropertyVal Name="Backdrop">0</PropertyVal>
+ <PropertyVal Name="BackgroundColor">16777215</PropertyVal>
+ <PropertyVal Name="HasBackgroundColor">False</PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="DefaultLocation">0</PropertyVal>
+ <PropertyVal Name="ImplicitInstance">True</PropertyVal>
+ <PropertyVal Name="FullScreen">False</PropertyVal>
+ <PropertyVal Name="MacProcID">0</PropertyVal>
+ <PropertyVal Name="Composite">False</PropertyVal>
+ <PropertyVal Name="Resizeable">True</PropertyVal>
+ <PropertyVal Name="HasFullScreenButton">False</PropertyVal>
+ <PropertyVal Name="HasMinimizeButton">True</PropertyVal>
+ <PropertyVal Name="HasMaximizeButton">True</PropertyVal>
+ <PropertyVal Name="HasCloseButton">True</PropertyVal>
+ <PropertyVal Name="Title">Untitled</PropertyVal>
+ <PropertyVal Name="Type">0</PropertyVal>
+ <PropertyVal Name="MaximumHeight">32000</PropertyVal>
+ <PropertyVal Name="MaximumWidth">32000</PropertyVal>
+ <PropertyVal Name="MinimumHeight">64</PropertyVal>
+ <PropertyVal Name="MinimumWidth">64</PropertyVal>
+ <PropertyVal Name="Height">400</PropertyVal>
+ <PropertyVal Name="Width">600</PropertyVal>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Interfaces</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Width</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>600</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>400</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MinimumWidth</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>64</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MinimumHeight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>64</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MaximumWidth</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>32000</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MaximumHeight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Size</PropertyGroup>
+   <PropertyValue>32000</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Type</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Types</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Document</ItemDef>
+    <ItemDef>1 - Movable Modal</ItemDef>
+    <ItemDef>2 - Modal Dialog</ItemDef>
+    <ItemDef>3 - Floating Window</ItemDef>
+    <ItemDef>4 - Plain Box</ItemDef>
+    <ItemDef>5 - Shadowed Box</ItemDef>
+    <ItemDef>6 - Rounded Window</ItemDef>
+    <ItemDef>7 - Global Floating Window</ItemDef>
+    <ItemDef>8 - Sheet Window</ItemDef>
+    <ItemDef>9 - Metal Window</ItemDef>
+    <ItemDef>11 - Modeless Dialog</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Title</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>Untitled</PropertyValue>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HasCloseButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HasMaximizeButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HasMinimizeButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HasFullScreenButton</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Resizeable</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Frame</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Composite</ObjName>
+   <PropertyGroup>OS X (Carbon)</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MacProcID</ObjName>
+   <PropertyGroup>OS X (Carbon)</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>FullScreen</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ImplicitInstance</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>DefaultLocation</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Locations</ItemType>
+   <EditorType>Enum</EditorType>
+   <Enumeration>
+    <ItemDef>0 - Default</ItemDef>
+    <ItemDef>1 - Parent Window</ItemDef>
+    <ItemDef>2 - Main Screen</ItemDef>
+    <ItemDef>3 - Parent Window Screen</ItemDef>
+    <ItemDef>4 - Stagger</ItemDef>
+   </Enumeration>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Visible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HasBackgroundColor</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Background</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>BackgroundColor</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Background</PropertyGroup>
+   <PropertyValue>&amp;hFFFFFF</PropertyValue>
+   <ItemType>Color</ItemType>
+   <EditorType>Color</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Backdrop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Background</PropertyGroup>
+   <ItemType>Picture</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MenuBar</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Menus</PropertyGroup>
+   <ItemType>MenuBar</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>MenuBarVisible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Deprecated</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+ <ControlBehavior>
+  <Superclass>PushButton</Superclass>
+  <HookInstance>
+   <ItemName>Action</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1220182015</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>//dim WL As new WinLicense</SourceLine>
+    <SourceLine>Declare function WLTrialDaysLeft lib  "WinLicenseSDK.dll" ( ) as Integer</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>MsgBox(Str(WLTrialDaysLeft))</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>PushButton</ControlClass>
+  <ItemName>PushButton</ItemName>
+  <PropertyVal Name="TextUnit">0</PropertyVal>
+  <PropertyVal Name="TextSize">0.0e+</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="ButtonStyle">0</PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="Name">PushButton1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="Left">68</PropertyVal>
+  <PropertyVal Name="Top">61</PropertyVal>
+  <PropertyVal Name="Width">80</PropertyVal>
+  <PropertyVal Name="Height">22</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="TabIndex">0</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="TabStop">True</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Caption">OK</PropertyVal>
+  <PropertyVal Name="Default">True</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Transparent">False</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="Super">PushButton</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1253173247</PartID>
+ </Control>
+</block>
+<block type="UIState" ID="0">
+ <StudioWindowState>
+  <EditBounds><Rect left="-8" top="-8" width="3456" height="1416"/></EditBounds>
+  <WindowMaximized>1</WindowMaximized>
+  <Editors>
+   <EditorCount>1</EditorCount>
+   <Editor>
+    <EditorIndex>0</EditorIndex>
+    <EditorLocation>App</EditorLocation>
+    <EditorPath></EditorPath>
+    <EditingPartID>998057983</EditingPartID>
+    <EditorPath></EditorPath>
+   </Editor>
+   <SelectedTab>0</SelectedTab>
+  </Editors>
+ </StudioWindowState>
+</block>
+</RBProject>

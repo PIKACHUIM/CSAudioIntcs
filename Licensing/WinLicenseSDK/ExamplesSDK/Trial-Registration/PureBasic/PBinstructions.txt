@@ -1,0 +1,25 @@
+Start
+
+C:\Program Files\PureBasic\Library SDK\DLL Importer\DLL Importer.exe
+
+For the DLL definition path select the directory that holds the Winlicense.pbl file (attached) and make sure your PureBasic path is correct.
+
+Click Start, then select the actual WinLicenseSDK.pbi file.
+
+You'll see a dialog like this :
+
+---------------------------
+Info
+---------------------------
+Conversion correctly finished.
+
+Files created:
+
+C:\Program Files\PureBasic\PureLibraries\Windows\WINLICENSESDK
+C:\Program Files\PureBasic\PureLibraries\Windows\Libraries\WINLICENSESDK.lib
+C:\Projects\Winlicensefiles\WinlicenseSDK\Exports\winlicensesdk.def
+---------------------------
+OK
+---------------------------
+
+Now copy the WinlicenseSDK.dll to the PureBasic compilers directory and you're done!

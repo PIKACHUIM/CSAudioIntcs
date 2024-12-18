@@ -1,0 +1,6 @@
+ENCRYPTED STRINGS
+-----------------
+
+This is an encrypted string 1!
+This is an encrypted string 2!
+This is an encrypted string 3!

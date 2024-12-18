@@ -1,0 +1,157 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_MYTESTRESOURCES MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_MYTESTRESOURCES ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 233, 219
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_TOOLWINDOW
+CAPTION "Smart Activate  SDK"
+FONT 10, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Register",IDC_BUTTONACTIVATE,63,113,117,14
+    LTEXT           "This application is not registered",IDC_LABEL1,66,11,
+                    100,8
+    LTEXT           "Please, insert your personal text key",IDC_LABEL2,60,22,
+                    115,8
+    GROUPBOX        "Registration Key",IDC_STATIC,12,44,210,88
+    EDITTEXT        IDC_TEXTKEYEDIT,31,59,176,49,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL
+    GROUPBOX        "Registration Info",IDC_STATIC,13,138,209,71
+    LTEXT           "Name:",IDC_STATIC,33,157,21,8
+    EDITTEXT        IDC_NAMEEDIT,59,154,150,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Company:",IDC_STATIC,23,174,32,8
+    EDITTEXT        IDC_COMPANYEDIT,59,171,150,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Extra Data:",IDC_STATIC,21,192,35,8
+    EDITTEXT        IDC_EXTRAEDIT,59,190,150,12,ES_AUTOHSCROLL | ES_READONLY
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 229
+        BOTTOMMARGIN, 214
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "MytestResources"
+    IDC_MYTESTRESOURCES     "MYTESTRESOURCES"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

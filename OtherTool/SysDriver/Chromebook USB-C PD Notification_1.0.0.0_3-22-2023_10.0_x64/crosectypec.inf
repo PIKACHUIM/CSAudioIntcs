@@ -1,0 +1,79 @@
+;/*++
+;
+;Copyright (c) CoolStar.  All rights reserved.
+;
+;Module Name:
+;    crosectypec.inf
+;
+;Abstract:
+;    INF file for installing the Chrome EC USB-C Driver
+;
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = USB
+ClassGuid   = {36FC9E60-C465-11CF-8056-444553540000}
+Provider    = CoolStar
+DriverVer = 03/22/2023,1.0.0.0
+CatalogFile = crosectypec.cat
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+crosectypec.sys  = 1,,
+
+;*****************************************
+; CrosEcTypeC  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTamd64.10.0...14393
+
+; Decorated model section take precedence over undecorated 
+; ones on XP and later.
+[Standard.NTamd64.10.0...14393]
+%CrosEcPDNotify.DeviceDesc%=CrosEcTypeC_Device, ACPI\GOOG0003
+%CrosEcTypeC.DeviceDesc%=CrosEcTypeC_Device, ACPI\GOOG0014
+
+[CrosEcTypeC_Device.NT]
+CopyFiles=Drivers_Dir
+
+[CrosEcTypeC_Device.NT.HW]
+AddReg=CrosEcTypeC_AddReg
+
+[Drivers_Dir]
+crosectypec.sys
+
+[CrosEcTypeC_AddReg]
+; Set to 1 to connect the first interrupt resource found, 0 to leave disconnected
+HKR,Settings,"ConnectInterrupt",0x00010001,0
+
+;-------------- Service installation
+[CrosEcTypeC_Device.NT.Services]
+AddService = CrosEcTypeC,%SPSVCINST_ASSOCSERVICE%, CrosEcTypeC_Service_Inst
+
+; -------------- CrosEcTypeC driver install sections
+[CrosEcTypeC_Service_Inst]
+DisplayName    = %CrosEcTypeC.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\crosectypec.sys
+LoadOrderGroup = Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+StdMfg                 = "CoolStar"
+DiskId1                = "Chrome EC Installation Disk #1"
+CrosEcPDNotify.DeviceDesc = "Chromebook USB-C PD Notification"
+CrosEcTypeC.DeviceDesc = "Chromebook EC USB-C"
+CrosEcTypeC.SVCDESC    = "Chrome EC Service"

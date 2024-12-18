@@ -1,0 +1,178 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_MYTESTRESOURCES MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_MYTESTRESOURCES ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 253, 318
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_TOOLWINDOW
+CAPTION "Trial-Registration SDK"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Application Status",IDC_STATIC,17,13,220,62
+    PUSHBUTTON      "Check Application Status",IDC_CHECK_APP_STATUS,71,28,
+                    100,14
+    LTEXT           "Status:",IDC_STATIC,63,57,24,8
+    LTEXT           "",IDC_STATUS,93,57,86,8
+    GROUPBOX        "Trial Information",IDC_STATIC,17,86,220,62
+    LTEXT           "Days Left:",IDC_STATIC,44,103,34,8
+    LTEXT           "Executions Left:",IDC_STATIC,26,116,53,8
+    LTEXT           "Minutes Left:",IDC_STATIC,141,103,43,8
+    LTEXT           "Runtime Left:",IDC_STATIC,139,116,44,8
+    LTEXT           "Expiration Date:",IDC_STATIC,26,131,53,8
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,82,128,59,11
+    GROUPBOX        "License Information",IDC_STATIC,17,156,220,95
+    EDITTEXT        IDC_EDITNAME,61,170,62,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Name:",IDC_STATIC,36,174,22,8
+    LTEXT           "Company:",IDC_STATIC,25,191,34,8
+    EDITTEXT        IDC_EDITCOMPANY,61,187,62,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Custom:",IDC_STATIC,143,172,28,8
+    EDITTEXT        IDC_EDITCUSTOM,175,170,55,31,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Days Left:",IDC_STATIC,25,210,34,8
+    LTEXT           "Executions Left:",IDC_STATIC,118,210,53,8
+    LTEXT           "Expiration Date:",IDC_STATIC,25,228,53,8
+    CONTROL         "",IDC_DATETIMEPICKER2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,81,225,59,11
+    GROUPBOX        "Hardware ID",IDC_STATIC,17,262,219,49
+    PUSHBUTTON      "Get Hardware ID",IDC_BUTTON_HARDID,30,279,59,14
+    EDITTEXT        IDC_EDIT_HARDID,104,279,114,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "",IDC_DAYSLEFT,81,103,26,8
+    LTEXT           "",IDC_EXECLEFT,81,116,24,8
+    LTEXT           "",IDC_MINUTESLEFT,187,102,23,8
+    LTEXT           "",IDC_RUNTIMELEFT,185,116,22,8
+    LTEXT           "",IDC_REG_DAYSLEFT,62,210,24,8
+    LTEXT           "",IDC_REG_EXECLEFT,173,210,26,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 243
+        BOTTOMMARGIN, 308
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "MytestResources"
+    IDC_MYTESTRESOURCES     "MYTESTRESOURCES"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
