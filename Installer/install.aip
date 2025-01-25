@@ -57,37 +57,33 @@
     <ROW Component="AI_ExePath" ComponentId="{348B4D10-0701-4DB9-BAD8-61AD5CD2C677}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{929F0BA2-AE68-438A-A08F-0F5C491CF264}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="ProductInformation" ComponentId="{81E4BC20-7D2B-463D-A838-99DF45209138}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
-    <ROW Component="acpbus.cat" ComponentId="{7291B229-39A0-4B23-86BD-0B5704637A75}" Directory_="acpbus_Dir" Attributes="0" KeyPath="acpbus.cat" Type="0"/>
-    <ROW Component="cacert.exe" ComponentId="{79A38382-180F-41FD-A4BC-0BE39D4E032E}" Directory_="csaudioamdsof.1.0.1cracked_Dir" Attributes="0" KeyPath="cacert.exe"/>
-    <ROW Component="cacert.exe_1" ComponentId="{0F0EF9C5-0255-41C7-BFD5-982DAE39B76E}" Directory_="csaudiointsof.1.0.4cracked_Dir" Attributes="0" KeyPath="cacert.exe_1"/>
-    <ROW Component="cacert.exe_2" ComponentId="{E338BA84-5914-4410-AFD9-2E43F96CE025}" Directory_="csaudiosstavs.1.0.4cracked_Dir" Attributes="0" KeyPath="cacert.exe_2"/>
-    <ROW Component="croseccodec.cat" ComponentId="{B726B915-F16C-45A2-90E2-50D9EC89B9C5}" Directory_="crosec_Dir" Attributes="0" KeyPath="croseccodec.cat" Type="0"/>
-    <ROW Component="cs42l42.cat" ComponentId="{C497489E-0BA3-48AC-B437-D4615B1A2ABC}" Directory_="cs42lx_Dir" Attributes="0" KeyPath="cs42l42.cat" Type="0"/>
-    <ROW Component="csaudioamdsof.cat" ComponentId="{E5EE33EC-C786-45C1-8CD8-58B3288373CB}" Directory_="csaudioamdsof.1.0.1cracked_Dir" Attributes="0" KeyPath="csaudioamdsof.cat" Type="0"/>
-    <ROW Component="csaudiointcsof.cat" ComponentId="{ACA8EF35-3D90-42EE-A4C0-EBD8576CAD38}" Directory_="csaudiointsof.1.0.4cracked_Dir" Attributes="0" KeyPath="csaudiointcsof.cat" Type="0"/>
-    <ROW Component="csaudiosstavs.cat" ComponentId="{12E3A362-947C-40C4-BAFE-1D9798838ED8}" Directory_="csaudiosstavs.1.0.4cracked_Dir" Attributes="0" KeyPath="csaudiosstavs.cat" Type="0"/>
-    <ROW Component="da7219.cat" ComponentId="{0595DB64-0547-4112-B0E5-6ADD955B709E}" Directory_="da7219_Dir" Attributes="0" KeyPath="da7219.cat" Type="0"/>
-    <ROW Component="dpinst.exe" ComponentId="{2AE3A33A-532E-4708-BA8E-438DEC9ED81B}" Directory_="csaudiointsof.1.0.4cracked_Dir" Attributes="256" KeyPath="dpinst.exe"/>
-    <ROW Component="dpinst.exe_1" ComponentId="{86DE0308-6F9B-44E0-AF60-AEFB91F534BC}" Directory_="csaudiosstavs.1.0.4cracked_Dir" Attributes="256" KeyPath="dpinst.exe_1"/>
-    <ROW Component="dpinst.exe_2" ComponentId="{06962D2C-3F2E-452B-B161-2ECBF23373C7}" Directory_="csaudioamdsof.1.0.1cracked_Dir" Attributes="256" KeyPath="dpinst.exe_2"/>
-    <ROW Component="driversinstalltoolinstall.exe" ComponentId="{A322584A-A398-4246-82AA-9108CFFABC0D}" Directory_="APPDIR" Attributes="256" KeyPath="driversinstalltoolinstall.exe"/>
+    <ROW Component="acpbus.cat" ComponentId="{0857E792-C3E3-4647-B6AA-614AD95D3437}" Directory_="acpbus_Dir" Attributes="0" KeyPath="acpbus.cat" Type="0"/>
+    <ROW Component="croseccodec.cat" ComponentId="{00EBDA00-EC13-42A4-A971-D000F24AA621}" Directory_="crosec_Dir" Attributes="0" KeyPath="croseccodec.cat" Type="0"/>
+    <ROW Component="cs42l42.cat" ComponentId="{9CD5A86C-063A-443C-BDF2-8D4B6D7A5D2C}" Directory_="cs42lx_Dir" Attributes="0" KeyPath="cs42l42.cat" Type="0"/>
+    <ROW Component="csaudioamdsof.cat" ComponentId="{7EA9BD48-8534-424D-B523-1B31A0B2191D}" Directory_="csaudioamdsof.1.0.1cracked_Dir" Attributes="0" KeyPath="csaudioamdsof.cat" Type="0"/>
+    <ROW Component="csaudiointcsof.cat" ComponentId="{3BADE22F-6A1C-44B7-B46A-FD314A6571C8}" Directory_="csaudiointsof.1.0.4cracked_Dir" Attributes="0" KeyPath="csaudiointcsof.cat" Type="0"/>
+    <ROW Component="csaudiosstavs.cat" ComponentId="{0E70FAFA-947B-4D29-85CB-D1819B8C1A82}" Directory_="csaudiosstavs.1.0.4cracked_Dir" Attributes="0" KeyPath="csaudiosstavs.cat" Type="0"/>
+    <ROW Component="da7219.cat" ComponentId="{A6C37909-1F4F-486A-8948-48A9DDA12D74}" Directory_="da7219_Dir" Attributes="0" KeyPath="da7219.cat" Type="0"/>
+    <ROW Component="driversinstalltoolinstall.exe" ComponentId="{EE68CBE3-CF9D-493D-9327-8D88BDEA8AFB}" Directory_="APPDIR" Attributes="256" KeyPath="driversinstalltoolinstall.exe"/>
     <ROW Component="driversremovecertsinstall.bat" ComponentId="{C39EA75F-46E9-4284-B23C-507E0E95867A}" Directory_="APPDIR" Attributes="0" KeyPath="driversremovecertsinstall.bat" Type="0"/>
-    <ROW Component="dsm_param_Google_Gimble.bin" ComponentId="{A760E05D-9904-4C9D-805A-FE5470510202}" Directory_="x_Dir" Attributes="0" KeyPath="dsm_param_Google_Gimble.bin" Type="0"/>
-    <ROW Component="max98357a.cat" ComponentId="{270902CF-2258-4D99-93C7-0772C831F545}" Directory_="a_Dir" Attributes="0" KeyPath="max98357a.cat" Type="0"/>
-    <ROW Component="nau8825.cat" ComponentId="{9FE77156-B41B-469B-8794-634585D7AA3F}" Directory_="na8825_Dir" Attributes="0" KeyPath="nau8825.cat" Type="0"/>
-    <ROW Component="opengmaxcodec.cat" ComponentId="{A9E47F0E-FCE6-4EB6-8E73-9657AC21ECDF}" Directory_="xcodec_Dir" Attributes="0" KeyPath="opengmaxcodec.cat" Type="0"/>
-    <ROW Component="pikachucertificateinstall.exe" ComponentId="{70F3B142-2C4A-4EF4-B0B2-218C06863376}" Directory_="APPDIR" Attributes="0" KeyPath="pikachucertificateinstall.exe"/>
-    <ROW Component="rt1011.cat" ComponentId="{83296021-59AF-4355-BCF6-77885EBE2F88}" Directory_="rt1011_Dir" Attributes="0" KeyPath="rt1011.cat" Type="0"/>
-    <ROW Component="rt1015.cat" ComponentId="{D4C19361-CB44-42A6-8852-E8AA8B66E06D}" Directory_="rt1015_Dir" Attributes="0" KeyPath="rt1015.cat" Type="0"/>
-    <ROW Component="rt1019.cat" ComponentId="{395E538E-F8EA-491C-891A-3D5EEC57A00F}" Directory_="rt1019_Dir" Attributes="0" KeyPath="rt1019.cat" Type="0"/>
-    <ROW Component="rt5682.cat" ComponentId="{14CAE644-2511-494B-8D5B-442EF8992EB1}" Directory_="rt5682_Dir" Attributes="0" KeyPath="rt5682.cat" Type="0"/>
-    <ROW Component="rt5682s.cat" ComponentId="{57361783-8807-435D-AE06-4C9BCBAE342D}" Directory_="rt568x_Dir" Attributes="0" KeyPath="rt5682s.cat" Type="0"/>
+    <ROW Component="dsm_param_Google_Gimble.bin" ComponentId="{9F466C8F-905D-4D77-91FB-1DEF2F990EBF}" Directory_="x_Dir" Attributes="0" KeyPath="dsm_param_Google_Gimble.bin" Type="0"/>
+    <ROW Component="max98357a.cat" ComponentId="{CF80B69D-2075-4045-A099-9CFCA1AE4E82}" Directory_="a_Dir" Attributes="0" KeyPath="max98357a.cat" Type="0"/>
+    <ROW Component="nau8825.cat" ComponentId="{3D2E2261-FD8A-4DFF-B72B-F87C445F0774}" Directory_="na8825_Dir" Attributes="0" KeyPath="nau8825.cat" Type="0"/>
+    <ROW Component="opengmaxcodec.cat" ComponentId="{2FC70FE2-0F95-4773-B5EF-559A7447332A}" Directory_="xcodec_Dir" Attributes="0" KeyPath="opengmaxcodec.cat" Type="0"/>
+    <ROW Component="pikachucertificateinstall.exe" ComponentId="{A5A5B290-7705-4671-964E-31DA18AEA9D8}" Directory_="APPDIR" Attributes="0" KeyPath="pikachucertificateinstall.exe"/>
+    <ROW Component="rt1011.cat" ComponentId="{C8493E90-DA73-453F-BAD4-C9154A5D15CF}" Directory_="rt1011_Dir" Attributes="0" KeyPath="rt1011.cat" Type="0"/>
+    <ROW Component="rt1015.cat" ComponentId="{D11573D0-1DD0-49C6-B345-886AC3EF9B8E}" Directory_="rt1015_Dir" Attributes="0" KeyPath="rt1015.cat" Type="0"/>
+    <ROW Component="rt1019.cat" ComponentId="{1E9160C9-C1B8-4BB6-B551-70B5942D44E1}" Directory_="rt1019_Dir" Attributes="0" KeyPath="rt1019.cat" Type="0"/>
+    <ROW Component="rt5682.cat" ComponentId="{321B0B9B-703E-4882-BE1F-D6C6A7349DC9}" Directory_="rt5682_Dir" Attributes="0" KeyPath="rt5682.cat" Type="0"/>
+    <ROW Component="rt5682s.cat" ComponentId="{3DB9EB18-78F1-4636-B3FF-61C3EC78BE62}" Directory_="rt568x_Dir" Attributes="0" KeyPath="rt5682s.cat" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="driversremovecertsinstall.bat" Component_="driversremovecertsinstall.bat" FileName="DRIVER~1.BAT|drivers-removecerts-install.bat" Attributes="0" SourcePath="Drivers\drivers-removecerts-install.bat" SelfReg="false"/>
+    <ROW File="driversremovecertsremoved.bat" Component_="driversremovecertsinstall.bat" FileName="DRIVER~2.BAT|drivers-removecerts-removed.bat" Attributes="0" SourcePath="Drivers\drivers-removecerts-removed.bat" SelfReg="false"/>
     <ROW File="csaudioamdsof.cat" Component_="csaudioamdsof.cat" FileName="CSAUDI~1.CAT|csaudioamdsof.cat" Attributes="0" SourcePath="Drivers\csaudioamdsof.1.0.1-cracked\csaudioamdsof.cat" SelfReg="false"/>
     <ROW File="csaudioamdsof.inf" Component_="csaudioamdsof.cat" FileName="CSAUDI~1.INF|csaudioamdsof.inf" Attributes="0" SourcePath="Drivers\csaudioamdsof.1.0.1-cracked\csaudioamdsof.inf" SelfReg="false"/>
     <ROW File="csaudioamdsof.sys" Component_="csaudioamdsof.cat" FileName="CSAUDI~1.SYS|csaudioamdsof.sys" Attributes="0" SourcePath="Drivers\csaudioamdsof.1.0.1-cracked\csaudioamdsof.sys" SelfReg="false"/>
@@ -96,26 +92,11 @@
     <ROW File="csaudiointcsof.cat" Component_="csaudiointcsof.cat" FileName="CSAUDI~1.CAT|csaudiointcsof.cat" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\csaudiointcsof.cat" SelfReg="false"/>
     <ROW File="csaudiointcsof.inf" Component_="csaudiointcsof.cat" FileName="CSAUDI~1.INF|csaudiointcsof.inf" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\csaudiointcsof.inf" SelfReg="false"/>
     <ROW File="csaudiointcsof.sys" Component_="csaudiointcsof.cat" FileName="CSAUDI~1.SYS|csaudiointcsof.sys" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\csaudiointcsof.sys" SelfReg="false"/>
-    <ROW File="dpinst.exe" Component_="dpinst.exe" FileName="dpinst.exe" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\dpinst.exe" SelfReg="false"/>
     <ROW File="sofapl.ri" Component_="csaudiointcsof.cat" FileName="sof-apl.ri" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\sof-apl.ri" SelfReg="false"/>
     <ROW File="sofcnl.ri" Component_="csaudiointcsof.cat" FileName="sof-cnl.ri" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\sof-cnl.ri" SelfReg="false"/>
     <ROW File="sofglk.ri" Component_="csaudiointcsof.cat" FileName="sof-glk.ri" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\sof-glk.ri" SelfReg="false"/>
     <ROW File="sofjsl.ri" Component_="csaudiointcsof.cat" FileName="sof-jsl.ri" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\sof-jsl.ri" SelfReg="false"/>
     <ROW File="softgl.ri" Component_="csaudiointcsof.cat" FileName="sof-tgl.ri" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\sof-tgl.ri" SelfReg="false"/>
-    <ROW File="csaudiosstavs.cat" Component_="csaudiosstavs.cat" FileName="CSAUDI~1.CAT|csaudiosstavs.cat" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\csaudiosstavs.cat" SelfReg="false"/>
-    <ROW File="csaudiosstavs.inf" Component_="csaudiosstavs.cat" FileName="CSAUDI~1.INF|csaudiosstavs.inf" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\csaudiosstavs.inf" SelfReg="false"/>
-    <ROW File="csaudiosstavs.sys" Component_="csaudiosstavs.cat" FileName="CSAUDI~1.SYS|csaudiosstavs.sys" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\csaudiosstavs.sys" SelfReg="false"/>
-    <ROW File="dpinst.exe_1" Component_="dpinst.exe_1" FileName="dpinst.exe" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dpinst.exe" SelfReg="false"/>
-    <ROW File="dsp_basefw_bxt.bin" Component_="csaudiosstavs.cat" FileName="DSP_BA~1.BIN|dsp_basefw_bxt.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_basefw_bxt.bin" SelfReg="false"/>
-    <ROW File="dsp_basefw_kbl.bin" Component_="csaudiosstavs.cat" FileName="DSP_BA~2.BIN|dsp_basefw_kbl.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_basefw_kbl.bin" SelfReg="false"/>
-    <ROW File="dsp_lib_kbl_dsm.bin" Component_="csaudiosstavs.cat" FileName="DSP_LI~1.BIN|dsp_lib_kbl_dsm.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_lib_kbl_dsm.bin" SelfReg="false"/>
-    <ROW File="dsp_mod_kbl_dsm.bin" Component_="csaudiosstavs.cat" FileName="DSP_MO~1.BIN|dsp_mod_kbl_dsm.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_mod_kbl_dsm.bin" SelfReg="false"/>
-    <ROW File="driversremovecertsinstall.bat" Component_="driversremovecertsinstall.bat" FileName="DRIVER~1.BAT|drivers-removecerts-install.bat" Attributes="0" SourcePath="Drivers\drivers-removecerts-install.bat" SelfReg="false"/>
-    <ROW File="driversremovecertsremoved.bat" Component_="driversremovecertsinstall.bat" FileName="DRIVER~2.BAT|drivers-removecerts-removed.bat" Attributes="0" SourcePath="Drivers\drivers-removecerts-removed.bat" SelfReg="false"/>
-    <ROW File="pikachucertificateinstall.exe" Component_="pikachucertificateinstall.exe" FileName="PIKACH~1.EXE|pikachu-certificate-install.exe" Attributes="0" SourcePath="Drivers\pikachu-certificate-install.exe" SelfReg="false"/>
-    <ROW File="cacert.exe" Component_="cacert.exe" FileName="cacert.exe" Attributes="0" SourcePath="Drivers\csaudioamdsof.1.0.1-cracked\cacert.exe" SelfReg="false"/>
-    <ROW File="dpinst.exe_2" Component_="dpinst.exe_2" FileName="dpinst.exe" Attributes="0" SourcePath="Drivers\csaudioamdsof.1.0.1-cracked\dpinst.exe" SelfReg="false"/>
-    <ROW File="cacert.exe_1" Component_="cacert.exe_1" FileName="cacert.exe" Attributes="0" SourcePath="Drivers\csaudiointsof.1.0.4-cracked\cacert.exe" SelfReg="false"/>
     <ROW File="max98357a.cat" Component_="max98357a.cat" FileName="MAX983~1.CAT|max98357a.cat" Attributes="0" SourcePath="Drivers\csaudioothers.1.0.4-origins\98357a\max98357a.cat" SelfReg="false"/>
     <ROW File="max98357a.inf" Component_="max98357a.cat" FileName="MAX983~1.INF|max98357a.inf" Attributes="0" SourcePath="Drivers\csaudioothers.1.0.4-origins\98357a\max98357a.inf" SelfReg="false"/>
     <ROW File="max98357a.sys" Component_="max98357a.cat" FileName="MAX983~1.SYS|max98357a.sys" Attributes="0" SourcePath="Drivers\csaudioothers.1.0.4-origins\98357a\max98357a.sys" SelfReg="false"/>
@@ -167,8 +148,15 @@
     <ROW File="opengmaxcodec.cat" Component_="opengmaxcodec.cat" FileName="OPENGM~1.CAT|opengmaxcodec.cat" Attributes="0" SourcePath="Drivers\csaudioothers.1.0.4-origins\xcodec\opengmaxcodec.cat" SelfReg="false"/>
     <ROW File="opengmaxcodec.inf" Component_="opengmaxcodec.cat" FileName="OPENGM~1.INF|opengmaxcodec.inf" Attributes="0" SourcePath="Drivers\csaudioothers.1.0.4-origins\xcodec\opengmaxcodec.inf" SelfReg="false"/>
     <ROW File="opengmaxcodec.sys" Component_="opengmaxcodec.cat" FileName="OPENGM~1.SYS|opengmaxcodec.sys" Attributes="0" SourcePath="Drivers\csaudioothers.1.0.4-origins\xcodec\opengmaxcodec.sys" SelfReg="false"/>
-    <ROW File="cacert.exe_2" Component_="cacert.exe_2" FileName="cacert.exe" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\cacert.exe" SelfReg="false"/>
+    <ROW File="csaudiosstavs.cat" Component_="csaudiosstavs.cat" FileName="CSAUDI~1.CAT|csaudiosstavs.cat" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\csaudiosstavs.cat" SelfReg="false"/>
+    <ROW File="csaudiosstavs.inf" Component_="csaudiosstavs.cat" FileName="CSAUDI~1.INF|csaudiosstavs.inf" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\csaudiosstavs.inf" SelfReg="false"/>
+    <ROW File="csaudiosstavs.sys" Component_="csaudiosstavs.cat" FileName="CSAUDI~1.SYS|csaudiosstavs.sys" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\csaudiosstavs.sys" SelfReg="false"/>
+    <ROW File="dsp_basefw_bxt.bin" Component_="csaudiosstavs.cat" FileName="DSP_BA~1.BIN|dsp_basefw_bxt.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_basefw_bxt.bin" SelfReg="false"/>
+    <ROW File="dsp_basefw_kbl.bin" Component_="csaudiosstavs.cat" FileName="DSP_BA~2.BIN|dsp_basefw_kbl.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_basefw_kbl.bin" SelfReg="false"/>
+    <ROW File="dsp_lib_kbl_dsm.bin" Component_="csaudiosstavs.cat" FileName="DSP_LI~1.BIN|dsp_lib_kbl_dsm.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_lib_kbl_dsm.bin" SelfReg="false"/>
+    <ROW File="dsp_mod_kbl_dsm.bin" Component_="csaudiosstavs.cat" FileName="DSP_MO~1.BIN|dsp_mod_kbl_dsm.bin" Attributes="0" SourcePath="Drivers\csaudiosstavs.1.0.4-cracked\dsp_mod_kbl_dsm.bin" SelfReg="false"/>
     <ROW File="driversinstalltoolinstall.exe" Component_="driversinstalltoolinstall.exe" FileName="DRIVER~1.EXE|drivers-installtool-install.exe" Attributes="0" SourcePath="Drivers\drivers-installtool-install.exe" SelfReg="false"/>
+    <ROW File="pikachucertificateinstall.exe" Component_="pikachucertificateinstall.exe" FileName="PIKACH~1.EXE|pikachu-certificate-install.exe" Attributes="0" SourcePath="Drivers\pikachu-certificate-install.exe" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -282,17 +270,10 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="csaudioamdsof.cat"/>
-    <ROW Feature_="MainFeature" Component_="csaudiointcsof.cat"/>
-    <ROW Feature_="MainFeature" Component_="dpinst.exe"/>
-    <ROW Feature_="MainFeature" Component_="csaudiosstavs.cat"/>
-    <ROW Feature_="MainFeature" Component_="dpinst.exe_1"/>
     <ROW Feature_="MainFeature" Component_="driversremovecertsinstall.bat"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
-    <ROW Feature_="MainFeature" Component_="pikachucertificateinstall.exe"/>
-    <ROW Feature_="MainFeature" Component_="cacert.exe"/>
-    <ROW Feature_="MainFeature" Component_="dpinst.exe_2"/>
-    <ROW Feature_="MainFeature" Component_="cacert.exe_1"/>
+    <ROW Feature_="MainFeature" Component_="csaudioamdsof.cat"/>
+    <ROW Feature_="MainFeature" Component_="csaudiointcsof.cat"/>
     <ROW Feature_="MainFeature" Component_="max98357a.cat"/>
     <ROW Feature_="MainFeature" Component_="dsm_param_Google_Gimble.bin"/>
     <ROW Feature_="MainFeature" Component_="acpbus.cat"/>
@@ -306,8 +287,9 @@
     <ROW Feature_="MainFeature" Component_="rt5682.cat"/>
     <ROW Feature_="MainFeature" Component_="rt5682s.cat"/>
     <ROW Feature_="MainFeature" Component_="opengmaxcodec.cat"/>
-    <ROW Feature_="MainFeature" Component_="cacert.exe_2"/>
+    <ROW Feature_="MainFeature" Component_="csaudiosstavs.cat"/>
     <ROW Feature_="MainFeature" Component_="driversinstalltoolinstall.exe"/>
+    <ROW Feature_="MainFeature" Component_="pikachucertificateinstall.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="dpinst.exe" SourcePath="dpinst.ico" Index="0"/>
