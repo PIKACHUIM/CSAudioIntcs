@@ -1,0 +1,83 @@
+;/*++
+;
+;Copyright (c) CoolStar.  All rights reserved.
+;
+;Module Name:
+;    coolstar.inf
+;
+;Abstract:
+;    INF file for installing the NAU8825 Driver 
+;
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Media
+ClassGuid   = {4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider    = CoolStar
+DriverVer = 11/07/2023,1.0.1.0
+CatalogFile = nau8825.cat
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+nau8825.sys  = 1,,
+
+;*****************************************
+; nau8825  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTAMD64
+
+; Decorated model section take precedence over undecorated 
+; ones on XP and later.
+[Standard.NTAMD64]
+%nau8825.DeviceDesc%=nau8825_Device, ACPI\10508825
+
+[nau8825_Device.NT]
+CopyFiles=Drivers_Dir
+
+[nau8825_Device.NT.HW]
+AddReg=nau8825_AddReg, nau8825_AddReg.Configuration.AddReg
+Include=pci.inf
+Needs=PciD3ColdSupported.HW
+
+[Drivers_Dir]
+nau8825.sys
+
+[nau8825_AddReg]
+; Set to 1 to connect the first interrupt resource found, 0 to leave disconnected
+HKR,Settings,"ConnectInterrupt",0x00010001,0
+HKR,,"UpperFilters",0x00010000,"mshidkmdf"
+
+[nau8825_AddReg.Configuration.AddReg]
+HKR,,"EnhancedPowerManagementEnabled",0x00010001,1
+
+;-------------- Service installation
+[nau8825_Device.NT.Services]
+AddService = nau8825,%SPSVCINST_ASSOCSERVICE%, nau8825_Service_Inst
+
+; -------------- nau8825 driver install sections
+[nau8825_Service_Inst]
+DisplayName    = %nau8825.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\nau8825.sys
+LoadOrderGroup = Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+StdMfg                 = "CoolStar"
+DiskId1                = "nau8825 Installation Disk #1"
+nau8825.DeviceDesc = "Nuvoton Nau88L25 Codec"
+nau8825.SVCDESC    = "nau8825 Service"

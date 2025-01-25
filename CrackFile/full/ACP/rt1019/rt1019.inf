@@ -1,0 +1,74 @@
+;/*++
+;
+;Copyright (c) CoolStar.  All rights reserved.
+;
+;Module Name:
+;    rt1019.inf
+;
+;Abstract:
+;    INF file for installing the Realtek ALC1019 I2S Amplifier Driver 
+;
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Media
+ClassGuid   = {4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider    = CoolStar
+DriverVer = 10/09/2023,1.0.0.0
+CatalogFile = rt1019.cat
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+rt1019.sys  = 1,,
+
+;*****************************************
+; rt1019  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTAMD64
+
+; Decorated model section take precedence over undecorated 
+; ones on XP and later.
+[Standard.NTAMD64]
+%rt1019.DeviceDesc%=Rt1019_Device, ACPI\10EC1019
+
+[Rt1019_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Rt1019_Device.NT.HW]
+Include=pci.inf
+Needs=PciD3ColdSupported.HW
+
+[Drivers_Dir]
+rt1019.sys
+
+;-------------- Service installation
+[Rt1019_Device.NT.Services]
+AddService = rt1019,%SPSVCINST_ASSOCSERVICE%, Rt1019_Service_Inst
+
+; -------------- rt1019 driver install sections
+[Rt1019_Service_Inst]
+DisplayName    = %rt1019.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\rt1019.sys
+LoadOrderGroup = Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+StdMfg                 = "CoolStar"
+DiskId1                = "Realtek 1019 Installation Disk #1"
+rt1019.DeviceDesc = "Realtek ALC1019 I2S Amplifier"
+rt1019.SVCDESC    = "Realtek 1019 Service"

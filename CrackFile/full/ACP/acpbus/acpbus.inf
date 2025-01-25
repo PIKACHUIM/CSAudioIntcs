@@ -1,0 +1,89 @@
+;/*++
+;
+;Copyright (c) CoolStar.  All rights reserved.
+;
+;Module Name:
+;    acpbus.inf
+;
+;Abstract:
+;    INF file for installing the ACP Bus Driver
+;
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = CoolStar
+DriverVer = 11/06/2023,1.0.0.0
+CatalogFile = acpbus.cat
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+acpbus.sys  = 1,,
+
+[SignatureAttributes]
+acpbus.sys=SignatureAttributes.DRM
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+;*****************************************
+; ACPBus  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTamd64
+
+; Decorated model section take precedence over undecorated 
+; ones on XP and later.
+[Standard.NTamd64]
+%ACPBus.DeviceDesc%=ACPBus_Device, PCI\VEN_1022&DEV_15E2&REV_6F ;Mendocino
+%ACPBus.DeviceDesc%=ACPBus_Device, PCI\VEN_1022&DEV_15E2&REV_01 ; Cezanne 
+
+[ACPBus_Device.NT]
+CopyFiles=Drivers_Dir
+
+[ACPBus_Device.NT.HW]
+AddReg=ACPBus_AddReg
+Include=pci.inf
+Needs=PciD3ColdSupported.HW
+
+[Drivers_Dir]
+acpbus.sys
+
+[ACPBus_AddReg]
+; Set to 1 to connect the first interrupt resource found, 0 to leave disconnected
+HKR,Settings,"ConnectInterrupt",0x00010001,0
+
+;-------------- Service installation
+[ACPBus_Device.NT.Services]
+AddService = ACPBus,%SPSVCINST_ASSOCSERVICE%, ACPBus_Service_Inst
+
+; -------------- ACPBus driver install sections
+[ACPBus_Service_Inst]
+DisplayName    = %ACPBus.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\acpbus.sys
+LoadOrderGroup = Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+StdMfg                 = "CoolStar"
+DiskId1                = "CoolStar ACP Bus Installation Disk #1"
+ACPBus.DeviceDesc = "CoolStar ACP Bus"
+ACPBus.SVCDESC    = "CoolStar ACP Bus Service"
