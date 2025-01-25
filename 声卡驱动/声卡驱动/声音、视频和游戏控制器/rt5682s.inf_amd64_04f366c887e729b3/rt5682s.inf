@@ -1,0 +1,83 @@
+;/*++
+;
+;Copyright (c) CoolStar.  All rights reserved.
+;
+;Module Name:
+;    coolstar.inf
+;
+;Abstract:
+;    INF file for installing the RT5682s Jack Detect Driver 
+;
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Media
+ClassGuid   = {4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider    = CoolStar
+DriverVer = 10/09/2023,1.0.1.0
+CatalogFile = rt5682s.cat
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+rt5682s.sys  = 1,,
+
+;*****************************************
+; rt5682s  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTAMD64
+
+; Decorated model section take precedence over undecorated 
+; ones on XP and later.
+[Standard.NTAMD64]
+%rt5682s.DeviceDesc%=Rt5682s_Device, ACPI\RTL5682
+
+[Rt5682s_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Rt5682s_Device.NT.HW]
+AddReg=Rt5682s_AddReg, Rt5682s_AddReg.Configuration.AddReg
+Include=pci.inf
+Needs=PciD3ColdSupported.HW
+
+[Drivers_Dir]
+rt5682s.sys
+
+[Rt5682s_AddReg]
+; Set to 1 to connect the first interrupt resource found, 0 to leave disconnected
+HKR,Settings,"ConnectInterrupt",0x00010001,0
+HKR,,"UpperFilters",0x00010000,"mshidkmdf"
+
+[Rt5682s_AddReg.Configuration.AddReg]
+HKR,,"EnhancedPowerManagementEnabled",0x00010001,1
+
+;-------------- Service installation
+[Rt5682s_Device.NT.Services]
+AddService = rt5682s,%SPSVCINST_ASSOCSERVICE%, Rt5682s_Service_Inst
+
+; -------------- rt5682s driver install sections
+[Rt5682s_Service_Inst]
+DisplayName    = %rt5682s.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\rt5682s.sys
+LoadOrderGroup = Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+StdMfg                 = "CoolStar"
+DiskId1                = "ALC5682s Installation Disk #1"
+rt5682s.DeviceDesc = "Realtek ALC5682s I2S Audio"
+rt5682s.SVCDESC    = "ALC5682s Service"
