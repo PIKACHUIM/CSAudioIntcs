@@ -31,3 +31,5 @@ drivers-installtool-install.exe /F /A /S /U chromebookwin.1.0.0-drivers/rt1019/r
 drivers-installtool-install.exe /F /A /S /U chromebookwin.1.0.0-drivers/rt5682/rt5682.inf
 drivers-installtool-install.exe /F /A /S /U chromebookwin.1.0.0-drivers/rt5682s/rt5682s.inf
 drivers-installtool-install.exe /F /A /S /U chromebookwin.1.0.0-drivers/sklhdaudbus/sklhdaudbus.inf
+drivers-installtool-install.exe /F /A /S /U chromebookwin.1.0.0-drivers/ov5675/ov5675.inf
+drivers-installtool-install.exe /F /A /S /U chromebookwin.1.0.0-drivers/iaisp64_46xx_ADL/iaisp64.inf
