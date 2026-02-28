@@ -1,14 +1,51 @@
-# ChromeBook Windows声卡驱动开心版
+# ChromeBook Windows 声卡驱动开心版
 
-ChromeBook Windows声卡驱动，基于CoolStar付费版修改，非常开心，直接安装即可，支持AMD/Intel CPU，6~14代ChromeBook/Box
+本项目提供适用于在 Windows 上运行的 Chromebook 的声卡驱动程序。基于 CoolStar 的付费驱动进行修改（开心版），移除了授权限制，直接安装即可使用。
 
-> 为防止奸商因此涨价，**本驱动添加了授权验证系统，一机一码，给个人用户免费提供**，发送邮件到pikachuim@foxmail.com免费获取
+## ✨ 特性
 
-| 文件     | 支持平台/系统               | 说明               | 授权 | 下载地址                                                     |
-| -------- | --------------------------- | ------------------ | ---- | ------------------------------------------------------------ |
-| 声卡驱动 | ChromeBook/Box Win8.1/10/11 | 付费声卡驱动开心版 | 需要 | [ChromeBook-CoolStar-Audio-Install-protected.exe](https://shared.pika.net.cn/139Data/PCDriver/CSAudio/ChromeBook-CoolStar-Audio-Install-protected.exe) |
-| 串口驱动 | ChromeBook/Box Win8.1/10/11 | 窗口IO驱动，触摸屏 | /    | [ChromeBook-Intel-Serial-IO-Host-Controllers.rar](https://shared.pika.net.cn/139Data/PCDriver/CSAudio/ChromeBook-Intel-Serial-IO-Host-Controllers.rar) |
-| USB-C+PD | ChromeBook/Box Win8.1/10/11 | USB-C 电源通知驱动 | /    | [Chromebook-USB-C-PD-Notification-v1.0.0.0-3.rar](https://shared.pika.net.cn/139Data/PCDriver/CSAudio/Chromebook-USB-C-PD-Notification-v1.0.0.0-3.rar) |
-| 雷电驱动 | ChromeBook/Box Win8.1/10/11 | Intel雷电驱动-按需 | /    | [Chromebook-Intel-Thunder-IO-Host-Controller.rar](https://shared.pika.net.cn/139Data/PCDriver/CSAudio/Chromebook-Intel-Thunder-IO-Host-Controller.rar) |
-| 声卡总线 | ChromeBook/Box Win8.1/10/11 | 安装声卡驱动必装的 | /    | [Chromebook-CoolStar-HD-Audio-Bus-v1.0.0.0-3.rar](https://shared.pika.net.cn/139Data/PCDriver/CSAudio/Chromebook-CoolStar-HD-Audio-Bus-v1.0.0.0-3.rar) |
+- **广泛的硬件支持**：支持 AMD 和 Intel 处理器，覆盖 6 代至 14 代 Chromebook/Chromebox。
+- **一键安装**：提供自动化安装脚本和安装包，简化驱动配置过程。
+- **解锁限制**：集成破解版驱动，无需付费授权。
+- **完整组件**：包含核心音频驱动、辅助总线驱动及多种编解码器驱动。
 
+## 📦 包含的驱动组件
+
+本项目集成了以下关键驱动组件：
+
+### 核心音频驱动 (Cracked)
+- **AMD SOF Audio**: `csaudioamdsof.1.0.1`
+- **Intel SOF Audio**: `csaudiointsof.1.0.4`
+- **Intel SST Audio**: `csaudiosstavs.1.0.4`
+
+### 编解码器与放大器 (Codecs & Amps)
+- **Cirrus Logic**: `cs42l42`
+- **Dialog**: `da7219`
+- **Maxim**: `max98357a`, `max98390`
+- **Nuvoton**: `nau8825`
+- **Realtek**: `rt1011`, `rt1015`, `rt1019`, `rt5682`, `rt5682s`
+- **Other**: `opengmaxcodec`
+
+### 总线与系统设备 (System & Bus)
+- **Buses**: `acpbus`, `crosecbus`, `croseci2c`, `crosectypec`, `sklhdaudbus`
+- **Intel Components**: `iaLPSS2_SPI`, `iaLPSS2_UART2`, `intelpmc`, `inteltcss`
+- **Other**: `cbtable`, `crosfingerprint` (指纹识别支持)
+
+## 🚀 安装说明
+
+1. 下载最新发布的安装包 (`ChromeBook-CoolStar-Audio-Drivers.exe`)。
+2. 运行安装程序。
+3. 安装过程中会自动部署证书并安装所需驱动。
+4. 安装完成后，建议重启系统以确保所有驱动正常加载。
+
+## 📂 项目结构
+
+- `CrackFile/`: 存放破解版驱动及原始驱动文件。
+- `Installer/`: 安装程序源码 (Inno Setup) 及构建资源。
+  - `Drivers/`: 待打包的驱动文件集合。
+  - `Release/`: 构建生成的安装包。
+- `Licensing/`: 包含授权相关的 SDK 和工具（主要用于研究或构建过程）。
+
+## ⚠️ 免责声明
+
+本项目仅供学习和研究使用，请勿用于商业用途。如果您觉得 CoolStar 的驱动对您有帮助，请考虑支持正版。
