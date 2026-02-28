@@ -1,5 +1,5 @@
 #define MyAppName "ChromeBook CoolStar Audio Drivers"
-#define MyAppVersion "1.0.4.0"
+#define MyAppVersion "1.0.4.0.20260301"
 #define MyAppPublisher "CoolStar"
 #define MyAppURL "https://github.com/coolstar"
 
@@ -17,6 +17,7 @@ DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=.\License.rtf
+SetupIconFile=dpinsts.ico
 ; 以下行取消注释，以在非管理安装模式下运行（仅为当前用户安装）。
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=commandline
