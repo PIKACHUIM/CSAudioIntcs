@@ -60,9 +60,10 @@ Source: "..\tools\dpinst\*";  DestDir: "{app}\tools\dpinst"; Flags: ignoreversio
 Source: "..\certs\pikachu-certificate-install.exe"; DestDir: "{app}\certs"; Flags: ignoreversion
 ; install / uninstall helpers
 Source: "..\scripts\*.bat";   DestDir: "{app}\scripts";      Flags: ignoreversion
-; documentation (all languages) + patch analysis
+; documentation (all languages) + patch analysis + licence
 Source: "..\README*.md";      DestDir: "{app}";              Flags: ignoreversion
 Source: "..\docs\*.md";       DestDir: "{app}\docs";         Flags: ignoreversion
+Source: "..\LICENSE";         DestDir: "{app}";              Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"

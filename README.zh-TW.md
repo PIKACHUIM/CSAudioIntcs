@@ -1,86 +1,110 @@
 <div align="center">
 
-# ChromeBook CoolStar 音訊驅動包
+# ChromeBook CoolStar 驅動包
 
-Chromebook 裝完 Windows 喇叭不響，這裡有一整套能出聲的驅動
+集合數十種 ChromeBook 專用驅動，包括音效卡、觸控板等驅動
 
 [简体中文](README.md) · [English](README.en.md) · **繁體中文** · [日本語](README.ja.md)
 
-![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![upstream](docs/badges/upstream.svg)
+![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![license](docs/badges/license.svg)
 
 </div>
 
-[這是什麼](#這是什麼) · [先確認裝哪一套](#先確認裝哪一套) · [安裝](#安裝) · [驅動清單](#驅動清單) · [原版為什麼不出聲](#原版為什麼不出聲) · [目錄結構](#目錄結構) · [開發](#開發) · [跑過的機器](#跑過的機器) · [已知缺口](#已知缺口) · [聲明](#聲明)
+[專案簡介](#專案簡介) · [快速安裝](#快速安裝) · [驅動清單](#驅動清單) · [修補原理](#修補原理) · [授權條款](#授權條款)
 
 ---
 
-## 這是什麼
+## 專案簡介
 
-手上這台 HP Chromebook 13 G1 裝完 Windows 之後，裝置管理員乾乾淨淨，音量滑桿能拖，播測試音時喇叭端點的音量表打到 0.35 滿格，喇叭一點聲音都沒有。
+本倉庫是 ChromeBook 平台在 Windows 下使用的驅動集合，依功能重新分類整理，共 37 個驅動包、198 個硬體 ID。
 
-一開始猜是放大器沒上電，換驅動版本、刷 coreboot、關快速啟動，一樣沒動。後來把 CoolStar 的 `.sys` 丟進十六進位編輯器翻字串，看到一句 `AVS: License not found`，路徑是 `C:\Windows\system32\drivers\avs_signedlicense.bin`。授權檢查沒過，`DriverEntry` 回傳 `0xC000026A`，上層拿到這個碼就不啟動 ADSP。ADSP 不起來，I2S 沒有時脈，放大器就一直掛在關斷狀態。
+| 項 | 內容 |
+|---|---|
+| 驅動數量 | 37 個包，預設安裝 35 個 |
+| 硬體 ID | 198 個 |
+| 涵蓋範圍 | 音訊（AVS / SOF）、codec、放大器、觸控板、觸控螢幕、指紋、攝影機、EC 匯流排、晶片組配套元件 |
+| 目標平台 | Intel Skylake 至 Alder Lake，AMD Rembrandt / Phoenix |
+| 檔案形式 | 裸 `INF` + `SYS` + `CAT`，無壓縮檔與自解壓安裝程式 |
+| 安裝工具 | Microsoft DPInst 2.1、Inno Setup 6 |
 
-裝置列舉、端點建立、音量表都正常，聲音沒有。這個組合看起來像硬體故障，實際上是軟體把後半段切掉了。細節在[原版為什麼不出聲](#原版為什麼不出聲)。
+驅動取自 CoolStar 與 ChromeOS 各廠商的公開驅動包，版本與硬體 ID 保持原樣，僅調整目錄結構與安裝順序。安裝過程中執行的外部程式只有兩個：`tools/dpinst/dpinst.exe` 與 `certs/pikachu-certificate-install.exe`。
 
-倉庫裡是這輪排查累積下來的東西。三套 CoolStar 音訊堆疊，掛在底下的 codec 和放大器，另外配齊了 ChromeOS 的 EC 匯流排、觸控板、指紋、攝影機。
+上游音訊驅動為按機器授權的商業軟體。本倉庫面向已持有授權的硬體，不包含授權檔、產生器或啟用工具。
 
-裡面全是裸的 `INF` + `SYS` + `CAT`，沒有壓縮檔，也沒有自解壓安裝程式。安裝過程中會執行的外部程式只有兩個，微軟的 `DPInst` 和 `certs/` 裡那個憑證安裝程式，都可以查。
+```
+.
+├── drivers/            audio codec amp bus input camera system
+├── installer/          Install.iss、payload.list（安裝順序）
+├── scripts/            preflight、install、uninstall、trust-certs
+├── certs/              簽章根安裝程式
+├── reference/originals/  CoolStar 官方原包，僅用於差異比對
+├── src/ssm4567/        ADI SSM4567 放大器驅動原始碼
+├── tools/              DPInst、文件產生、二進位比對
+├── docs/               DRIVERS.md、PATCH-ANALYSIS.md、VENDOR.md
+└── vendor/             本機暫存，git 忽略
+```
 
-上游是按機器賣授權的。這裡的東西面向已經買過授權的機器，倉庫裡不含授權檔，也沒有產生器或啟用工具。
+## 快速安裝
 
-## 先確認裝哪一套
+### 使用發佈包
 
-Chromebook 的音訊按平台分成三套，互不相容，硬體 ID 也不重疊。
+1. 在 [Releases](../../releases) 下載 `ChromeBook-CoolStar-Audio-Driver-<版本>-x64.exe`
+2. 以系統管理員身分執行
+3. 安裝完成後重新開機
 
-| 平台 | 裝這個 | 服務名 |
-|---|---|---|
-| Skylake、Kaby Lake、Amber Lake、Braswell、Apollo Lake | `drivers/audio/csaudiosstavs` | `CsAudioSSTAVS` |
-| Gemini Lake、Jasper Lake、Ice Lake、Tiger Lake、Alder Lake 及更新 | `drivers/audio/csaudiointcsof` | `CsAudioIntcSOF` |
-| AMD 的 Chromebook，Rembrandt、Phoenix 這些 | `drivers/audio/csaudioamdsof` | `CsAudioAmdSOF` |
-| glados、chell 這類板子的喇叭，例如 HP Chromebook 13 G1 | 再加一個 `drivers/audio/ssm4567` | `ssm4567` |
+安裝程式會先匯入簽章根，再依 `payload.list` 逐項呼叫 DPInst，已存在同版本的驅動不會重複安裝。
 
-最後一行值得單獨講。Skylake 時代的 Chromebook 把喇叭放大器掛在 I2C 上，耳機走另一顆 codec，兩條路各管各的。耳機有聲、喇叭沒聲，缺的就是 `ssm4567` 這個包，跟主驅動版本對不對無關。
+### 從原始碼建置
 
-拿不準就裝完整包。三套都在裡面，`DPInst` 只綁硬體 ID 對得上的那一個，裝進去的另外兩個不會生效。
-
-## 安裝
-
-去 [Releases](../../releases) 取 `ChromeBook-CoolStar-Audio-Driver-<版本>-x64.exe`，以系統管理員身分執行，裝完重新開機。
-
-自己建置只要 [Inno Setup 6](https://jrsoftware.org/isinfo.php)，不用 WDK，也不用 Visual Studio。
+相依只有 [Inno Setup 6](https://jrsoftware.org/isinfo.php)，不需要 WDK 與 Visual Studio。
 
 ```bat
-ISCC.exe installer\Install.iss
+:: 選用，校驗 payload 完整性
+powershell -ExecutionPolicy Bypass -File scripts\preflight.ps1
 
-:: 帶版本號的話，產物名稱會跟著變
+:: 建置，產物在 dist\
+ISCC.exe installer\Install.iss
 ISCC.exe /DMyAppVersion=1.0.5 installer\Install.iss
 ```
 
-產物落在 `dist\`。
+CI 在 `.github/workflows/release.yml`，手動觸發時填寫版本號，或推送 `v*` 標籤。流程為 preflight、建置、產生 `SHA256SUMS.txt`、建立 Release。
 
-只壞了一路的話可以分開處理，先信任簽章根，再上驅動包：
+### 單獨安裝某個驅動
+
+適用於只缺一路裝置的情況。先匯入簽章根，再指定 INF。
 
 ```bat
-:: 系統管理員 PowerShell，在解壓後的目錄裡執行
+:: 系統管理員 PowerShell
 certs\pikachu-certificate-install.exe /VERYSILENT
 
 pnputil /add-driver drivers\audio\ssm4567\ssm4567.inf /install
 ```
 
-`pnputil` 會在 `ACPI\INT343B\0` 和 `\1` 上各綁一次，成功後裝置管理員裡出現兩個 `Analog Devices SSM4567 Amplifier`，狀態正常。
+### 音訊堆疊選擇
+
+三套音訊架構互不相容，硬體 ID 不重疊，需依平台選擇。
+
+| 平台 | 驅動包 | 服務名 |
+|---|---|---|
+| Skylake、Kaby Lake、Amber Lake、Braswell、Apollo Lake | `csaudiosstavs` | `CsAudioSSTAVS` |
+| Gemini Lake、Jasper Lake、Ice Lake、Tiger Lake、Alder Lake 及更新 | `csaudiointcsof` | `CsAudioIntcSOF` |
+| AMD：Rembrandt、Phoenix 等 | `csaudioamdsof` | `CsAudioAmdSOF` |
+| glados、chell 等板卡的喇叭放大器 | `ssm4567` | `ssm4567` |
+
+完整安裝包含全部三套，DPInst 只綁定硬體 ID 相符的一項。`ssm4567` 為獨立放大器驅動，與音訊堆疊並行安裝。
 
 ## 驅動清單
 
-37 個包，198 個硬體 ID。每個包的版本、供應商、全部 HWID 在 [docs/DRIVERS.md](docs/DRIVERS.md)。那張表是 `python tools/gen-driver-docs.py` 從 INF 讀出來的，別手改，改完下次產生就被覆蓋。
+完整版本號與 HWID 見 [docs/DRIVERS.md](docs/DRIVERS.md)，該檔由 `python tools/gen-driver-docs.py` 從 INF 產生。
 
 ### 音訊
 
 | 包 | 版本 | 說明 |
 |---|---|---|
-| `csaudiosstavs` | 1.0.4.0 | AVS 架構，Skylake 到 Apollo Lake |
+| `csaudiosstavs` | 1.0.4.0 | AVS 架構，Skylake 至 Apollo Lake |
 | `csaudiointcsof` | 1.0.4.0 | SOF 架構，Gemini Lake 及更新 |
-| `csaudioamdsof` | 1.0.1.0 | AMD 平台的 SOF |
-| `ssm4567` | 1.0.1 | ADI 的 I2S 放大器，glados 系列板子用 |
+| `csaudioamdsof` | 1.0.1.0 | AMD 平台 SOF |
+| `ssm4567` | 1.0.1 | ADI I2S 放大器，glados 系列板卡 |
 
 ### Codec
 
@@ -98,13 +122,15 @@ pnputil /add-driver drivers\audio\ssm4567\ssm4567.inf /install
 
 `crostouchpad-{synaptics,cypress,cypress-smbus,atmel,elan}` · `crosfingerprint` · `ov5675` · `iaisp64_46xx_ADL`
 
-有兩個包在倉庫裡但預設不裝。`nau88l25rvp` 和 `nau8825` 搶同一個 `ACPI\10508825`，只能活一個，預設給 CoolStar 那版；`gnodriver` 只有 INF 沒有 `sys`，裝上去也沒東西可綁。
+兩個包隨倉庫發佈但不預設安裝：`nau88l25rvp` 與 `nau8825` 使用同一硬體 ID `ACPI\10508825`，預設啟用 CoolStar 版本；`gnodriver` 不含 `SYS`，僅作 INF 佔位。
 
-裝和卸都讀 [installer/payload.list](installer/payload.list) 這一份清單，順序也在裡面。
+安裝與卸載均以 [installer/payload.list](installer/payload.list) 為唯一清單。
 
-## 原版為什麼不出聲
+## 修補原理
 
-原始 `.sys` 裡可以直接讀到這幾行字串，用的是明文 ASCII，沒加密也沒混淆。
+CoolStar 音訊驅動在 `DriverEntry` 中讀取授權檔、驗證簽章，並與 SMBIOS 中的板卡代號比對。校驗失敗時回傳 NTSTATUS `0xC000026A`，呼叫方收到該狀態碼後不再啟動 ADSP。ADSP 未啟動則 I2S 無時脈輸出，放大器維持關斷。
+
+原始二進位中可直接讀到以下字串：
 
 ```
 AVS: License not found. Please install it to C:\Windows\system32\drivers\avs_signedlicense.bin
@@ -112,113 +138,53 @@ AVS: License too small. Make sure the license is signed.
 SystemSKU      Chell
 ```
 
-`DriverEntry` 會讀授權檔、驗簽章、再拿 SMBIOS 裡的板卡代號比對。任何一步不過就回傳 NTSTATUS `0xC000026A`，呼叫方看到這個碼直接放棄啟動 ADSP。
+因此裝置列舉、端點建立與音量表均正常，喇叭無聲。
 
-### 補丁動了哪幾個位元組
+### 修補位置
 
-三個堆疊分別改了 5 處、12 處、12 處，加起來 153 個位元組。改法只有一種。
+三個音訊堆疊分別修改 5、12、12 處，合計 153 位元組，形式一致：
 
 ```asm
-mov eax, 0xC000026A    ; 原本檢查失敗回傳這個
-mov eax, 0              ; 現在照樣回傳成功
+mov eax, 0xC000026A    ; 校驗失敗的回傳值
+mov eax, 0              ; 修改後直接回傳成功
 ```
 
-`return cond ? STATUS_X : STATUS_SUCCESS;` 編出來是 `and reg, 0xC000026A`，補丁把它變成 `and reg, 0`，剩下的位元組用 `nop` 填平，長度不變，後面的指令位移也不會錯位。
+原始碼形式為 `return cond ? STATUS_X : STATUS_SUCCESS;`，編譯後對應 `and reg, 0xC000026A`，修補改為 `and reg, 0`，剩餘位元組以 `nop` 填滿，指令長度不變。
 
-INF、HWID 表、服務安裝段、DSP 韌體一個位元組都沒動。`CsAudioCallbackAPI` 回呼照舊註冊，`ssm4567` 放大器驅動全靠這條回呼才拿到 Speaker 端點。改的只是授權判斷，音訊通路本身是原廠的。
+INF、HWID 表、服務安裝段與 DSP 韌體均未修改。`CsAudioCallbackAPI` 回呼保持註冊，`ssm4567` 依賴該回呼註冊 Speaker 端點。
 
-### 簽章與信任鏈
+### 簽章
 
-改一個位元組，WHQL 簽章就廢了，所以補丁版是重新簽的。兩個檔案用的憑證還不一樣。
+修改後原 WHQL 簽章失效，兩個檔案分別重新簽章。
 
-| 檔案 | 原始 | 現在 | 時戳 |
+| 檔案 | 原始簽章 | 目前簽章 | 時戳 |
 |---|---|---|---|
-| `.sys` | 微軟 WHQL | Airspace Intelligent Technology，常州 | DigiCert，公共 TSA |
-| `.cat` | 微軟 WHQL | 福建六壬網安 | Pikachu Time Sub CA，自建 |
+| `.sys` | Microsoft WHQL | Airspace Intelligent Technology（常州） | DigiCert 公共 TSA |
+| `.cat` | Microsoft WHQL | 福建六壬網安 | Pikachu Time Sub CA（自建） |
 
-`.sys` 的鏈能追到公共根，Secure Boot 關著就能載入。`.cat` 的時戳來自自建 TSA，公開根不認，`pnputil` 會卡在這裡：
+`.sys` 的憑證鏈可追溯至公共根，Secure Boot 關閉狀態下可載入。`.cat` 的時戳來自自建 TSA，公開根不信任，`pnputil` 回傳：
 
 ```
 0xE0000242  尚未建立對 Authenticode(TM)簽署的類別目錄的發行者信任
 ```
 
-`certs/` 裡那個安裝程式就是幹這個的。它在裝驅動之前跑一遍，把根同時寫進 `LocalMachine\Root` 和 `LocalMachine\TrustedPublisher`，少寫一個都還是 0xE0000242。
+`certs/pikachu-certificate-install.exe` 用於將此根寫入 `LocalMachine\Root` 與 `LocalMachine\TrustedPublisher`，兩個存放區缺一不可。
 
-有個坑可以先講，省你半天。`Get-AuthenticodeSignature` 回傳 `Valid`，不代表 `pnputil` 會收這個包。前者只驗 PKCS#7 結構和憑證鏈，後者還要過 setupapi 的發行者信任檢查。另外 INF 的位元組一個都不能改，換行字元也算，因為類別目錄裡存著它的雜湊。`.gitattributes` 把 `*.inf`、`*.sys`、`*.cat` 都標成 `binary`，就是為了這個。
+`Get-AuthenticodeSignature` 回傳 `Valid` 不代表 `pnputil` 接受該包：前者僅校驗 PKCS#7 結構與憑證鏈，後者還需通過 setupapi 的發行者信任檢查。同時 INF 檔案不可作任何位元組修改，包括換行字元，因為類別目錄中記錄了其雜湊，故 `.gitattributes` 將 `*.inf`、`*.sys`、`*.cat` 標記為 `binary`。
 
-逐位元組 diff、反組譯，以及和 [akibaPatcher](https://github.com/akibaGumi/akibaPatcher) 那條路線的對照，都在 [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)。
+逐位元組差異、反組譯與實作方式對照見 [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)，比對工具為 `tools/compare-drivers.py`。
 
-## 目錄結構
+## 授權條款
 
-```
-.
-├── .github/workflows/release.yml   CI，填版本進去，出來的就是 Release
-├── certs/                          簽章根，一個 Inno Setup 安裝程式
-├── docs/
-│   ├── DRIVERS.md                  驅動表，37 包 / 198 HWID，腳本產生
-│   ├── PATCH-ANALYSIS.md           補丁原理與逐位元組差異
-│   └── VENDOR.md                   哪些東西進不了倉庫，以及為什麼
-├── drivers/                        驅動本體
-│   ├── audio/  codec/  amp/        出聲相關的核心
-│   ├── bus/    input/  camera/  system/
-├── installer/
-│   ├── Install.iss                 Inno Setup 腳本
-│   ├── payload.list                安裝順序
-│   └── License.rtf  dpinsts.ico
-├── reference/originals/            CoolStar 官方原包，只用來 diff，不安裝
-├── scripts/
-│   ├── preflight.ps1               打包前校驗 payload
-│   ├── trust-certs.bat             手動裝驅動時信任簽章根
-│   ├── install-drivers.bat         按 payload.list 叫 DPInst
-│   └── uninstall-drivers.bat       同一份清單，走 /U
-├── src/ssm4567/                    ADI SSM4567 放大器驅動原始碼，KMDF 加 I2C
-├── tools/
-│   ├── dpinst/dpinst.exe           Microsoft DPInst 2.1
-│   ├── gen-driver-docs.py          產生 docs/DRIVERS.md
-│   └── compare-drivers.py          原包和補丁包逐位元組對比
-└── vendor/                         本機暫存，git 忽略，見 docs/VENDOR.md
-```
+本倉庫的腳本、文件、建置設定以 MIT 授權條款發佈，全文見 [LICENSE](LICENSE)。
 
-## 開發
+倉庫內的驅動二進位版權歸各原廠所有，不適用 MIT：
 
-打包只要 Inno Setup 6，`choco install innosetup` 完事。改 `src/ssm4567` 才需要 VS 2022 加 WDK，注意 WDK 對 VS 版本有要求，對不上會編不過。輔助腳本用 PowerShell 5.1 或 7，Python 3.9 以上。`compare-drivers.py` 的反組譯部分要 `pip install capstone`，不裝也能跑，只是看不到指令。
+| 元件 | 授權 |
+|---|---|
+| CoolStar 音訊驅動 | 商業授權，按機器計費，見 <https://coolstar.org/chromebook/> |
+| `src/ssm4567` | CoolStar，見 `src/ssm4567/LICENSE.txt` |
+| `tools/dpinst/dpinst.exe` | Microsoft，隨 WDK 發佈 |
+| ChromeOS EC、觸控板、攝影機、DPTF 等驅動 | 各自廠商 |
 
-```bat
-:: 校驗 payload，缺目錄、缺 inf、類別目錄引用的檔案不存在都會報出來
-powershell -ExecutionPolicy Bypass -File scripts\preflight.ps1
-
-:: 打包
-ISCC.exe /DMyAppVersion=1.0.5 installer\Install.iss
-
-:: 動過驅動包之後更新清單
-python tools\gen-driver-docs.py
-
-:: 看看某個包跟官方原版差在哪
-python tools\compare-drivers.py reference\originals\csaudiosstavs drivers\audio\csaudiosstavs
-```
-
-CI 在 [.github/workflows/release.yml](.github/workflows/release.yml)。手動觸發填個版本號，或者推一個 `v*` 標籤。流程是跑 preflight、裝 Inno Setup、`ISCC /DMyAppVersion=<v>`、算 `SHA256SUMS.txt`、傳 artifact、`gh release create`，同名標籤已存在就改成上傳覆蓋。preflight 掛了直接中斷，壞包進不了 Release。
-
-要加驅動，包丟進 `drivers/<類別>/<名字>/`，需要預設裝就往 `payload.list` 加一行，跑一遍產生腳本和 preflight，提交。驅動版本從 INF 讀，安裝包版本從 CI 輸入讀，兩邊不用手動同步。
-
-卸載走系統裡的應用程式清單，或者 `scripts\uninstall-drivers.bat`。它按同一份清單逐個 `DPInst /U`，最後把 CA 一起卸掉。
-
-## 跑過的機器
-
-| 機型 | 板卡 | 平台 | 結果 |
-|---|---|---|---|
-| HP Chromebook 13 G1 | `chell` | Skylake | 喇叭和耳機都正常，要 `ssm4567` 加 `csaudiosstavs` |
-
-只有這一台。其他機型按平台歸屬應該能用，但我沒有條件逐台試，所以不敢替你保證。試過的話把機型、`SystemSKU`、以及 `ACPI\INT343B` 和 `ACPI\10508825` 的硬體 ID 發我，我加進表裡。
-
-## 已知缺口
-
-四個包的上游版本比這裡新，三處東西故意沒收，原因和替代方案寫在 [docs/VENDOR.md](docs/VENDOR.md)。
-
-影響最大的是 Intel Serial IO 的 I2C 和 GPIO 驅動。chell 的 codec 和放大器就掛在那條 I2C 匯流排上，全新裝機缺了它，codec 連暫存器都配不上。手上只有一份 DriverStore 傾印，裡面沒有類別目錄，拼不出能裝進 x64 的包，所以這件事卡在這兒。
-
-## 聲明
-
-CoolStar 音訊驅動 © CoolStar，從 <https://coolstar.org/chromebook/> 發佈，上游按機器授權收費。這個倉庫是非官方重新打包，面向已經持有授權的硬體，不含授權檔、產生器或啟用工具。`DPInst.exe` © Microsoft，隨 WDK 發佈。`src/ssm4567` © CoolStar，來自 <https://github.com/coolstar/ssm4567>，授權見 `src/ssm4567/LICENSE.txt`。ChromeOS EC、觸控板、攝影機、DPTF 那些驅動版權歸各自廠商。
-
-跟 Google、CoolStar 和任何硬體廠商都沒有隸屬關係。Chromebook 刷 Windows 有變磚風險，動韌體尤其危險。只裝驅動是可逆的，卸載腳本能把驅動和信任的根一起清掉。
+MIT 僅涵蓋本倉庫新增內容，不改變上述元件的授權狀態。本倉庫與 Google、CoolStar 及任何硬體廠商無隸屬關係。Chromebook 安裝 Windows 存在變磚風險，修改韌體風險更高；僅安裝驅動可逆，卸載腳本會同時移除驅動與匯入的根憑證。
