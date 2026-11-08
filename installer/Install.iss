@@ -59,9 +59,9 @@ Source: "..\tools\dpinst\*";  DestDir: "{app}\tools\dpinst"; Flags: ignoreversio
 Source: "..\certs\*.cer";     DestDir: "{app}\certs";        Flags: ignoreversion
 ; install / uninstall / cert helpers
 Source: "..\scripts\*.bat";   DestDir: "{app}\scripts";      Flags: ignoreversion
-; documentation
-Source: "..\README.md";       DestDir: "{app}";              Flags: ignoreversion
-Source: "..\docs\DRIVERS.md"; DestDir: "{app}\docs";         Flags: ignoreversion
+; documentation (all languages) + patch analysis
+Source: "..\README*.md";      DestDir: "{app}";              Flags: ignoreversion
+Source: "..\docs\*.md";       DestDir: "{app}\docs";         Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"

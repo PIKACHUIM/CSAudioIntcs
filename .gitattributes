@@ -5,6 +5,7 @@
 *.cat   binary
 *.inf   binary
 *.bin   binary
+*.i64   binary
 *.ri    binary
 *.aiqb  binary
 *.cpf   binary

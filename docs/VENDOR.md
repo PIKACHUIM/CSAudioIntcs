@@ -6,7 +6,7 @@ moved here so nothing is lost, and `.gitignore` keeps the folder out of git.
 | folder | what it is | why it is not committed |
 |---|---|---|
 | `installers/` | Upstream CoolStar installers: `coolstar-audio-driver.exe`, `cr50.1.0.1-installer.exe`, `crosec.2.0.6/2.0.7-installer.exe`, `crostouchpad.4.1.6-installer.exe`, `crostouchscreen.2.9.5-installer.exe`, `pikachu-certificate-install.exe`, `drivers-installtool-install.exe` | Self-extracting NSIS / Inno packages. They use an inverted NSIS header layout wrapped by WinLicense, so neither 7-Zip (26.04 / 19.00 / 9.20) nor any static unpacker can read them, and the sandbox refuses to execute them. Shipping them would mean shipping binaries that cannot be audited — and the payload they carry is already present as plain files under `drivers/` |
-| `alt-signatures/` | `origin/`, `sha160/`, `sha256/` — three older builds of the same three audio stacks, plus `driverall-crack/` and `typec/` | Same drivers, different catalog-signature generations (WHQL, a SHA-1 test cert, a SHA-256 test cert). Only the variant the project actually ships is kept in `drivers/`; keeping four copies invites accidentally installing two different builds of `csaudiosstavs` |
+| `alt-signatures/` | `sha160/`, `sha256/` — two older cracked builds of the same three audio stacks, plus `driverall-crack/` and `typec/` | Same drivers, different catalog-signature generations (a SHA-1 test cert and a SHA-256 test cert). The WHQL originals are tracked in `reference/originals/`, the build the project ships is in `drivers/`; keeping four copies around invites accidentally installing two different builds of `csaudiosstavs` |
 | `camera-redrix/` | Intel camera DriverStore dump for the Redrix boards (`iacamera64`, `hi556`, `ov2740`, `ov8856`, …) — 268 MB, single files up to 46 MB | Too large for a driver payload repo, and specific to one board family. `drivers/camera/` keeps the two packages that the general installer needs (`ov5675`, `iaisp64_46xx_ADL`) |
 | `duplicate-addons/` | `CoolStarAudioDrivers-Addons` | Byte-identical to `drivers/bus`, `drivers/codec`, `drivers/amp` |
 | `archives/` | `CoolStarAudioDrivers-Addons.rar`, `Comparers.rar`, three `Intel-FORCED-Camera-*.zip` | Contents already unpacked into `drivers/` |
@@ -29,3 +29,11 @@ Everything removed here is still reachable through git history:
 git log --diff-filter=D --summary -- Licensing
 git show <commit>:Licensing/WinLicense.exe > WinLicense.exe
 ```
+
+## What *is* tracked
+
+`reference/originals/` holds the three genuine CoolStar packages (WHQL-signed, `dpinst.exe`
+removed) as they came from upstream. They are not part of the payload and are never
+installed — they exist so that the patch is auditable:
+`tools/compare-drivers.py` diffs them against `drivers/audio/` and `docs/PATCH-ANALYSIS.md`
+records the result. 9.5 MB, worth it.
