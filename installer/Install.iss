@@ -60,7 +60,7 @@ Source: "..\certs\*.cer";     DestDir: "{app}\certs";        Flags: ignoreversio
 ; install / uninstall / cert helpers
 Source: "..\scripts\*.bat";   DestDir: "{app}\scripts";      Flags: ignoreversion
 ; documentation
-Source: "..\README.md";       DestDir: "{app}";              Flags: ignoreversion isreadme
+Source: "..\README.md";       DestDir: "{app}";              Flags: ignoreversion
 Source: "..\docs\DRIVERS.md"; DestDir: "{app}\docs";         Flags: ignoreversion
 
 [Icons]
@@ -74,9 +74,3 @@ Filename: "{app}\scripts\install-drivers.bat"; StatusMsg: "Installing drivers, p
 
 [UninstallRun]
 Filename: "{app}\scripts\uninstall-drivers.bat"; Flags: waituntilterminated runhidden; RunOnceId: "RemoveDrivers"
-
-[Code]
-function InitializeSetup(): Boolean;
-begin
-  Result := True;
-end;
