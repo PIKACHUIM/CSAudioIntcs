@@ -45,12 +45,14 @@ foreach ($line in Get-Content -LiteralPath $list) {
 
 if (-not (Test-Path -LiteralPath $dp)) { $errors.Add('tools\dpinst\dpinst.exe is missing') }
 
-$certs = @(Get-ChildItem -LiteralPath (Join-Path $root 'certs') -Filter '*.cer' -File -ErrorAction SilentlyContinue)
-if ($certs.Count -eq 0) { $errors.Add('certs\*.cer is missing') }
+$ca = Join-Path $root 'certs\pikachu-certificate-install.exe'
+if (-not (Test-Path -LiteralPath $ca)) {
+    $errors.Add('certs\pikachu-certificate-install.exe is missing (the catalogs cannot be trusted without it)')
+}
 
 Write-Host ("payload entries : {0}" -f $count)
-Write-Host ("cert roots      : {0}" -f $certs.Count)
 Write-Host ("dpinst.exe      : {0}" -f (Test-Path -LiteralPath $dp))
+Write-Host ("ca installer    : {0}" -f (Test-Path -LiteralPath $ca))
 
 foreach ($w in $warns)  { Write-Host ("WARN  " + $w) -ForegroundColor Yellow }
 foreach ($e in $errors) { Write-Host ("ERROR " + $e) -ForegroundColor Red }

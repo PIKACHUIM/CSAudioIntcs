@@ -22,6 +22,16 @@ for /f "usebackq eol=# delims=" %%D in ("%LIST%") do (
     call :remove_one "%%D"
 )
 
+rem The bundled CA installer registers its own uninstaller. Drivers are already
+rem gone at this point, so removing the trust is the last step.
+if exist "%ProgramFiles(x86)%\Pikacu Test CA Truster\unins000.exe" (
+    echo [remove ] signing roots
+    "%ProgramFiles(x86)%\Pikacu Test CA Truster\unins000.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+) else if exist "%ProgramFiles%\Pikacu Test CA Truster\unins000.exe" (
+    echo [remove ] signing roots
+    "%ProgramFiles%\Pikacu Test CA Truster\unins000.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+)
+
 echo === uninstall pass finished ===
 exit /b 0
 

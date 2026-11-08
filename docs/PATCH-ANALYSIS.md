@@ -144,8 +144,9 @@ CoolStar 原包是 WHQL 签名的，改一个字节签名就废。修补包的�
   ```
 
   必须先把这条时间戳链的**根**装进 `LocalMachine\Root` 和
-  `LocalMachine\TrustedPublisher`。本仓库把它放在
-  [`certs/pikachu-testca-root.cer`](../certs/)，安装器会自动导入（`scripts/trust-certs.bat`）。
+  `LocalMachine\TrustedPublisher`。本仓库用 [`certs/pikachu-certificate-install.exe`](../certs/)
+  做这件事（Inno Setup 打包，`/VERYSILENT` 静默安装，同时写两个 store 并注册卸载项）。
+  安装器在装驱动之前会自动调用它；手动装驱动时用 `scripts/trust-certs.bat` 包一层。
 
 > 注意：`Get-AuthenticodeSignature` 返回 `Valid` **不代表 pnputil 会接受**。
 > 前者只验 PKCS#7 本身，后者还要过 setupapi 的发布者信任检查。两者是两码事，

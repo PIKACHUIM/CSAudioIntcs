@@ -1,145 +1,126 @@
+<div align="center">
+
 # ChromeBook CoolStar Audio Drivers
 
-[简体中文](README.md) | **English** | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md)
+Getting the speakers to work after Windows lands on a Chromebook
 
-After turning a Chromebook into a Windows machine, the hard part is rarely the GPU or the
-touchpad — it is **sound**. This repository packages everything a Chromebook needs to make
-noise: the CoolStar audio stacks, the codecs and speaker amplifiers behind them, plus the
-ChromeOS embedded-controller bus, touchpad, fingerprint and camera drivers.
+[简体中文](README.md) · **English** · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md)
 
-Everything here is plain driver payload (`INF + SYS + CAT`, a few with firmware blobs) —
-no archives, no self-extracting installers. The tracked tree is 13 MB and the only foreign
-binaries that ever execute are Microsoft's `DPInst` and Windows' own `certutil`.
+![platform](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white)
+![packages](https://img.shields.io/badge/drivers-37-2E7D32)
+![installer](https://img.shields.io/badge/Inno_Setup-6-1F6FEB)
+![upstream](https://img.shields.io/badge/upstream-paid_licence-8A8A8A)
 
-> This is an **unofficial repack**. The drivers are CoolStar's work
-> (<https://coolstar.org/chromebook/>); upstream is a per-machine licensed commercial
-> product. See [Notice](#notice).
-
----
-
-## Contents
-
-- [What this is](#what-this-is)
-- [Quick start](#quick-start)
-- [Driver list](#driver-list)
-- [How the patch works](#how-the-patch-works)
-- [Repository layout](#repository-layout)
-- [Development](#development)
-- [Verified hardware](#verified-hardware)
-- [Notice](#notice)
+</div>
 
 ---
 
 ## What this is
 
-Chromebook audio is nothing like a normal laptop:
+This started as one broken HP Chromebook 13 G1. Windows installed fine, Device Manager
+looked clean, the volume slider moved, the endpoint level meter hit full scale during
+playback, and the speakers stayed silent. The cause turned out to be a licence check inside
+the driver: it failed, so the ADSP never started, so the amplifier never left shutdown.
 
-| Normal laptop | Chromebook |
-|---|---|
-| HD Audio codec on the HDA bus, works out of the box | The audio controller is an Intel **AVS / SOF** ADSP; codecs and amps sit on **I2C / I2S** |
-| The BIOS initialises the codec | The driver has to program every codec register over I2C |
-| The amp is inside the codec | The amp is a separate chip (MAX98357A / SSM4567 / RT1015…) gated by GPIO + I2S clocks |
+Everything needed to cover the rest of the family is here now. Three CoolStar audio stacks,
+the codecs and amplifiers behind them, plus the ChromeOS EC bus, touchpad, fingerprint
+reader and camera drivers.
 
-So the missing-driver symptom is not a yellow bang in Device Manager — it is far more
-confusing: **everything green, all four audio endpoints present, the endpoint level meter
-pegs at full scale during playback, and the speakers stay completely silent**. The ADSP
-never started, so there is no I2S clock and the amplifier never leaves power-down/mute.
+All of it is plain `INF + SYS + CAT` payload. No archives, no self-extracting installers.
+The working tree is about 13 MB, and the only foreign binaries that execute at install
+time are Microsoft's `DPInst` and the CA installer in `certs/`.
 
-That is the problem this package solves.
+Upstream is a paid, per-machine licence. This pack is for hardware that already holds one.
+There is no licence file in here, and no generator or activation tool.
 
----
+## Pick the right stack first
 
-## Quick start
+Chromebook audio splits into three incompatible architectures with disjoint hardware IDs.
+Installing the wrong one produces the most expensive symptom to debug: device present,
+no sound.
 
-**Just install**: grab the latest `ChromeBook-CoolStar-Audio-Driver-<version>-x64.exe` from
+| Your platform | Install | Service |
+|---|---|---|
+| Skylake / Kaby Lake / Amber Lake / Braswell / Apollo Lake | `drivers/audio/csaudiosstavs` | `CsAudioSSTAVS` |
+| Gemini Lake / Jasper Lake / Ice Lake / Tiger Lake / Alder Lake and newer | `drivers/audio/csaudiointcsof` | `CsAudioIntcSOF` |
+| AMD Chromebooks (Rembrandt, Phoenix, …) | `drivers/audio/csaudioamdsof` | `CsAudioAmdSOF` |
+| Speakers on glados / chell boards (HP Chromebook 13 G1 and friends) | add `drivers/audio/ssm4567` | `ssm4567` |
+
+If you are not sure which platform you have, install the full package. All three stacks
+ship in it and DPInst binds only the one whose hardware IDs match.
+
+## Install
+
+**Prebuilt**: grab `ChromeBook-CoolStar-Audio-Driver-<version>-x64.exe` from
 [Releases](../../releases), run it as administrator, reboot.
 
-**Build it yourself** (needs [Inno Setup 6](https://jrsoftware.org/isinfo.php); no WDK,
-no Visual Studio, no compiler):
+**Build it**: you need [Inno Setup 6](https://jrsoftware.org/isinfo.php). No WDK, no Visual
+Studio.
 
 ```bat
 ISCC.exe installer\Install.iss
 
-:: or pin a version
+:: or pin a version; the output filename follows it
 ISCC.exe /DMyAppVersion=1.0.5 installer\Install.iss
 ```
 
-Output lands in `dist\`.
+Output goes to `dist\`.
 
-**Install a single package** (e.g. only the speaker amp):
+**One package only**, say the speakers are the only thing broken. Trust the signing root
+first, then add the package:
 
 ```bat
 :: elevated PowerShell, from the unpacked directory
-certutil -addstore -f Root             certs\pikachu-testca-root.cer
-certutil -addstore -f TrustedPublisher certs\pikachu-testca-root.cer
+certs\pikachu-certificate-install.exe /VERYSILENT
+
 pnputil /add-driver drivers\audio\ssm4567\ssm4567.inf /install
 ```
 
----
-
 ## Driver list
 
-37 packages, 198 hardware IDs. The full table (DriverVer, provider and every HWID per
-package) lives in **[docs/DRIVERS.md](docs/DRIVERS.md)** and is generated from the INFs by
-`python tools/gen-driver-docs.py`.
+37 packages, 198 hardware IDs. Version, provider and every HWID per package live in
+[docs/DRIVERS.md](docs/DRIVERS.md); that table is generated from the INFs by
+`python tools/gen-driver-docs.py`, not written by hand.
 
-> **Known gaps**: four packages are older than upstream and three families are missing on
-> purpose (among them the Intel Serial IO I2C/GPIO bus that chell needs). Itemised reasons
-> and workarounds are in **[docs/VENDOR.md](docs/VENDOR.md)**.
+### Audio
 
-### Audio (`drivers/audio/`)
-
-| Package | Version | Platform |
+| Package | Version | Notes |
 |---|---|---|
-| `csaudiosstavs` | 1.0.4.0 | **AVS**: Skylake / Kaby Lake / Amber Lake / Braswell / Apollo Lake |
-| `csaudiointcsof` | 1.0.4.0 | **SOF**: Gemini Lake / Jasper Lake / Ice Lake / Tiger Lake / Alder Lake… |
-| `csaudioamdsof` | 1.0.1.0 | **AMD SOF**: Rembrandt / Phoenix and other AMD Chromebooks |
-| `ssm4567` | 1.0.1 | ADI SSM4567 I2S amp (glados / chell, i.e. HP Chromebook 13 G1) |
+| `csaudiosstavs` | 1.0.4.0 | AVS architecture, Skylake through Apollo Lake |
+| `csaudiointcsof` | 1.0.4.0 | SOF architecture, Gemini Lake and newer |
+| `csaudioamdsof` | 1.0.1.0 | SOF for AMD platforms |
+| `ssm4567` | 1.0.1 | ADI I2S amplifier used on glados-family boards |
 
-> **Install exactly one.** Picking the wrong architecture is the most common cause of
-> "device present, no sound": AVS and SOF are entirely different stacks with disjoint
-> hardware IDs, and DPInst binds whichever one matches.
-
-### Codecs (`drivers/codec/`)
+### Codecs
 
 `nau8825` · `nau88l25rvp` · `cs42l42` · `da7219` · `rt5682` · `rt5682s` · `croseccodec`
 
-### Speaker amplifiers (`drivers/amp/`)
+### Amplifiers
 
 `max98357a` · `max98390` · `opengmaxcodec` · `rt1011` · `rt1015` · `rt1019`
 
-### Bus and system (`drivers/bus/`, `drivers/system/`)
+### Bus and system
 
 `acpbus` · `cbtable` · `crosecbus` · `croseci2c` · `crosectypec` · `sklhdaudbus` ·
 `intelpmc` · `inteltcss` · `iaLPSS2_SPI` · `iaLPSS2_UART2` · `dptf_acpi` · `gnodriver`
 
-### Input and camera (`drivers/input/`, `drivers/camera/`)
+### Input and camera
 
 `crostouchpad-{synaptics,cypress,cypress-smbus,atmel,elan}` · `crosfingerprint` ·
 `ov5675` · `iaisp64_46xx_ADL`
 
-### Shipped but not installed by default
+### Shipped, not enabled
 
-| Package | Why |
-|---|---|
-| `codec/nau88l25rvp` | Nuvoton reference codec; fights `codec/nau8825` over the same `ACPI\10508825` |
-| `system/gnodriver` | INF-only placeholder, ships no `.sys` |
+`codec/nau88l25rvp` and `codec/nau8825` both claim `ACPI\10508825`, so only one can be
+active; the CoolStar build wins by default. `system/gnodriver` is an INF with no `sys`,
+there is nothing for it to bind.
 
-Install order lives in [`installer/payload.list`](installer/payload.list) — the installer
-and the uninstaller iterate the same file.
+Install order is in [installer/payload.list](installer/payload.list). Both the installer
+and the uninstaller read that one file.
 
----
+## Why the genuine driver stays silent
 
-## How the patch works
-
-Two questions to answer: **why does the genuine driver stay silent**, and **what did this
-build actually change**. The full evidence chain (byte-level diff, disassembly, signature
-comparison, and a route comparison against akibaPatcher) is in
-**[docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)** (Chinese).
-
-### 1. The blocker: a per-machine licence check
-
-CoolStar's audio drivers are licensed. The original `.sys` contains, in plain sight:
+The original `.sys` files contain these strings:
 
 ```
 AVS: License not found. Please install it to C:\Windows\system32\drivers\avs_signedlicense.bin
@@ -147,202 +128,146 @@ AVS: License too small. Make sure the license is signed.
 SystemSKU      Chell
 ```
 
-`DriverEntry` reads the licence file, verifies its signature, and compares it against the
-SMBIOS `SystemSKU` (the board name). On failure it returns NTSTATUS `0xC000026A` and the
-caller **never starts the ADSP** — so no I2S clock, no amplifier power, full-scale meter,
-dead silence.
+`DriverEntry` reads the licence, verifies the signature, and compares it against the board
+name in SMBIOS. When that fails it returns NTSTATUS `0xC000026A`. The caller sees a failure
+and never starts the ADSP. No ADSP means no I2S clock, and an amplifier with no clock stays
+muted.
 
-### 2. The patch: turn "failed" into "succeeded"
+That is why the symptom looks so wrong: devices fine, endpoints fine, meter at full scale,
+no sound.
 
-Across the three stacks, 5 / 12 / 12 sites are changed — 153 bytes in total, all the same
-shape:
+### What the patch changes
+
+5, 12 and 12 sites across the three stacks. 153 bytes total, all the same shape:
 
 ```asm
-; original — return the error code when the check fails
-mov    eax, 0xC000026A
-; patched — report success even when it fails
-mov    eax, 0
+mov eax, 0xC000026A    ; before: return this error when the check fails
+mov eax, 0              ; now: report success anyway
 ```
 
-For `return cond ? STATUS_X : STATUS_SUCCESS;` the compiler emits `and reg, 0xC000026A`;
-the patch turns it into `and reg, 0`, padding the leftover bytes with `nop`.
+`return cond ? STATUS_X : STATUS_SUCCESS;` compiles down to `and reg, 0xC000026A`. The patch
+turns it into `and reg, 0` and pads the leftover bytes with `nop`.
 
-| Stack | Sites | Bytes changed |
-|---|---|---|
-| `csaudiosstavs` | 5 | 25 B |
-| `csaudiointcsof` | 12 | 64 B |
-| `csaudioamdsof` | 12 | 64 B |
+The INF, the HWID table, the service sections and the DSP firmware are untouched. The
+`CsAudioCallbackAPI` callback is still registered, which is how the `ssm4567` amplifier
+driver gets its Speaker endpoint.
 
-**The INF, the HWID table, the service sections and the DSP firmware are untouched**, and
-the `CsAudioCallbackAPI` callback is still registered with the CoolStar bus driver — which
-is exactly how the `ssm4567` amp driver obtains its Speaker endpoint.
+### Signing
 
-### 3. Signing: regenerate the catalog and re-sign
+One changed byte destroys the WHQL signature, so the patched builds are re-signed, and the
+two files do not share a certificate:
 
-One changed byte destroys the WHQL signature, so the patched builds are **re-signed**, and
-the two chains behave very differently:
-
-| File | Original signer | Patched signer | Timestamp |
+| File | Before | Now | Timestamp |
 |---|---|---|---|
-| `.sys` | Microsoft WHQL | Airspace Intelligent Technology (Changzhou) | DigiCert (**public TSA**) |
-| `.cat` | Microsoft WHQL | Fujian Liuren Network Security Co., Ltd. | Pikachu Time Sub CA (**private TSA**) |
+| `.sys` | Microsoft WHQL | Airspace Intelligent Technology (Changzhou) | DigiCert, public TSA |
+| `.cat` | Microsoft WHQL | Fujian Liuren Network Security | Pikachu Time Sub CA, private |
 
-The `.sys` chain reaches a publicly trusted root, so it loads on any machine with Secure
-Boot off. The `.cat` timestamp comes from a private TSA that nothing public trusts, so
-`pnputil` refuses the package with:
+The `.sys` chain reaches a public root, so it loads with Secure Boot off. The `.cat`
+timestamp comes from a private TSA that nothing public trusts, and `pnputil` stops with
+`0xE0000242`. That is what the installer in `certs/` is for: it runs before the drivers and
+writes the root into `LocalMachine\Root` and `LocalMachine\TrustedPublisher`.
 
-```
-0xE0000242  publisher trust for the Authenticode-signed catalog has not been established
-```
+One trap worth knowing in advance. `Get-AuthenticodeSignature` returning `Valid` does not
+mean `pnputil` will accept the package; the former verifies the PKCS#7, the latter also has
+to pass setupapi's publisher-trust check. Separately, not a single byte of the INF may
+change, line endings included, because the catalog stores its hash. `.gitattributes` marks
+`*.inf`, `*.sys` and `*.cat` as `binary` for that reason.
 
-**The private TSA root therefore has to be installed on the target first**
-(`certs/pikachu-testca-root.cer`; the installer does it for you):
+Byte-level diff, disassembly, and a comparison with
+[akibaPatcher](https://github.com/akibaGumi/akibaPatcher) are in
+[docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md).
 
-```bat
-certutil -addstore -f Root             certs\pikachu-testca-root.cer
-certutil -addstore -f TrustedPublisher certs\pikachu-testca-root.cer
-```
-
-> Two pitfalls that cost real time:
-> ① `Get-AuthenticodeSignature` returning `Valid` does **not** mean `pnputil` will accept
->    the package — the former only verifies the PKCS#7, the latter also has to pass
->    setupapi's publisher-trust check.
-> ② Not a single byte of the `.inf` may change (**including line endings**), because the
->    catalog stores its hash. That is why `.gitattributes` marks `*.inf`/`*.sys`/`*.cat`
->    as `binary`.
-
-### 4. How this differs from akibaPatcher
-
-[akibaPatcher](https://github.com/akibaGumi/akibaPatcher) solves the same problem for SOF
-1.0.5.0, but far more bluntly: it deletes the `.sys` Authenticode certificate table
-outright, forges a 20-year self-signed certificate, rewrites four functions into
-`xor eax,eax; ret` / `mov eax,1; ret`, and **requires test-signing to be enabled**.
-
-This repository's build is a minimal semantic patch plus a real re-sign: it costs a code
-signing certificate and a timestamp service, and in exchange **needs no test-signing** and
-leaves no watermark on the machine. Side-by-side table in
-[docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md) (section 5).
-
----
-
-## Repository layout
+## Layout
 
 ```
 .
-├── .github/workflows/release.yml   CI: version in → build → GitHub Release
-├── certs/                          signing roots (installer imports Root + TrustedPublisher)
+├── .github/workflows/release.yml   CI: version in, release out
+├── certs/                          signing root, one Inno Setup installer
 ├── docs/
-│   ├── DRIVERS.md                  generated driver table (37 packages / 198 HWIDs)
+│   ├── DRIVERS.md                  driver table, 37 packages / 198 HWIDs, generated
 │   ├── PATCH-ANALYSIS.md           patch principle and byte-level diff
 │   └── VENDOR.md                   what cannot live in git, and why
-├── drivers/                        the payload, grouped by function
-│   ├── audio/  codec/  amp/        ← the parts that make sound
+├── drivers/                        the payload
+│   ├── audio/  codec/  amp/        the parts that make sound
 │   ├── bus/    input/  camera/  system/
 ├── installer/
-│   ├── Install.iss                 Inno Setup script (version injected on the command line)
-│   ├── payload.list                install order, shared by install and uninstall
-│   ├── License.rtf  dpinsts.ico
-├── reference/originals/            genuine CoolStar packages (WHQL), the diff baseline
+│   ├── Install.iss                 Inno Setup script
+│   ├── payload.list                install order
+│   └── License.rtf  dpinsts.ico
+├── reference/originals/            genuine CoolStar packages, diff baseline, never installed
 ├── scripts/
-│   ├── preflight.ps1               validates the payload before packaging (runs in CI)
-│   ├── trust-certs.bat             imports the signing roots
+│   ├── preflight.ps1               validates the payload before packaging
+│   ├── trust-certs.bat             manual signing-root install
 │   ├── install-drivers.bat         DPInst over payload.list
-│   └── uninstall-drivers.bat       DPInst /U over payload.list
-├── src/ssm4567/                    ADI SSM4567 amp driver source (KMDF + I2C)
+│   └── uninstall-drivers.bat       same list, /U
+├── src/ssm4567/                    ADI SSM4567 amplifier source, KMDF + I2C
 ├── tools/
-│   ├── dpinst/dpinst.exe           Microsoft Driver Package Installer 2.1
+│   ├── dpinst/dpinst.exe           Microsoft DPInst 2.1
 │   ├── gen-driver-docs.py          regenerates docs/DRIVERS.md
 │   └── compare-drivers.py          byte-level diff, original vs patched
-└── vendor/                         local staging, git-ignored (see docs/VENDOR.md)
+└── vendor/                         local staging, git-ignored, see docs/VENDOR.md
 ```
-
----
 
 ## Development
 
-### Requirements
-
-- **Packaging**: Inno Setup 6 (`choco install innosetup`). No WDK, no Visual Studio.
-- **Rebuilding the amp driver** (`src/ssm4567`): VS 2022 + WDK (check the WDK/VS
-  compatibility matrix first).
-- **Helper scripts**: PowerShell 5.1 or 7, Python 3.9+ (`capstone` only for disassembly).
-
-### Build and self-check
+Packaging needs Inno Setup 6 (`choco install innosetup`) and nothing else. Rebuilding
+`src/ssm4567` needs VS 2022 plus WDK; check the WDK/VS compatibility matrix first. Helper
+scripts run on PowerShell 5.1 or 7 and Python 3.9+; the disassembly part of
+`compare-drivers.py` wants `pip install capstone`.
 
 ```bat
-:: 1) validate the payload (missing folder / missing inf / dangling catalog all fail)
+:: validate the payload: missing folder, missing inf, dangling catalog reference
 powershell -ExecutionPolicy Bypass -File scripts\preflight.ps1
 
-:: 2) package
+:: package
 ISCC.exe /DMyAppVersion=1.0.5 installer\Install.iss
 
-:: 3) refresh the driver table after touching a package
+:: refresh the table after touching a driver
 python tools\gen-driver-docs.py
 
-:: 4) see how a package differs from the genuine one
+:: see how a package differs from the genuine one
 python tools\compare-drivers.py reference\originals\csaudiosstavs drivers\audio\csaudiosstavs
 ```
 
-### CI
+CI lives in [.github/workflows/release.yml](.github/workflows/release.yml). Trigger it by
+hand with a version number, or push a `v*` tag. The pipeline runs preflight, installs Inno
+Setup, calls `ISCC /DMyAppVersion=<v>`, writes `SHA256SUMS.txt`, uploads the artifact and
+runs `gh release create`. If the tag already exists it uploads over it. A preflight failure
+aborts the build, so a broken payload cannot reach a release.
 
-[`.github/workflows/release.yml`](.github/workflows/release.yml):
+To add a driver, drop the package into `drivers/<category>/<name>/`, append it to
+`payload.list` if it should install by default, run the doc generator and preflight, commit.
+Driver versions come from the INFs, the installer version comes from the CI input.
 
-| Trigger | Behaviour |
-|---|---|
-| `workflow_dispatch` | takes a `version` input (e.g. `1.0.5`) and an optional pre-release flag → tags `v1.0.5` and publishes a Release |
-| push `v*` tag | version comes from the tag name |
-
-Pipeline: checkout → resolve version → `preflight.ps1` → install Inno Setup via Chocolatey
-→ `ISCC /DMyAppVersion=<v>` → `SHA256SUMS.txt` → artifact upload → `gh release create`
-(falls back to `gh release upload --clobber` when the tag already exists).
-
-A preflight failure aborts the build, so a broken payload can never reach a release.
-
-### Adding or updating a driver
-
-1. Drop the package into `drivers/<category>/<name>/` (`.inf` + `.sys` + `.cat`, plus any
-   firmware blobs in the same directory)
-2. Append `<category>\<name>` to `installer/payload.list` if it should be installed —
-   order matters (bus first, audio controller later; the file has comments)
-3. `python tools/gen-driver-docs.py` to refresh the table
-4. `powershell -File scripts/preflight.ps1` to self-check
-5. Commit. The driver version comes from the INF, the installer version from the CI input
-
-### Uninstalling
-
-Apps & features, or from an elevated console:
-
-```bat
-scripts\uninstall-drivers.bat
-```
-
-It walks the same `payload.list` and calls `DPInst /U` for every INF.
-
----
+Uninstall through Apps & features, or run `scripts\uninstall-drivers.bat`. It walks the same
+list with `DPInst /U` and removes the CA on the way out.
 
 ## Verified hardware
 
 | Machine | Board | Platform | Result |
 |---|---|---|---|
-| HP Chromebook 13 G1 | `chell` | Skylake | ✅ speakers + headphones (needs `ssm4567` + `csaudiosstavs`) |
+| HP Chromebook 13 G1 | `chell` | Skylake | speakers and headphones work, needs `ssm4567` + `csaudiosstavs` |
 
-Everything else should work based on the platform each stack targets, but has **not** been
-verified machine by machine. If yours is not listed, please report the model + board name
-(`SystemSKU`) + the hardware ID from Device Manager after installing.
+Other machines should work based on the platform each stack targets, but I have not tested
+them one by one. If you try one, a report with the model, `SystemSKU` and the hardware ID
+from Device Manager would be useful.
 
----
+## Known gaps
+
+Four packages are older than upstream and three families are deliberately absent; the
+reasons and workarounds are in [docs/VENDOR.md](docs/VENDOR.md). The one that matters most
+is the missing Intel Serial IO I2C/GPIO driver: chell's codec and amplifier sit on that bus.
+The only local copy is a DriverStore dump with no catalog, which cannot be turned into an
+installable package.
 
 ## Notice
 
-- **CoolStar audio drivers** — © CoolStar, distributed via
-  <https://coolstar.org/chromebook/>. Upstream is a per-machine licensed commercial
-  product. This repository is an **unofficial repack** for hardware that is already
-  licensed, and contains **no licence files, licence generators or activation tooling**.
-- **`DPInst.exe`** — © Microsoft, redistributed as part of the WDK.
-- **`src/ssm4567`** — © CoolStar, from <https://github.com/coolstar/ssm4567>
-  (see `src/ssm4567/LICENSE.txt`).
-- **ChromeOS EC / touchpad / camera / DPTF drivers** — © their respective vendors.
+CoolStar audio drivers © CoolStar, distributed via <https://coolstar.org/chromebook/> under
+a per-machine paid licence. This repository is an unofficial repack for hardware that
+already holds one, and contains no licence file, generator or activation tool.
+`DPInst.exe` © Microsoft, shipped with the WDK. `src/ssm4567` © CoolStar, from
+<https://github.com/coolstar/ssm4567>, see `src/ssm4567/LICENSE.txt`. ChromeOS EC, touchpad,
+camera and DPTF drivers belong to their respective vendors.
 
-Not affiliated with Google, CoolStar or any hardware vendor. Converting a Chromebook to
-Windows carries a brick risk (firmware flashing especially); installing drivers is
-reversible.
+Not affiliated with Google, CoolStar or any hardware vendor. Putting Windows on a Chromebook
+carries a brick risk, especially when touching firmware; installing drivers is reversible.

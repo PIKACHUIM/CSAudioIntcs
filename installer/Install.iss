@@ -55,9 +55,10 @@ Source: "..\drivers\*";       DestDir: "{app}\drivers";      Flags: ignoreversio
 Source: "..\installer\payload.list"; DestDir: "{app}\installer"; Flags: ignoreversion
 ; DPInst (Microsoft Driver Package Installer)
 Source: "..\tools\dpinst\*";  DestDir: "{app}\tools\dpinst"; Flags: ignoreversion
-; signing roots the catalogs chain to
-Source: "..\certs\*.cer";     DestDir: "{app}\certs";        Flags: ignoreversion
-; install / uninstall / cert helpers
+; CA installer -- puts the root the catalogs chain to into Root and
+; TrustedPublisher. Without it pnputil rejects every package with 0xE0000242.
+Source: "..\certs\pikachu-certificate-install.exe"; DestDir: "{app}\certs"; Flags: ignoreversion
+; install / uninstall helpers
 Source: "..\scripts\*.bat";   DestDir: "{app}\scripts";      Flags: ignoreversion
 ; documentation (all languages) + patch analysis
 Source: "..\README*.md";      DestDir: "{app}";              Flags: ignoreversion
@@ -69,7 +70,8 @@ Name: "{group}\Driver folder";                      Filename: "{app}\drivers"
 Name: "{group}\Driver list (DRIVERS.md)";           Filename: "{app}\docs\DRIVERS.md"
 
 [Run]
-Filename: "{app}\scripts\trust-certs.bat";   StatusMsg: "Installing signing roots..."; Flags: waituntilterminated runhidden
+; 1) trust the signing root, 2) install the payload -- order matters
+Filename: "{app}\certs\pikachu-certificate-install.exe"; Parameters: "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART"; StatusMsg: "Installing signing roots..."; Flags: waituntilterminated runhidden
 Filename: "{app}\scripts\install-drivers.bat"; StatusMsg: "Installing drivers, please wait..."; Flags: waituntilterminated runhidden
 
 [UninstallRun]
