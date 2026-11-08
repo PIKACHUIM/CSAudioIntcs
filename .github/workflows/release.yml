@@ -106,10 +106,10 @@ jobs:
 
           $pre = "${{ github.event.inputs.prerelease }}"
           $isPush = "${{ github.event_name }}" -eq 'push'
-          $args = @('release', 'create', $tag, '--title', $tag, '--notes', $notes)
-          if (-not $isPush -and $pre -eq 'true') { $args += '--prerelease' }
+          $ghArgs = @('release', 'create', $tag, '--title', $tag, '--notes', $notes)
+          if (-not $isPush -and $pre -eq 'true') { $ghArgs += '--prerelease' }
 
-          gh @args @files
+          gh @ghArgs @files
           if ($LASTEXITCODE -ne 0) {
             Write-Host 'release exists, uploading assets instead'
             gh release upload $tag @files --clobber
