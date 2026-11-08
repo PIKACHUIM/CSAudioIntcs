@@ -1,2 +1,0 @@
-C:\Users\rahucha\Desktop\WinLicenseFiles crossplatform\WinlicenseSDK\ExamplesSDK\Generators\LicenseGenerator\Visual Basic\VB.NET\Basic\ANSI\obj\Debug\Interop.DAO.dll
-C:\Users\rahucha\Desktop\WinLicenseFiles crossplatform\WinlicenseSDK\ExamplesSDK\Generators\LicenseGenerator\Visual Basic\VB.NET\Basic\ANSI\obj\Debug\Proyecto1.vbproj.ResolveComReference.cache

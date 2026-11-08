@@ -1,0 +1,59 @@
+# payload.list -- install order for DPInst.
+# One driver folder per line, relative to ..\drivers\.
+# '#' starts a comment line. Blank lines are ignored.
+
+# ---- audio controllers: expose the render/capture endpoints
+audio\csaudioamdsof
+audio\csaudiointcsof
+audio\csaudiosstavs
+
+# ---- platform / embedded-controller bus
+bus\acpbus
+bus\cbtable
+bus\crosecbus
+bus\croseci2c
+bus\crosectypec
+bus\sklhdaudbus
+bus\intelpmc
+bus\inteltcss
+bus\iaLPSS2_SPI
+bus\iaLPSS2_UART2
+
+# ---- audio codecs
+codec\croseccodec
+codec\cs42l42
+codec\da7219
+codec\nau8825
+codec\rt5682
+codec\rt5682s
+
+# ---- speaker amplifiers
+amp\max98357a
+amp\max98390
+amp\opengmaxcodec
+amp\rt1011
+amp\rt1015
+amp\rt1019
+
+# ---- I2S speaker amp used by glados/chell (HP Chromebook 13 G1)
+audio\ssm4567
+
+# ---- input
+input\crostouchpad-synaptics
+input\crostouchpad-cypress
+input\crostouchpad-cypress-smbus
+input\crostouchpad-atmel
+input\crostouchpad-elan
+input\crosfingerprint
+
+# ---- camera
+camera\ov5675
+camera\iaisp64_46xx_ADL
+
+# ---- system
+system\dptf_acpi
+
+# ---- not installed by default -------------------------------------------
+# codec\nau88l25rvp    Nuvoton reference codec, same HWID as codec\nau8825
+#                      -> mutually exclusive, keep it out of the default run
+# system\gnodriver     placeholder INF only (no .sys), nothing to bind

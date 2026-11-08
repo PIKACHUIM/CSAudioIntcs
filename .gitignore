@@ -1,0 +1,21 @@
+# Build output
+/dist/
+/installer/Release/
+
+# Local staging area: upstream installers that cannot be unpacked losslessly,
+# alternate catalog-signature variants, and vendor camera dumps.
+# Kept on disk for reference, never committed. See docs/VENDOR.md.
+/vendor/
+
+# Windows / IDE noise
+*.PNF
+*.pnf
+.vs/
+*.suo
+*.user
+*.VC.db
+Thumbs.db
+desktop.ini
+
+# Inno Setup leftovers
+*.tmp
