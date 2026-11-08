@@ -41,14 +41,26 @@ records the result. 9.5 MB, worth it.
 ## Upstream is newer than what we ship — known gaps
 
 Checked 2026-11-09. Everything currently in `drivers/` is the newest copy obtainable from
-the material at hand, but four packages are known to lag or be missing upstream:
+the material at hand, but five packages are known to lag or be missing upstream:
 
 | package | repo | upstream | why not updated |
 |---|---|---|---|
-| `csaudiointcsof` (SOF) | 1.0.4.0 (2024-04-23) | **1.0.5** (`csaudiointcsof.1.0.5-1-installer.exe`) | upstream is a licensed per-machine download; 1.0.5 reportedly fixes the channel-swap / dead-tweeter bug that cracked ≤1.0.4 builds show on some boards |
+| `csaudiointcsof` (SOF) | 1.0.4.0 (2024-04-23) | **1.0.5-1** (`csaudiointcsof.1.0.5-1-installer.exe`, 2026-03; staged in `vendor/installers/`, sha256 `a147b28f…e0e1e`) | upstream is a licensed per-machine download. 1.0.5 fixed a regression that broke audio at random and another that killed HDMI audio; 1.0.5-1 additionally fixes the Redrix 4-speaker mapping and the reversed stereo imaging that ≤1.0.5 (and every cracked ≤1.0.4 build) shows. The installer is inverted-header NSIS — 7-Zip 19.00 / 23.01 / 26.04 all refuse it, so the payload has to be released by running it once |
+| `csaudiosstavs` (AVS) | 1.0.4.0 (2023-11-07) | **1.0.6** (`csaudiosof4skl.1.0.6-installer.exe`, 2025-05; staged in `vendor/installers/`, sha256 `c4eede33…32aeae`) | version taken from the installer filename, not verified by unpacking; same extraction blocker |
 | `crostouchpad` | 4.1 (2017-08-03) | **4.1.6** (`crostouchpad.4.1.6-installer.exe`, sitting in `vendor/installers/`) | the installer is an inverted-header NSIS wrapped by WinLicense — 7-Zip 26.04 / 19.00 / 9.20 all refuse it and the sandbox will not execute it, so the payload cannot be extracted here |
 | `crostouchscreen` | — | **2.9.5** | same reason: `crostouchscreen.2.9.5-installer.exe` cannot be unpacked |
 | `cr50` | — | **1.0.1** | same reason: `cr50.1.0.1-installer.exe` cannot be unpacked |
+
+Mirrors for the two audio packages, both uploaded by third parties rather than CoolStar:
+
+```
+https://archive.org/download/sof_1.0.5.1/csaudiointcsof-1.0.5-1.zip
+https://archive.org/download/csaudiosstavs_202505/csaudiosstavs.zip
+```
+
+Each zip also carries `gui/GenLicense.exe` and `sof-intellicense.txt`, which this repo
+does not redistribute.
+
 
 `crosecbus` is *not* a gap — the repo ships 2.1.0.0, newer than the 2.0.6 / 2.0.7
 installers floating around.
