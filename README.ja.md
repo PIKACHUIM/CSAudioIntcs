@@ -142,37 +142,63 @@ SystemSKU      Chell
 
 ### パッチ箇所
 
-3 つのスタックでそれぞれ 5、12、12 箇所、合計 153 バイトを、同一の形式で変更しています。
+3 つのスタックでそれぞれ 5、12、12 箇所、合計 153 バイトを変更しています。形は 2 種類だけです。
+
+**エラー分岐がそのまま戻る形**（4 箇所 / 24 バイト）：
 
 ```asm
-mov eax, 0xC000026A    ; 検証失敗時の戻り値
-mov eax, 0              ; 変更後はそのまま成功を返す
+mov eax, 0xC000026A    ; 検証失敗時に戻り値へ書き込む
+jmp 0x140004970        ; 関数の後処理へジャンプ
 ```
 
-ソース上は `return cond ? STATUS_X : STATUS_SUCCESS;` で、コンパイル後は `and reg, 0xC000026A` になります。パッチはこれを `and reg, 0` に変更し、余ったバイトを `nop` で埋めるため命令長は変わりません。
+**三項演算子の後処理**（25 箇所 / 129 バイト）：
+
+```asm
+sbb  ebx, ebx          ; 直前の比較に応じて 0 か -1
+not  ebx               ; 反転
+and  ebx, 0xC000026A   ; 条件成立なら失敗コード、そうでなければ 0
+```
+
+これは `return cond ? STATUS_X : STATUS_SUCCESS;` のコンパイル結果です。パッチは即値を 0 に
+書き換え（`and ebx, 0`）、条件が戻り値に影響しなくなります。元の命令は 6 バイト、
+置き換え後は 3 バイトで、余りは `nop` で埋めるため後続のオフセットは動きません。
+
+箇所ごとのファイルオフセット、仮想アドレス、変更前後のバイトと命令は
+[docs/PATCH-SITES.md](docs/PATCH-SITES.md) にあります。
 
 INF、HWID テーブル、サービス定義、DSP ファームウェアは変更していません。`CsAudioCallbackAPI` のコールバックは登録されたままで、`ssm4567` はこのコールバック経由で Speaker エンドポイントを登録します。
 
 ### 署名
 
-1 バイトでも変更すると元の WHQL 署名は無効になるため、2 つのファイルをそれぞれ再署名しています。
-
-| ファイル | 元の署名 | 現在の署名 | タイムスタンプ |
-|---|---|---|---|
-| `.sys` | Microsoft WHQL | Airspace Intelligent Technology（常州） | DigiCert 公開 TSA |
-| `.cat` | Microsoft WHQL | 福建六壬網安 | Pikachu Time Sub CA（自前） |
-
-`.sys` の証明書チェーンは公開ルートまで辿れるため、Secure Boot を無効にすれば読み込まれます。`.cat` のタイムスタンプは自前の TSA によるもので公開ルートは信頼しないため、`pnputil` は次のエラーを返します。
+1 バイトでも変更すると元の WHQL 署名は無効になるため、パッチ後のバイナリはカタログを
+作り直して再署名する必要があります。ここに含まれるオーディオパッケージは第三者が
+再署名したもので、カタログのタイムスタンプは公開ルートが信頼しない証明書につながるため、
+クリーンなシステムでは `pnputil` が拒否します。
 
 ```
 0xE0000242  発行者の信頼が確立されていない Authenticode(TM) 署名付きカタログです
 ```
 
-`certs/pikachu-certificate-install.exe` はこのルートを `LocalMachine\Root` と `LocalMachine\TrustedPublisher` の両方に書き込みます。どちらか一方でも欠けるとエラーが再現します。
+`certs/pikachu-certificate-install.exe` が必要なルートを `LocalMachine\Root` と
+`LocalMachine\TrustedPublisher` の両方に書き込みます。片方でも欠けるとエラーが再現します。
+インストーラーはドライバーを入れる前にこれを実行します。
 
-`Get-AuthenticodeSignature` が `Valid` を返しても `pnputil` がパッケージを受け入れるとは限りません。前者は PKCS#7 の構造と証明書チェーンのみを検証し、後者は setupapi の発行者信頼チェックも必要とします。また INF は改行コードを含め 1 バイトも変更できません。カタログにハッシュが記録されているためで、`.gitattributes` が `*.inf`、`*.sys`、`*.cat` を `binary` としているのはこの理由です。
+自分で変更したバイナリに再署名する手順（カタログの再生成、署名、ルートのインポート、検証）は
+[FakeSign](https://github.com/PIKACHUIM/FakeSign) にあります。本リポジトリにコード署名証明書は
+含まれていません。
 
-バイト単位の差分、逆アセンブル、実装方式の比較は [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md) にあります。比較ツールは `tools/compare-drivers.py` です。
+37 パッケージそれぞれの署名元と、ルートのインポートが必要かどうかは
+[docs/SIGNATURES.md](docs/SIGNATURES.md) にあります。必要なのは 7 つで、残り 30 は
+Microsoft WHQL か公開ルートにつながる第三者署名です。
+
+誤解しやすい点として、`Get-AuthenticodeSignature` が `Valid` を返しても `pnputil` が
+受け入れるとは限りません。前者は PKCS#7 の構造と証明書チェーンのみを検証し、後者は
+setupapi の発行者信頼チェックも必要とします。また INF は改行コードを含め 1 バイトも
+変更できません。カタログにハッシュが記録されているためです。
+
+バイト単位の差分と逆アセンブルは [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)、
+29 箇所のオフセット・バイト・前後の命令は [docs/PATCH-SITES.md](docs/PATCH-SITES.md) にあります。
+比較ツールは `tools/compare-drivers.py` です。
 
 ## ライセンス
 

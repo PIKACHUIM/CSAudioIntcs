@@ -142,38 +142,51 @@ Device enumeration, endpoint creation and level meters all behave normally, and 
 
 ### Patch sites
 
-The three audio stacks are patched at 5, 12 and 12 sites, 153 bytes in total, all in the same form:
+The three audio stacks are patched at 5, 12 and 12 sites, 153 bytes in total, in two shapes only.
+
+**An error branch returning directly** (4 sites / 24 bytes):
 
 ```asm
-mov eax, 0xC000026A    ; returned when the check failed
-mov eax, 0              ; now returns success directly
+mov eax, 0xC000026A    ; written into the return value when the check fails
+jmp 0x140004970        ; jump to the epilogue
 ```
 
-In source this is `return cond ? STATUS_X : STATUS_SUCCESS;`, which compiles to `and reg, 0xC000026A`. The patch changes it to `and reg, 0` and pads the remaining bytes with `nop`, so instruction lengths are unchanged.
+**A ternary expression at the end of a function** (25 sites / 129 bytes):
+
+```asm
+sbb  ebx, ebx          ; 0 or -1, from the preceding compare
+not  ebx               ; invert
+and  ebx, 0xC000026A   ; the failure code when the condition holds, else 0
+```
+
+That is what `return cond ? STATUS_X : STATUS_SUCCESS;` compiles to. The patch rewrites the
+immediate to 0 (`and ebx, 0`), so the condition no longer affects the result. The original
+instruction is 6 bytes, the replacement 3, and the leftover is padded with `nop` so the
+following offsets stay put.
+
+Per-site file offsets, virtual addresses, original and patched bytes, and both instructions
+are in [docs/PATCH-SITES.md](docs/PATCH-SITES.md).
 
 The INF, HWID tables, service sections and DSP firmware are untouched. The `CsAudioCallbackAPI` callback still registers, and `ssm4567` depends on it to register the Speaker endpoint.
 
 ### Signatures
 
-A single modified byte voids the original WHQL signature, so both files are re-signed, by different parties.
-
-| File | Original | Current | Timestamp |
-|---|---|---|---|
-| `.sys` | Microsoft WHQL | Airspace Intelligent Technology (Changzhou) | DigiCert public TSA |
-| `.cat` | Microsoft WHQL | Fujian Liuren Network Security | Pikachu Time Sub CA (self-hosted) |
-
-The `.sys` chain reaches a public root and loads with Secure Boot off. The `.cat` timestamp comes from a self-hosted TSA that public roots do not trust, so `pnputil` reports:
+A single modified byte voids the original WHQL signature, so a patched binary has to have its catalog regenerated and signed again. The audio packages shipped here were re-signed by a third party, and their catalog timestamps chain to a certificate that public roots do not trust, so `pnputil` refuses them on a clean system:
 
 ```
 0xE0000242  A certificate chain processed, but terminated in a root certificate
             which is not trusted by the trust provider
 ```
 
-`certs/pikachu-certificate-install.exe` writes that root into both `LocalMachine\Root` and `LocalMachine\TrustedPublisher`; either store missing reproduces the error.
+`certs/pikachu-certificate-install.exe` writes the required root into both `LocalMachine\Root` and `LocalMachine\TrustedPublisher`; either store missing reproduces the error. The installer runs it before touching any driver.
 
-A `Valid` result from `Get-AuthenticodeSignature` does not mean `pnputil` accepts the package: the former verifies the PKCS#7 structure and chain, the latter also requires setupapi's publisher trust check. The INF must not change by a single byte, line endings included, because the catalog stores its hash, which is why `.gitattributes` marks `*.inf`, `*.sys` and `*.cat` as `binary`.
+To re-sign a binary you changed yourself, the procedure (rebuild the catalog, sign it, import the root, verify) is in [FakeSign](https://github.com/PIKACHUIM/FakeSign). No code-signing certificate ships with this repository.
 
-Byte-level diffs, disassembly and an implementation comparison are in [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md); the tool is `tools/compare-drivers.py`.
+Which of the 37 packages are signed by whom, and which seven need the root import, is listed in [docs/SIGNATURES.md](docs/SIGNATURES.md). The other 30 are either Microsoft WHQL or third-party with a public chain.
+
+One thing that trips people up: a `Valid` result from `Get-AuthenticodeSignature` does not mean `pnputil` accepts the package. The former verifies the PKCS#7 structure and chain, the latter also requires setupapi's publisher trust check. And the INF must not change by a single byte, line endings included, because the catalog stores its hash.
+
+Byte-level diffs and disassembly are in [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md), the tool is `tools/compare-drivers.py`.
 
 ## License
 

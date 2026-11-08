@@ -142,37 +142,48 @@ SystemSKU      Chell
 
 ### 修補位置
 
-三個音訊堆疊分別修改 5、12、12 處，合計 153 位元組，形式一致：
+三個音訊堆疊分別修改 5、12、12 處，合計 153 位元組，只有兩種形態。
+
+**錯誤分支直接回傳**（4 處 / 24 位元組）：
 
 ```asm
-mov eax, 0xC000026A    ; 校驗失敗的回傳值
-mov eax, 0              ; 修改後直接回傳成功
+mov eax, 0xC000026A    ; 校驗失敗時寫入回傳值
+jmp 0x140004970        ; 跳到函式收尾
 ```
 
-原始碼形式為 `return cond ? STATUS_X : STATUS_SUCCESS;`，編譯後對應 `and reg, 0xC000026A`，修補改為 `and reg, 0`，剩餘位元組以 `nop` 填滿，指令長度不變。
+**三元運算式收尾**（25 處 / 129 位元組）：
+
+```asm
+sbb  ebx, ebx          ; 0 或 -1，取決於上一處比較
+not  ebx               ; 取反
+and  ebx, 0xC000026A   ; 條件成立得到失敗碼，否則得到 0
+```
+
+這是 `return cond ? STATUS_X : STATUS_SUCCESS;` 的編譯結果。修補把立即數改成 0
+（`and ebx, 0`），條件不再影響回傳值。原指令 6 位元組、新指令 3 位元組，其餘以 `nop`
+補滿，後續位移不變。
+
+逐點的檔案偏移、虛擬位址、原始與修補位元組、前後指令，見 [docs/PATCH-SITES.md](docs/PATCH-SITES.md)。
 
 INF、HWID 表、服務安裝段與 DSP 韌體均未修改。`CsAudioCallbackAPI` 回呼保持註冊，`ssm4567` 依賴該回呼註冊 Speaker 端點。
 
 ### 簽章
 
-修改後原 WHQL 簽章失效，兩個檔案分別重新簽章。
-
-| 檔案 | 原始簽章 | 目前簽章 | 時戳 |
-|---|---|---|---|
-| `.sys` | Microsoft WHQL | Airspace Intelligent Technology（常州） | DigiCert 公共 TSA |
-| `.cat` | Microsoft WHQL | 福建六壬網安 | Pikachu Time Sub CA（自建） |
-
-`.sys` 的憑證鏈可追溯至公共根，Secure Boot 關閉狀態下可載入。`.cat` 的時戳來自自建 TSA，公開根不信任，`pnputil` 回傳：
+改一個位元組，原 WHQL 簽章就失效，修補後的二進位必須重新產生類別目錄並簽章。倉庫裡的音訊包由第三方完成這一步，其類別目錄的時戳鏈終止於一條公開根不信任的憑證，因此在乾淨系統上 `pnputil` 會拒絕：
 
 ```
 0xE0000242  尚未建立對 Authenticode(TM)簽署的類別目錄的發行者信任
 ```
 
-`certs/pikachu-certificate-install.exe` 用於將此根寫入 `LocalMachine\Root` 與 `LocalMachine\TrustedPublisher`，兩個存放區缺一不可。
+`certs/pikachu-certificate-install.exe` 用於把所需的根寫入 `LocalMachine\Root` 與 `LocalMachine\TrustedPublisher`，兩個存放區缺一不可。安裝程式會在裝驅動之前自動執行。
 
-`Get-AuthenticodeSignature` 回傳 `Valid` 不代表 `pnputil` 接受該包：前者僅校驗 PKCS#7 結構與憑證鏈，後者還需通過 setupapi 的發行者信任檢查。同時 INF 檔案不可作任何位元組修改，包括換行字元，因為類別目錄中記錄了其雜湊，故 `.gitattributes` 將 `*.inf`、`*.sys`、`*.cat` 標記為 `binary`。
+要自己給改過的驅動重新簽章，流程（重建類別目錄、簽章、匯入信任根、驗證）見 [FakeSign](https://github.com/PIKACHUIM/FakeSign)。倉庫不附帶任何程式碼簽章憑證。
 
-逐位元組差異、反組譯與實作方式對照見 [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)，比對工具為 `tools/compare-drivers.py`。
+37 個包各自的簽章來源與是否需要匯入根，見 [docs/SIGNATURES.md](docs/SIGNATURES.md)。其中 7 個需要匯入，其餘 30 個是 Microsoft WHQL 或公共根的第三方簽章。
+
+另有一個容易誤判的地方：`Get-AuthenticodeSignature` 回傳 `Valid` 不代表 `pnputil` 接受該包，前者只校驗 PKCS#7 結構與憑證鏈，後者還要過 setupapi 的發行者信任檢查。另外 INF 不可作任何位元組修改，包括換行字元，因為類別目錄裡記錄著它的雜湊。
+
+逐位元組差異與反組譯見 [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)；29 處修補點的偏移、位元組與前後指令見 [docs/PATCH-SITES.md](docs/PATCH-SITES.md)。比對工具為 `tools/compare-drivers.py`。
 
 ## 授權條款
 

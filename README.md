@@ -142,37 +142,48 @@ SystemSKU      Chell
 
 ### 补丁位置
 
-三个音频栈分别修改 5、12、12 处，合计 153 字节，形式一致：
+三个音频栈分别修改 5、12、12 处，合计 153 字节，只有两种形态。
+
+**错误分支直接返回**（4 处 / 24 字节）：
 
 ```asm
-mov eax, 0xC000026A    ; 校验失败的返回值
-mov eax, 0              ; 修改后直接返回成功
+mov eax, 0xC000026A    ; 校验失败时写入返回值
+jmp 0x140004970        ; 跳到函数收尾
 ```
 
-源码形式为 `return cond ? STATUS_X : STATUS_SUCCESS;`，编译后对应 `and reg, 0xC000026A`，补丁改为 `and reg, 0`，剩余字节以 `nop` 填充，指令长度不变。
+**三元表达式收尾**（25 处 / 129 字节）：
+
+```asm
+sbb  ebx, ebx          ; 0 或 -1，取决于上一处比较
+not  ebx               ; 取反
+and  ebx, 0xC000026A   ; 条件成立得到失败码，否则得到 0
+```
+
+这是 `return cond ? STATUS_X : STATUS_SUCCESS;` 的编译结果。补丁把立即数改成 0
+（`and ebx, 0`），条件不再影响返回值。原指令 6 字节、新指令 3 字节，剩余用 `nop` 补齐，
+后续偏移不变。
+
+逐点的文件偏移、虚拟地址、原始与修补字节、前后指令，见 [docs/PATCH-SITES.md](docs/PATCH-SITES.md)。
 
 INF、HWID 表、服务安装段与 DSP 固件均未修改。`CsAudioCallbackAPI` 回调保持注册，`ssm4567` 依赖该回调注册 Speaker 端点。
 
 ### 签名
 
-修改后原 WHQL 签名失效，两个文件分别重新签名。
-
-| 文件 | 原始签名 | 当前签名 | 时间戳 |
-|---|---|---|---|
-| `.sys` | Microsoft WHQL | Airspace Intelligent Technology（常州） | DigiCert 公共 TSA |
-| `.cat` | Microsoft WHQL | 福建六壬网安 | Pikachu Time Sub CA（自建） |
-
-`.sys` 的证书链可追溯至公共根，Secure Boot 关闭状态下可加载。`.cat` 的时间戳来自自建 TSA，公开根不信任，`pnputil` 返回：
+改一个字节，原有的 WHQL 签名就失效，修补后的二进制必须重新生成 catalog 并签名。仓库里的音频包由第三方完成这一步，其 catalog 的时间戳链终止于一条公开根不信任的证书，因此在干净系统上 `pnputil` 会拒绝：
 
 ```
 0xE0000242  尚未建立对 Authenticode(TM)签名的目录的发布者信任
 ```
 
-`certs/pikachu-certificate-install.exe` 用于将此根写入 `LocalMachine\Root` 与 `LocalMachine\TrustedPublisher`，两个存储缺一不可。
+`certs/pikachu-certificate-install.exe` 用于把所需的根写入 `LocalMachine\Root` 与 `LocalMachine\TrustedPublisher`，两个存储缺一不可。安装器会在装驱动之前自动执行。
 
-`Get-AuthenticodeSignature` 返回 `Valid` 不代表 `pnputil` 接受该包：前者仅校验 PKCS#7 结构与证书链，后者还需通过 setupapi 的发布者信任检查。同时 INF 文件不可作任何字节修改，包括换行符，因为 catalog 中记录了其哈希，故 `.gitattributes` 将 `*.inf`、`*.sys`、`*.cat` 标记为 `binary`。
+要自己给改过的驱动重签名，流程（重建 catalog、签名、导入信任根、验证）见 [FakeSign](https://github.com/PIKACHUIM/FakeSign)。仓库不附带任何代码签名证书。
 
-逐字节差异、反汇编与实现方式对比见 [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)，比对工具为 `tools/compare-drivers.py`。
+37 个包各自的签名来源与是否需要导入根，见 [docs/SIGNATURES.md](docs/SIGNATURES.md)。其中 7 个需要导入，其余 30 个是 Microsoft WHQL 或公共根的第三方签名。
+
+另有一个容易误判的地方：`Get-AuthenticodeSignature` 返回 `Valid` 不代表 `pnputil` 接受该包，前者只校验 PKCS#7 结构与证书链，后者还要过 setupapi 的发布者信任检查。另外 INF 不可作任何字节修改，包括换行符，因为 catalog 里记录着它的哈希。
+
+逐字节差异与反汇编见 [docs/PATCH-ANALYSIS.md](docs/PATCH-ANALYSIS.md)；29 处补丁点的偏移、字节与前后指令见 [docs/PATCH-SITES.md](docs/PATCH-SITES.md)。比对工具为 `tools/compare-drivers.py`。
 
 ## 许可证
 
