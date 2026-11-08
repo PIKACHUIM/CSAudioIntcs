@@ -1,0 +1,85 @@
+;
+; Nau88L25Rvp.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=MEDIA 
+ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=Nau88L25Rvp.cat
+DriverVer=11/30/2015,17.51.14.673
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+Nau88L25Rvp.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+;;;;%Nau88L25Rvp.DeviceDesc%=Nau88L25Rvp_Device, ACPI\Nau88L25Rvp	;; TO TEST WITH ROOT ENUM DEVICE
+;;;;%Nau88L25Rvp.DeviceDesc%=Nau88L25Rvp_Device, ACPI\10EC5640		;; TO TEST WITH REALTEK DEVICE	
+%Nau88L25Rvp.DeviceDesc%=Nau88L25Rvp_Device, ACPI\10508825
+
+[Nau88L25Rvp_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+Nau88L25Rvp.sys
+
+;-------------- Service installation
+[Nau88L25Rvp_Device.NT.Services]
+AddService = Nau88L25Rvp,%SPSVCINST_ASSOCSERVICE%, Nau88L25Rvp_Service_Inst
+
+; -------------- Nau88L25Rvp driver install sections
+[Nau88L25Rvp_Service_Inst]
+DisplayName    = %Nau88L25Rvp.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\Nau88L25Rvp.sys
+LoadOrderGroup = Extended Base
+
+;
+;--- Nau88L25Rvp_Device Coinstaller installation ------
+;
+
+[DestinationDirs]
+Nau88L25Rvp_Device_CoInstaller_CopyFiles = 11
+
+[Nau88L25Rvp_Device.NT.CoInstallers]
+AddReg=Nau88L25Rvp_Device_CoInstaller_AddReg
+CopyFiles=Nau88L25Rvp_Device_CoInstaller_CopyFiles
+
+[Nau88L25Rvp_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01011.dll,WdfCoInstaller"
+
+[Nau88L25Rvp_Device_CoInstaller_CopyFiles]
+WdfCoInstaller01011.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01011.dll=1 ; make sure the number matches with SourceDisksNames
+
+[Nau88L25Rvp_Device.NT.Wdf]
+KmdfService =  Nau88L25Rvp, Nau88L25Rvp_wdfsect
+[Nau88L25Rvp_wdfsect]
+KmdfLibraryVersion = 1.11
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="NuvotonIgx"
+DiskName = "Nau88L25Rvp Installation Disk"
+Nau88L25Rvp.DeviceDesc = "Nuvoton SST Nau88L25 Codec Device"
+Nau88L25Rvp.SVCDESC = "Nau88L25Rvp Service"

@@ -1,0 +1,118 @@
+; Copyright (c) 2018 Google.  All rights reserved.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGUID={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%QUANTA%
+CatalogFile=gNoDriver.cat
+DriverVer=04/22/2009,1.0.0.2
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%GOOGLE%=Google,NT,NTx86.10,NTamd64.10
+
+[Google]
+; no support for pre-NT
+
+[Google.NT]
+; no support for pre-Win10
+
+[Google.NTx86.10]
+; no support for 32-bit
+
+[Google.NTamd64.10]
+
+; We want this no-op driver to be the worst possible match.  Unfortunately
+; the only device-enumerated ID that includes the subsystem ID is the
+; very first hardware ID, so this driver will have the best possible
+; "Identifier Score" in its driver rank.
+
+%BOOT0000_eve_desc%=NO_DRV,ACPI\VEN_BOOT&DEV_0000&SUBSYS_1AE0006B
+%PRP0001_eve_desc%=NO_DRV,ACPI\VEN_PRP&DEV_0001&SUBSYS_1AE0006B
+%GGL0001_eve_desc%=NO_DRV,ACPI\VEN_GGL&DEV_0001&SUBSYS_1AE0006B
+%GOOG0002_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0002&SUBSYS_1AE0006B
+%GOOG0003_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0003&SUBSYS_1AE0006B
+%GOOG0004_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0004&SUBSYS_1AE0006B
+%GOOG0005_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0005&SUBSYS_1AE0006B
+%GOOG0006_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0006&SUBSYS_1AE0006B
+%GOOG0008_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0008&SUBSYS_1AE0006B
+%GOOG9999_eve_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_9999&SUBSYS_1AE0006B
+
+%BOOT0000_nocturne_desc%=NO_DRV,ACPI\VEN_BOOT&DEV_0000&SUBSYS_1AE0006C
+%PRP0001_nocturne_desc%=NO_DRV,ACPI\VEN_PRP&DEV_0001&SUBSYS_1AE0006C
+%GOOG0002_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0002&SUBSYS_1AE0006C
+%GOOG0003_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0003&SUBSYS_1AE0006C
+%GOOG0004_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0004&SUBSYS_1AE0006C
+%GOOG0005_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0005&SUBSYS_1AE0006C
+%GOOG0006_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0006&SUBSYS_1AE0006C
+%GOOG0008_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_0008&SUBSYS_1AE0006C
+%GOOG9999_nocturne_desc%=NO_DRV,ACPI\VEN_GOOG&DEV_9999&SUBSYS_1AE0006C
+
+; It's not quite appropriate to broadly claim these two device IDs
+; %BOOT0000_desc%=NO_DRV,ACPI\BOOT0000,*BOOT0000
+; %PRP0001_desc%=NO_DRV,ACPI\PRP0001,*PRP0001
+
+; For these following broad IDs we want the worst possible match.
+; The worse Identifier score is when a compat ID in this INF matches
+; a compat ID in the hardware.  Unfortunately chkinf says we can't
+; specify a line in this section that specifies a hardware ID but
+; not a compatible ID.  I don't want to use a completely bogus
+; hardware ID in this file, so the next-worse match is when a
+; hardware ID in this inf matches a compatible ID in the device.
+; So, I'm using the worse-possible compatible ID that is enumerated
+; by ACPI (i.e., has a "ACPI\" prefix).
+
+%GGL0001_desc%=NO_DRV,ACPI\GGL0001
+%GOOG0002_desc%=NO_DRV,ACPI\GOOG0002
+%GOOG0003_desc%=NO_DRV,ACPI\GOOG0003
+%GOOG0004_desc%=NO_DRV,ACPI\GOOG0004
+%GOOG0005_desc%=NO_DRV,ACPI\GOOG0005
+%GOOG0006_desc%=NO_DRV,ACPI\GOOG0006
+%GOOG0008_desc%=NO_DRV,ACPI\GOOG0008
+%GOOG9999_desc%=NO_DRV,ACPI\GOOG9999
+
+[NO_DRV]
+
+; null service install
+[NO_DRV.Services]
+AddService = , 0x00000002
+
+[Strings]
+GOOGLE="Google"
+QUANTA="Quanta"
+
+BOOT0000_eve_desc="Google Pixelbook Coreboot Device (BOOT0000)"
+PRP0001_eve_desc ="Google Pixelbook Audio SPI Device (PRP0001)"
+GGL0001_eve_desc ="Google Pixelbook ACPI API Device (GGL0001)"
+GOOG0002_eve_desc="Google Pixelbook Keyboard Backlight Device (GOOG0002)"
+GOOG0003_eve_desc="Google Pixelbook EC Power Delivery Device (GOOG0003)"
+GOOG0004_eve_desc="Google Pixelbook EC LPC Device (GOOG0004)"
+GOOG0005_eve_desc="Google Pixelbook TPM I2C Device (GOOG0005)"
+GOOG0006_eve_desc="Google Pixelbook Tablet Mode Detection Device (GOOG0006)"
+GOOG0008_eve_desc="Google Pixelbook EC I2C Device (GOOG0008)"
+GOOG9999_eve_desc="Google Pixelbook Ramoops Device (GOOG9999)"
+
+BOOT0000_nocturne_desc="Google Chromebook Coreboot Device (BOOT0000)"
+PRP0001_nocturne_desc ="Google Chromebook Device (PRP0001)"
+GOOG0002_nocturne_desc="Google Chromebook Keyboard Backlight Device (GOOG0002)"
+GOOG0003_nocturne_desc="Google Chromebook EC Power Delivery Device (GOOG0003)"
+GOOG0004_nocturne_desc="Google Chromebook EC LPC Device (GOOG0004)"
+GOOG0005_nocturne_desc="Google Chromebook TPM I2C Device (GOOG0005)"
+GOOG0006_nocturne_desc="Google Chromebook Tablet Mode Detection Device (GOOG0006)"
+GOOG0008_nocturne_desc="Google Chromebook EC I2C Device (GOOG0008)"
+GOOG9999_nocturne_desc="Google Chromebook Ramoops Device (GOOG9999)"
+
+; BOOT0000_desc="Google Coreboot Device (BOOT0000)"
+; PRP0001_desc ="Google Audio SPI Device (PRP0001)"
+
+GGL0001_desc ="Google ACPI API Device (GGL0001)"
+GOOG0002_desc="Google Keyboard Backlight Device (GOOG0002)"
+GOOG0003_desc="Google EC Power Delivery Device (GOOG0003)"
+GOOG0004_desc="Google EC LPC Device (GOOG0004)"
+GOOG0005_desc="Google TPM I2C Device (GOOG0005)"
+GOOG0006_desc="Google Tablet Mode Detection Device (GOOG0006)"
+GOOG0008_desc="Google EC I2C Device (GOOG0008)"
+GOOG9999_desc="Google Ramoops Device (GOOG9999)"

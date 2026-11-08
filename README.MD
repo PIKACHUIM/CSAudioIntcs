@@ -43,6 +43,7 @@
 - `CrackFile/`: 存放破解版驱动及原始驱动文件。
 - `Installer/`: 安装程序源码 (Inno Setup) 及构建资源。
   - `Drivers/`: 待打包的驱动文件集合。
+  - `Drivers/chromebook-extra-drivers/`: Chromebook 专有驱动补充包（CoolStar 触摸板 ×5、Nuvoton NAU88L25 参考驱动、gNoDriver 占位、Intel DPTF）。
   - `Release/`: 构建生成的安装包。
 - `Licensing/`: 包含授权相关的 SDK 和工具（主要用于研究或构建过程）。
 
