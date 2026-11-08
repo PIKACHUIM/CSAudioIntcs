@@ -6,10 +6,7 @@ Chromebook 装完 Windows 之后，把扬声器修好
 
 [简体中文](README.md) · [English](README.en.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md)
 
-![platform](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white)
-![packages](https://img.shields.io/badge/drivers-37-2E7D32)
-![installer](https://img.shields.io/badge/Inno_Setup-6-1F6FEB)
-![upstream](https://img.shields.io/badge/upstream-paid_licence-8A8A8A)
+![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![upstream](docs/badges/upstream.svg)
 
 </div>
 
