@@ -77,6 +77,9 @@ pnputil /add-driver drivers\audio\ssm4567\ssm4567.inf /install
 37 个驱动包、198 个硬件 ID。完整清单（含每个包的 DriverVer、Provider、全部 HWID）
 在 **[docs/DRIVERS.md](docs/DRIVERS.md)**，由 `python tools/gen-driver-docs.py` 从 INF 自动生成。
 
+> **已知缺口**：有 4 个包上游版本比这里新、3 类包因故未收录（其中包括 chell 需要的
+> Intel Serial IO I2C/GPIO）。逐条原因与替代方案见 **[docs/VENDOR.md](docs/VENDOR.md)**。
+
 ### 音频（`drivers/audio/`）
 
 | 包 | 版本 | 适用平台 |

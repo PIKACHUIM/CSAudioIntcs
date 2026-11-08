@@ -85,6 +85,10 @@ pnputil /add-driver drivers\audio\ssm4567\ssm4567.inf /install
 すべての HWID を含む完全な一覧は **[docs/DRIVERS.md](docs/DRIVERS.md)** にあり、
 `python tools/gen-driver-docs.py` で INF から自動生成しています。
 
+> **既知の欠落**：4 パッケージは上流に新しい版があり、3 系統は意図的に未収録です
+> （chell が必要とする Intel Serial IO I2C/GPIO を含む）。個別の理由と回避策は
+> **[docs/VENDOR.md](docs/VENDOR.md)** にまとめています。
+
 ### オーディオ（`drivers/audio/`）
 
 | パッケージ | バージョン | 対象プラットフォーム |

@@ -37,3 +37,26 @@ removed) as they came from upstream. They are not part of the payload and are ne
 installed — they exist so that the patch is auditable:
 `tools/compare-drivers.py` diffs them against `drivers/audio/` and `docs/PATCH-ANALYSIS.md`
 records the result. 9.5 MB, worth it.
+
+## Upstream is newer than what we ship — known gaps
+
+Checked 2026-11-09. Everything currently in `drivers/` is the newest copy obtainable from
+the material at hand, but four packages are known to lag or be missing upstream:
+
+| package | repo | upstream | why not updated |
+|---|---|---|---|
+| `csaudiointcsof` (SOF) | 1.0.4.0 (2024-04-23) | **1.0.5** (`csaudiointcsof.1.0.5-1-installer.exe`) | upstream is a licensed per-machine download; 1.0.5 reportedly fixes the channel-swap / dead-tweeter bug that cracked ≤1.0.4 builds show on some boards |
+| `crostouchpad` | 4.1 (2017-08-03) | **4.1.6** (`crostouchpad.4.1.6-installer.exe`, sitting in `vendor/installers/`) | the installer is an inverted-header NSIS wrapped by WinLicense — 7-Zip 26.04 / 19.00 / 9.20 all refuse it and the sandbox will not execute it, so the payload cannot be extracted here |
+| `crostouchscreen` | — | **2.9.5** | same reason: `crostouchscreen.2.9.5-installer.exe` cannot be unpacked |
+| `cr50` | — | **1.0.1** | same reason: `cr50.1.0.1-installer.exe` cannot be unpacked |
+
+`crosecbus` is *not* a gap — the repo ships 2.1.0.0, newer than the 2.0.6 / 2.0.7
+installers floating around.
+
+Three more things exist but were left out on purpose:
+
+| package | status |
+|---|---|
+| Intel Serial IO `iaLPSS2i_I2C_{SKL,BXT_P,GLK,CNL}` + `iaLPSS2i_GPIO2_*` | **genuinely needed** — this is the I2C/GPIO bus the codecs, amps and touchpads hang off (the SKL package covers `PCI\VEN_8086&DEV_9D60..9D65`, i.e. chell's `9D64`). A DriverStore dump has them, but the dump carries no `.cat`, so the packages are unsigned and will not install on x64. Needs the original Intel Serial IO installer |
+| `dptf_cpu` | available locally *with* a catalog (20 MB of DPTF policy DLLs). Pairs with the `dptf_acpi` we do ship. Thermal only, no audio impact — left out to keep the payload lean |
+| Redrix camera extras (`hi556`, `ov2740`, `ov5675_extension`, `iacamera64`) | 268 MB, Lenovo/Dell-board specific; `drivers/camera/` keeps the two general packages instead |

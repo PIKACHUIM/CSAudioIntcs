@@ -83,6 +83,10 @@ pnputil /add-driver drivers\audio\ssm4567\ssm4567.inf /install
 package) lives in **[docs/DRIVERS.md](docs/DRIVERS.md)** and is generated from the INFs by
 `python tools/gen-driver-docs.py`.
 
+> **Known gaps**: four packages are older than upstream and three families are missing on
+> purpose (among them the Intel Serial IO I2C/GPIO bus that chell needs). Itemised reasons
+> and workarounds are in **[docs/VENDOR.md](docs/VENDOR.md)**.
+
 ### Audio (`drivers/audio/`)
 
 | Package | Version | Platform |
