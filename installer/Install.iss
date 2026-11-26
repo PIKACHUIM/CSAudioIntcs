@@ -3,14 +3,14 @@
 ;
 ;  Build:
 ;     ISCC.exe installer\Install.iss
-;     ISCC.exe /DMyAppVersion=1.0.5 installer\Install.iss
+;     ISCC.exe /DMyAppVersion=26.11.26 installer\Install.iss
 ;
 ;  The version comes from the command line so that CI can drive it
 ;  (see .github/workflows/release.yml).
 ; ---------------------------------------------------------------------------
 
 #ifndef MyAppVersion
-  #define MyAppVersion "1.0.4"
+  #define MyAppVersion "26.11.26"
 #endif
 
 #define MyAppName        "ChromeBook CoolStar Audio Drivers"

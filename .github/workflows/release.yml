@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version written into the installer name and the release tag, e.g. 1.0.5"
+        description: "Version written into the installer name and the release tag, e.g. 26.11.26"
         required: true
-        default: "1.0.4"
+        default: "26.11.26"
       prerelease:
         description: "Publish as a pre-release"
         type: boolean
@@ -101,6 +101,7 @@ jobs:
 
           * installer: 64-bit, Inno Setup
           * payload:  ${{ github.sha }}
+          * the exe is not code-signed; sign it locally if you need a signature
           * verify with SHA256SUMS.txt
           "@
 
