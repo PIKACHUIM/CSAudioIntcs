@@ -56,4 +56,3 @@ system\dptf_acpi
 # ---- not installed by default -------------------------------------------
 # codec\nau88l25rvp    Nuvoton reference codec, same HWID as codec\nau8825
 #                      -> mutually exclusive, keep it out of the default run
-# system\gnodriver     placeholder INF only (no .sys), nothing to bind

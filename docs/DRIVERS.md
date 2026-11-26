@@ -9,8 +9,8 @@ it is the same file the installer and uninstaller iterate over.
 
 | | |
 |---|---|
-| packages | 37 |
-| hardware IDs | 198 |
+| packages | 36 |
+| hardware IDs | 171 |
 
 ## Audio controllers
 
@@ -490,12 +490,11 @@ ACPI\VEN_OVTI&DEV_5675&SUBSYS_MSHW0170
 
 ## System
 
-`drivers/system/` — Intel Dynamic Tuning (DPTF) and the Quanta placeholder driver.
+`drivers/system/` — Intel Dynamic Tuning (DPTF).
 
 | package | driver version | provider | class | files |
 |---|---|---|---|---|
 | `dptf_acpi` | 06/14/2019,8.6.10401.9906 | Intel | System | 3 |
-| `gnodriver` | 04/22/2009,1.0.0.2 | Quanta | System | 2 |
 
 <details><summary><code>dptf_acpi — 17 IDs</code></summary>
 
@@ -521,47 +520,12 @@ ACPI\INT3532
 
 </details>
 
-<details><summary><code>gnodriver — 27 IDs</code></summary>
-
-```
-ACPI\VEN_BOOT&DEV_0000&SUBSYS_1AE0006B
-ACPI\VEN_PRP&DEV_0001&SUBSYS_1AE0006B
-ACPI\VEN_GGL&DEV_0001&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_0002&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_0003&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_0004&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_0005&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_0006&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_0008&SUBSYS_1AE0006B
-ACPI\VEN_GOOG&DEV_9999&SUBSYS_1AE0006B
-ACPI\VEN_BOOT&DEV_0000&SUBSYS_1AE0006C
-ACPI\VEN_PRP&DEV_0001&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_0002&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_0003&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_0004&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_0005&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_0006&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_0008&SUBSYS_1AE0006C
-ACPI\VEN_GOOG&DEV_9999&SUBSYS_1AE0006C
-ACPI\GGL0001
-ACPI\GOOG0002
-ACPI\GOOG0003
-ACPI\GOOG0004
-ACPI\GOOG0005
-ACPI\GOOG0006
-ACPI\GOOG0008
-ACPI\GOOG9999
-```
-
-</details>
-
 ## Shipped but not installed by default
 
 | package | why |
 |---|---|
 | `nau88l25rvp` | Nuvoton reference codec, binds the same `ACPI\10508825` as `nau8825` — mutually exclusive |
-| `gnodriver` | placeholder INF only, ships no `.sys` |
 
-Both folders stay in the tree so the payload is complete; they are simply excluded
+The folder stays in the tree so the payload is complete; it is simply excluded
 from `payload.list`.
 

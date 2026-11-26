@@ -7,7 +7,7 @@
 0xE0000242  尚未建立对 Authenticode(TM)签名的目录的发布者信任
 ```
 
-哪些包需要这一步，见 [../docs/SIGNATURES.md](../docs/SIGNATURES.md)（37 个里有 7 个）。
+哪些包需要这一步，见 [../docs/SIGNATURES.md](../docs/SIGNATURES.md)（36 个里有 7 个）。
 
 ## 怎么装
 

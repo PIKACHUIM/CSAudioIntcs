@@ -1,11 +1,11 @@
 # 签名状态
 
-`drivers/` 下 37 个驱动包全部带 catalog，没有裸 INF，也没有"未签名"的包。
+`drivers/` 下 36 个驱动包全部带 catalog，没有裸 INF，也没有"未签名"的包。
 但签名分三种情况，装之前要不要额外操作，看的是第二种里的第三类。
 
 | 分类 | 包数 | 安装前是否需要额外步骤 |
 |---|---|---|
-| Microsoft WHQL 签名 | 25 | 不需要，`pnputil` 直接接受 |
+| Microsoft WHQL 签名 | 24 | 不需要，`pnputil` 直接接受 |
 | 第三方签名，证书链终止于公共根 | 5 | 不需要（触摸板那五个） |
 | 第三方签名，时间戳链终止于非公共根 | 7 | 需要先把根导入信任存储 |
 
@@ -30,7 +30,7 @@ certutil -dump .\drivers\audio\csaudiosstavs\csaudiosstavs.cat
 ## 二、逐包状态
 
 `catalog` 列为签名来源，`sys` 列表示包内是否有 `.sys`（`crosfingerprint` 是 UMDF，
-`gnodriver` 只有 INF 占位，两者本来就没有内核模块）。
+本来就没有内核模块）。
 
 | 包 | catalog | .sys | 需先导入根 |
 |---|---|---|---|
@@ -70,7 +70,6 @@ certutil -dump .\drivers\audio\csaudiosstavs\csaudiosstavs.cat
 | `input/crostouchpad-elan` | 第三方 | 有 | — |
 | `input/crostouchpad-synaptics` | 第三方 | 有 | — |
 | `system/dptf_acpi` | Microsoft WHQL | 有 | — |
-| `system/gnodriver` | Microsoft WHQL | 无 | — |
 
 ### 需要导入根的 7 个
 

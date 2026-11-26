@@ -147,7 +147,7 @@ NTSTATUS 里负值表示失败，`0x0A` 是正数，与 0 一样会被判为成�
 | `.inf`（含 HWID 表、`DeviceDesc`、服务安装段、`CatalogFile`） | 与官方包逐字节相同 |
 | DSP 固件（`dsp_*.bin`、`sof-*.ri`） | 未改动 |
 | `CsAudioCallbackAPI` 回调注册 | 保留，`ssm4567` 依赖它注册 Speaker 端点 |
-| 官方包里的 `cacert.exe`、`dpinst.exe`、`.sys.i64` | 安装器不投放（工具与 32 位版本） |
+| 官方包里的 `cacert.exe`、`dpinst.exe` | 安装器不投放（安装工具） |
 
 改动只影响「校验失败时返回什么」，不改变音频通路本身的初始化序列。
 

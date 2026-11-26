@@ -28,11 +28,10 @@ CATEGORY = {
     'camera': ('Cameras',
                'Intel IPU / MIPI camera packages.'),
     'system': ('System',
-               'Intel Dynamic Tuning (DPTF) and the Quanta placeholder driver.'),
+               'Intel Dynamic Tuning (DPTF).'),
 }
 NOT_DEFAULT = {
     'nau88l25rvp': 'Nuvoton reference codec, binds the same `ACPI\\10508825` as `nau8825` — mutually exclusive',
-    'gnodriver':   'placeholder INF only, ships no `.sys`',
 }
 
 
@@ -162,7 +161,7 @@ w('|---|---|')
 for k, v in NOT_DEFAULT.items():
     w('| `%s` | %s |' % (k, v))
 w('')
-w('Both folders stay in the tree so the payload is complete; they are simply excluded')
+w('The folder stays in the tree so the payload is complete; it is simply excluded')
 w('from `payload.list`.')
 w('')
 

@@ -21,7 +21,7 @@ python tools/compare-drivers.py reference\originals\csaudiosstavs drivers\audio\
 | `.inf` | 基准 | **完全一致**（DriverVer、Provider、HWID、CatalogFile 都没动） |
 | `.sys` | WHQL 签名 | 改 5 / 12 / 12 处代码，重新签名 |
 | `.cat` | WHQL 签名 | 重新生成并签名 |
-| 额外文件 | 带 `dpinst.exe`、`cacert.exe`、`.sys.i64` | 只留驱动本体 |
+| 额外文件 | 带 `dpinst.exe`、`cacert.exe` | 只留驱动本体 |
 
 | 驱动栈 | 补丁点 | 改动字节 | `.sys` 体积 |
 |---|---|---|---|
@@ -88,8 +88,8 @@ AMD 包有 4 处改成 `0x0A` 而不是 0，`0x0A` 是正数，同样被判为�
   `\CallBack\CsAudioCallbackAPI` 向 CoolStar 总线驱动注册端点；`ssm4567` 功放驱动正是靠
   这条回调拿到 Speaker 端点
 - **DSP 固件**（`dsp_basefw_kbl.bin`、`sof-*.ri`）：未改动
-- 原始包里的 `cacert.exe`、`dpinst.exe`、`.sys.i64`（32 位版）在 payload 里被剔除，
-  前两个是工具，第三个在纯 64 位安装里用不到
+- 原始包里的 `cacert.exe`、`dpinst.exe` 在 payload 里被剔除，
+  这两个是安装工具，和驱动运行时无关
 
 ---
 
