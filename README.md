@@ -48,7 +48,7 @@ ChromeBook / ChromeBox 专用驱动包，包括36个驱动，支持171个硬件
 
 ## 安装方式
 
-1. 在 [Releases](../../releases) 下载 `ChromeBook-CoolStar-Audio-Driver-<版本>-x64.exe`
+1. 在 [Releases](../../releases) 下载 `ChromeBook-Windows-Driver-<版本>-x64.exe`
 2. 右键以管理员身份运行，安装完成后重启
 
 ## 安装过程

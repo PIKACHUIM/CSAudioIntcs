@@ -48,7 +48,7 @@ None of the following is required:
 
 ## Install
 
-1. Download `ChromeBook-CoolStar-Audio-Driver-<version>-x64.exe` from [Releases](../../releases)
+1. Download `ChromeBook-Windows-Driver-<version>-x64.exe` from [Releases](../../releases)
 2. Right-click and run as administrator, then reboot
 
 ## What the installer does

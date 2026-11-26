@@ -48,7 +48,7 @@ ChromeBook / ChromeBox 専用のドライバーパックです。36 個のドラ
 
 ## インストール方法
 
-1. [Releases](../../releases) から `ChromeBook-CoolStar-Audio-Driver-<バージョン>-x64.exe` をダウンロード
+1. [Releases](../../releases) から `ChromeBook-Windows-Driver-<バージョン>-x64.exe` をダウンロード
 2. 右クリックして管理者として実行し、完了後に再起動
 
 ## インストールの流れ

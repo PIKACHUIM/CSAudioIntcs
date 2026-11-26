@@ -97,12 +97,18 @@ jobs:
           $ver   = "${{ steps.ver.outputs.version }}"
           $files = @(Get-ChildItem -Path dist -File | ForEach-Object { $_.FullName })
           $notes = @"
-          ChromeBook CoolStar Audio Drivers $ver
+          ChromeBook Windows Drivers $ver
 
           * installer: 64-bit, Inno Setup
           * payload:  ${{ github.sha }}
           * the exe is not code-signed; sign it locally if you need a signature
           * verify with SHA256SUMS.txt
+
+          中文
+          * 安装包：64 位，Inno Setup
+          * 载荷提交：${{ github.sha }}
+          * exe 未签名，需要签名请在本地补签
+          * 用 SHA256SUMS.txt 校验
           "@
 
           $pre = "${{ github.event.inputs.prerelease }}"

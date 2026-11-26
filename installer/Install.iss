@@ -1,5 +1,5 @@
 ; ---------------------------------------------------------------------------
-;  ChromeBook CoolStar Audio Drivers -- Inno Setup script
+;  ChromeBook Windows Drivers -- Inno Setup script
 ;
 ;  Build:
 ;     ISCC.exe installer\Install.iss
@@ -13,8 +13,8 @@
   #define MyAppVersion "26.11.26"
 #endif
 
-#define MyAppName        "ChromeBook CoolStar Audio Drivers"
-#define MyAppShortName   "ChromeBook-CoolStar-Audio-Driver"
+#define MyAppName        "ChromeBook Windows Drivers"
+#define MyAppShortName   "ChromeBook-Windows-Driver"
 #define MyAppPublisher   "CoolStar"
 #define MyAppURL         "https://github.com/PIKACHUIM/CSAudioIntcs"
 
