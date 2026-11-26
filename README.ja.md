@@ -77,56 +77,44 @@ x64 のみです。a64 と x32 の Windows には対応するパッケージが�
 
 バージョンと全 HWID は [docs/DRIVERS.md](docs/DRIVERS.md) にあります。このファイルは `python tools/gen-driver-docs.py` が INF から生成するので、手で編集しないでください。
 
-### オーディオ
-
-- `csaudiosstavs` 1.0.4.0
-- `csaudiointcsof` 1.0.4.0
-- `csaudioamdsof` 1.0.1.0
-- `ssm4567` 1.0.1
-
-### Codec
-
-- `nau8825`
-- `nau88l25rvp`
-- `cs42l42`
-- `da7219`
-- `rt5682`
-- `rt5682s`
-- `croseccodec`
-
-### アンプ
-
-- `max98357a`
-- `max98390`
-- `opengmaxcodec`
-- `rt1011`
-- `rt1015`
-- `rt1019`
-
-### バスとシステム
-
-- `acpbus`
-- `cbtable`
-- `crosecbus`
-- `croseci2c`
-- `crosectypec`
-- `sklhdaudbus`
-- `intelpmc`
-- `inteltcss`
-- `iaLPSS2_SPI`
-- `iaLPSS2_UART2`
-- `dptf_acpi`
-
-### 入力とカメラ
-
-- `crostouchpad-synaptics`
-- `crostouchpad-cypress`
-- `crostouchpad-cypress-smbus`
-- `crostouchpad-atmel`
-- `crostouchpad-elan`
-- `crosfingerprint`
-- `ov5675`
-- `iaisp64_46xx_ADL`
+| 分類 | ドライバー | バージョン |
+|---|---|---|
+| オーディオ | `csaudiosstavs` | 1.0.4.0 |
+| オーディオ | `csaudiointcsof` | 1.0.4.0 |
+| オーディオ | `csaudioamdsof` | 1.0.1.0 |
+| オーディオ | `ssm4567` | 1.0.1 |
+| Codec | `nau8825` | 1.0.1.0 |
+| Codec | `nau88l25rvp` | 17.51.14.673 |
+| Codec | `cs42l42` | 1.0.0.0 |
+| Codec | `da7219` | 1.0.1.0 |
+| Codec | `rt5682` | 1.0.2.0 |
+| Codec | `rt5682s` | 1.0.1.0 |
+| Codec | `croseccodec` | 1.0.1.0 |
+| アンプ | `max98357a` | 1.0.3.0 |
+| アンプ | `max98390` | 1.0.1.0 |
+| アンプ | `opengmaxcodec` | 1.0.1.0 |
+| アンプ | `rt1011` | 1.0.1.0 |
+| アンプ | `rt1015` | 1.0.1.0 |
+| アンプ | `rt1019` | 1.0.0.0 |
+| バスとシステム | `acpbus` | 1.0.0.0 |
+| バスとシステム | `cbtable` | 1.0.1.0 |
+| バスとシステム | `crosecbus` | 2.1.0.0 |
+| バスとシステム | `croseci2c` | 1.0.2.0 |
+| バスとシステム | `crosectypec` | 1.0.1.0 |
+| バスとシステム | `sklhdaudbus` | 1.0.5.0 |
+| バスとシステム | `intelpmc` | 1.0.0.0 |
+| バスとシステム | `inteltcss` | 1.0.0.0 |
+| バスとシステム | `iaLPSS2_SPI` | 30.100.1633.03 |
+| バスとシステム | `iaLPSS2_UART2` | 5.123.1.1023 |
+| バスとシステム | `dptf_acpi` | 8.6.10401.9906 |
+| 入力とカメラ | `crostouchpad-synaptics` | 4.1 |
+| 入力とカメラ | `crostouchpad-cypress` | 4.1 |
+| 入力とカメラ | `crostouchpad-cypress-smbus` | 4.1 |
+| 入力とカメラ | `crostouchpad-atmel` | 4.1 |
+| 入力とカメラ | `crostouchpad-elan` | 4.1 |
+| 入力とカメラ | `crosfingerprint` | 1.0.0.0 |
+| 入力とカメラ | `ov5675` | 63.22000.0.13186 |
+| 入力とカメラ | `iaisp64_46xx_ADL` | 63.22000.10.18461 |
 
 `nau88l25rvp` と `nau8825` は同じハードウェア ID `ACPI\10508825` を取り合います。既定では CoolStar 版を使うため、`nau88l25rvp` は同梱されますがインストール対象から外しています。インストールも削除も [installer/payload.list](installer/payload.list) が基準です。
 

@@ -77,56 +77,44 @@ x64 only. a64 and x32 Windows have no matching packages.
 
 Full versions and every hardware ID are in [docs/DRIVERS.md](docs/DRIVERS.md). That file is generated from the INFs by `python tools/gen-driver-docs.py`, so edit the generator, not the output.
 
-### Audio
-
-- `csaudiosstavs` 1.0.4.0
-- `csaudiointcsof` 1.0.4.0
-- `csaudioamdsof` 1.0.1.0
-- `ssm4567` 1.0.1
-
-### Codecs
-
-- `nau8825`
-- `nau88l25rvp`
-- `cs42l42`
-- `da7219`
-- `rt5682`
-- `rt5682s`
-- `croseccodec`
-
-### Amplifiers
-
-- `max98357a`
-- `max98390`
-- `opengmaxcodec`
-- `rt1011`
-- `rt1015`
-- `rt1019`
-
-### Bus and system
-
-- `acpbus`
-- `cbtable`
-- `crosecbus`
-- `croseci2c`
-- `crosectypec`
-- `sklhdaudbus`
-- `intelpmc`
-- `inteltcss`
-- `iaLPSS2_SPI`
-- `iaLPSS2_UART2`
-- `dptf_acpi`
-
-### Input and cameras
-
-- `crostouchpad-synaptics`
-- `crostouchpad-cypress`
-- `crostouchpad-cypress-smbus`
-- `crostouchpad-atmel`
-- `crostouchpad-elan`
-- `crosfingerprint`
-- `ov5675`
-- `iaisp64_46xx_ADL`
+| Category | Driver | Version |
+|---|---|---|
+| Audio | `csaudiosstavs` | 1.0.4.0 |
+| Audio | `csaudiointcsof` | 1.0.4.0 |
+| Audio | `csaudioamdsof` | 1.0.1.0 |
+| Audio | `ssm4567` | 1.0.1 |
+| Codecs | `nau8825` | 1.0.1.0 |
+| Codecs | `nau88l25rvp` | 17.51.14.673 |
+| Codecs | `cs42l42` | 1.0.0.0 |
+| Codecs | `da7219` | 1.0.1.0 |
+| Codecs | `rt5682` | 1.0.2.0 |
+| Codecs | `rt5682s` | 1.0.1.0 |
+| Codecs | `croseccodec` | 1.0.1.0 |
+| Amplifiers | `max98357a` | 1.0.3.0 |
+| Amplifiers | `max98390` | 1.0.1.0 |
+| Amplifiers | `opengmaxcodec` | 1.0.1.0 |
+| Amplifiers | `rt1011` | 1.0.1.0 |
+| Amplifiers | `rt1015` | 1.0.1.0 |
+| Amplifiers | `rt1019` | 1.0.0.0 |
+| Bus and system | `acpbus` | 1.0.0.0 |
+| Bus and system | `cbtable` | 1.0.1.0 |
+| Bus and system | `crosecbus` | 2.1.0.0 |
+| Bus and system | `croseci2c` | 1.0.2.0 |
+| Bus and system | `crosectypec` | 1.0.1.0 |
+| Bus and system | `sklhdaudbus` | 1.0.5.0 |
+| Bus and system | `intelpmc` | 1.0.0.0 |
+| Bus and system | `inteltcss` | 1.0.0.0 |
+| Bus and system | `iaLPSS2_SPI` | 30.100.1633.03 |
+| Bus and system | `iaLPSS2_UART2` | 5.123.1.1023 |
+| Bus and system | `dptf_acpi` | 8.6.10401.9906 |
+| Input and cameras | `crostouchpad-synaptics` | 4.1 |
+| Input and cameras | `crostouchpad-cypress` | 4.1 |
+| Input and cameras | `crostouchpad-cypress-smbus` | 4.1 |
+| Input and cameras | `crostouchpad-atmel` | 4.1 |
+| Input and cameras | `crostouchpad-elan` | 4.1 |
+| Input and cameras | `crosfingerprint` | 1.0.0.0 |
+| Input and cameras | `ov5675` | 63.22000.0.13186 |
+| Input and cameras | `iaisp64_46xx_ADL` | 63.22000.10.18461 |
 
 `nau88l25rvp` and `nau8825` claim the same hardware ID, `ACPI\10508825`. The CoolStar build is the default, so `nau88l25rvp` ships but stays off the install list. [installer/payload.list](installer/payload.list) drives both install and uninstall.
 

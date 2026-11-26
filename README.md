@@ -77,56 +77,44 @@ ChromeBook / ChromeBox 专用驱动包，包括36个驱动，支持171个硬件
 
 完整版本号和每一条 HWID 在 [docs/DRIVERS.md](docs/DRIVERS.md)，那份文件由 `python tools/gen-driver-docs.py` 从 INF 生成，别手改。
 
-### 音频
-
-- `csaudiosstavs` 1.0.4.0
-- `csaudiointcsof` 1.0.4.0
-- `csaudioamdsof` 1.0.1.0
-- `ssm4567` 1.0.1
-
-### Codec
-
-- `nau8825`
-- `nau88l25rvp`
-- `cs42l42`
-- `da7219`
-- `rt5682`
-- `rt5682s`
-- `croseccodec`
-
-### 功放
-
-- `max98357a`
-- `max98390`
-- `opengmaxcodec`
-- `rt1011`
-- `rt1015`
-- `rt1019`
-
-### 总线与系统
-
-- `acpbus`
-- `cbtable`
-- `crosecbus`
-- `croseci2c`
-- `crosectypec`
-- `sklhdaudbus`
-- `intelpmc`
-- `inteltcss`
-- `iaLPSS2_SPI`
-- `iaLPSS2_UART2`
-- `dptf_acpi`
-
-### 输入与摄像头
-
-- `crostouchpad-synaptics`
-- `crostouchpad-cypress`
-- `crostouchpad-cypress-smbus`
-- `crostouchpad-atmel`
-- `crostouchpad-elan`
-- `crosfingerprint`
-- `ov5675`
-- `iaisp64_46xx_ADL`
+| 分类 | 驱动 | 版本 |
+|---|---|---|
+| 音频 | `csaudiosstavs` | 1.0.4.0 |
+| 音频 | `csaudiointcsof` | 1.0.4.0 |
+| 音频 | `csaudioamdsof` | 1.0.1.0 |
+| 音频 | `ssm4567` | 1.0.1 |
+| Codec | `nau8825` | 1.0.1.0 |
+| Codec | `nau88l25rvp` | 17.51.14.673 |
+| Codec | `cs42l42` | 1.0.0.0 |
+| Codec | `da7219` | 1.0.1.0 |
+| Codec | `rt5682` | 1.0.2.0 |
+| Codec | `rt5682s` | 1.0.1.0 |
+| Codec | `croseccodec` | 1.0.1.0 |
+| 功放 | `max98357a` | 1.0.3.0 |
+| 功放 | `max98390` | 1.0.1.0 |
+| 功放 | `opengmaxcodec` | 1.0.1.0 |
+| 功放 | `rt1011` | 1.0.1.0 |
+| 功放 | `rt1015` | 1.0.1.0 |
+| 功放 | `rt1019` | 1.0.0.0 |
+| 总线与系统 | `acpbus` | 1.0.0.0 |
+| 总线与系统 | `cbtable` | 1.0.1.0 |
+| 总线与系统 | `crosecbus` | 2.1.0.0 |
+| 总线与系统 | `croseci2c` | 1.0.2.0 |
+| 总线与系统 | `crosectypec` | 1.0.1.0 |
+| 总线与系统 | `sklhdaudbus` | 1.0.5.0 |
+| 总线与系统 | `intelpmc` | 1.0.0.0 |
+| 总线与系统 | `inteltcss` | 1.0.0.0 |
+| 总线与系统 | `iaLPSS2_SPI` | 30.100.1633.03 |
+| 总线与系统 | `iaLPSS2_UART2` | 5.123.1.1023 |
+| 总线与系统 | `dptf_acpi` | 8.6.10401.9906 |
+| 输入与摄像头 | `crostouchpad-synaptics` | 4.1 |
+| 输入与摄像头 | `crostouchpad-cypress` | 4.1 |
+| 输入与摄像头 | `crostouchpad-cypress-smbus` | 4.1 |
+| 输入与摄像头 | `crostouchpad-atmel` | 4.1 |
+| 输入与摄像头 | `crostouchpad-elan` | 4.1 |
+| 输入与摄像头 | `crosfingerprint` | 1.0.0.0 |
+| 输入与摄像头 | `ov5675` | 63.22000.0.13186 |
+| 输入与摄像头 | `iaisp64_46xx_ADL` | 63.22000.10.18461 |
 
 `nau88l25rvp` 和 `nau8825` 抢同一个硬件 ID `ACPI\10508825`，默认用 CoolStar 那份，所以它随仓库分发但不进安装清单。安装和卸载都以 [installer/payload.list](installer/payload.list) 为准。
 
