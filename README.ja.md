@@ -2,7 +2,7 @@
 
 # ChromeBook / ChromeBox 専用ドライバーパック
 
-Chromebook/box 向けのドライバーパック。数十種類のドライバーをまとめて収録
+Chromebook/box 向けのドライバーパック。数多くの珍しい Chrome デバイス向けドライバーを収録
 
 ![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![license](docs/badges/license.svg)
 

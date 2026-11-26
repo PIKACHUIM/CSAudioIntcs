@@ -2,7 +2,7 @@
 
 # ChromeBook / ChromeBox 专用驱动包
 
-Chromebook/box 专用驱动包合集，包括数十种不常见的驱动
+Chromebook/box 专用驱动包合集，包括数十种不常见的Chrome设备驱动
 
 ![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![license](docs/badges/license.svg)
 

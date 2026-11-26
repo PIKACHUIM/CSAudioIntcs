@@ -2,7 +2,7 @@
 
 # ChromeBook / ChromeBox Driver Pack
 
-A driver pack for Chromebook and Chromebox, dozens of drivers in one place
+A driver pack for Chromebook and Chromebox, covering dozens of uncommon Chrome devices
 
 ![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![license](docs/badges/license.svg)
 

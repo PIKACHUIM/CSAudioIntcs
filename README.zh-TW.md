@@ -2,7 +2,7 @@
 
 # ChromeBook / ChromeBox 專用驅動包
 
-Chromebook/box 專用驅動包合集，包含數十種驅動
+Chromebook/box 專用驅動包合集，包含數十種不常見的 Chrome 裝置驅動
 
 ![platform](docs/badges/platform.svg) ![drivers](docs/badges/drivers.svg) ![installer](docs/badges/installer.svg) ![license](docs/badges/license.svg)
 
