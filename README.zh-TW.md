@@ -145,7 +145,7 @@ INF、HWID 表、服務安裝段和 DSP 韌體一個位元組都沒動。`CsAudi
 
 ### 安裝檔本身的簽章
 
-Actions 建出來的 `exe` 沒有 Authenticode 簽章，第一次執行會被 SmartScreen 攔一下，按「仍要執行」就好，不影響安裝。
+Actions 建出來的 `exe` 本身沒有 Authenticode 簽章，直接雙擊會被 SmartScreen 攔一下。Releases 裡那份是建置完在本機補簽後替換上去的，下載到的已經有簽章。
 
 要正式簽，用自己的憑證在本機簽。簽章會改變檔案雜湊，所以簽完要重算 `SHA256SUMS.txt`：
 

@@ -145,7 +145,7 @@ If you patch a `.sys` yourself, the catalog has to be rebuilt and both the binar
 
 ### Signing the installer
 
-The `exe` that Actions produces has no Authenticode signature. SmartScreen will warn once on first run; click through and it installs normally.
+The `exe` that Actions produces has no Authenticode signature, so SmartScreen warns on first run. The copy in Releases was signed locally after the build and uploaded over the unsigned one, which is why the download verifies.
 
 To sign it properly, use your own certificate locally. Signing changes the file hash, so `SHA256SUMS.txt` has to be regenerated afterwards:
 
