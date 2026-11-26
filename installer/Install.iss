@@ -45,7 +45,9 @@ ArchitecturesInstallIn64BitMode=x64
 ShowLanguageDialog=auto
 
 [Languages]
-Name: "chinese"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
+; ChineseSimplified.isl is bundled: Inno Setup 6.7 no longer ships the
+; unofficial translations with the installer.
+Name: "chinese"; MessagesFile: "ChineseSimplified.isl"
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
