@@ -1,6 +1,6 @@
 <div align="center">
 
-# ChromeBook / ChromeBox Driver Pack
+# ChromeBook/Box Windows Driver Pack
 
 A driver pack for Chromebook and Chromebox, covering dozens of uncommon Chrome devices
 

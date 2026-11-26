@@ -1,6 +1,6 @@
 <div align="center">
 
-# ChromeBook / ChromeBox 専用ドライバーパック
+# ChromeBook/Box Windows 専用ドライバーパック
 
 Chromebook/box 向けのドライバーパック。数多くの珍しい Chrome デバイス向けドライバーを収録
 

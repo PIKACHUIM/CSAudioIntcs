@@ -1,6 +1,6 @@
 <div align="center">
 
-# ChromeBook / ChromeBox 專用驅動包
+# ChromeBook/Box Windows 專用驅動包
 
 Chromebook/box 專用驅動包合集，包含數十種不常見的 Chrome 裝置驅動
 
