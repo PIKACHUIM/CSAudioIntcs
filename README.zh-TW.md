@@ -80,7 +80,7 @@ ChromeBook / ChromeBox 專用驅動包，包含 36 個驅動，支援 171 個硬
 | 分類 | 驅動 | 版本 |
 |---|---|---|
 | 音訊 | `csaudiosstavs` | 1.0.4.0 |
-| 音訊 | `csaudiointcsof` | 1.0.4.0 |
+| 音訊 | `csaudiointcsof` | 1.0.5.0 |
 | 音訊 | `csaudioamdsof` | 1.0.1.0 |
 | 音訊 | `ssm4567` | 1.0.1 |
 | Codec | `nau8825` | 1.0.1.0 |

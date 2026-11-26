@@ -19,7 +19,7 @@ it is the same file the installer and uninstaller iterate over.
 | package | driver version | provider | class | files |
 |---|---|---|---|---|
 | `csaudioamdsof` | 03/10/2024,1.0.1.0 | CoolStar | MEDIA | 5 |
-| `csaudiointcsof` | 04/23/2024,1.0.4.0 | CoolStar | MEDIA | 8 |
+| `csaudiointcsof` | 02/18/2026,1.0.5.0 | CoolStar | MEDIA | 8 |
 | `csaudiosstavs` | 11/07/2023,1.0.4.0 | CoolStar | MEDIA | 7 |
 | `ssm4567` | 11/8/2026,1.0.1 | CoolStar | Media | 3 |
 

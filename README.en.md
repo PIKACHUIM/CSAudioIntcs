@@ -80,7 +80,7 @@ Full versions and every hardware ID are in [docs/DRIVERS.md](docs/DRIVERS.md). T
 | Category | Driver | Version |
 |---|---|---|
 | Audio | `csaudiosstavs` | 1.0.4.0 |
-| Audio | `csaudiointcsof` | 1.0.4.0 |
+| Audio | `csaudiointcsof` | 1.0.5.0 |
 | Audio | `csaudioamdsof` | 1.0.1.0 |
 | Audio | `ssm4567` | 1.0.1 |
 | Codecs | `nau8825` | 1.0.1.0 |

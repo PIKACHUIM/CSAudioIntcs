@@ -4,13 +4,12 @@
 
 | 包 | 当前 | 上游 | 没跟上的原因 |
 |---|---|---|---|
-| `csaudiointcsof` | 1.0.4.0（2024-04-23） | 1.0.5-1（2026-03） | 上游按机器授权下载。1.0.5 修了偶发无声和 HDMI 静音，1.0.5-1 又修了 Redrix 四扬声器映射和左右声道反相。安装器是反头 NSIS，7-Zip 解不开，只能跑一次让它自己释放 |
 | `csaudiosstavs` | 1.0.4.0（2023-11-07） | 1.0.6（2025-05） | 同上。版本号取自安装包文件名，没有解包核对 |
 | `crostouchpad` | 4.1（2017-08-03） | 4.1.6 | 安装包是反头 NSIS 加 WinLicense，7-Zip 19.00 / 26.04 都不认 |
 | `crostouchscreen` | — | 2.9.5 | 同上 |
 | `cr50` | — | 1.0.1 | 同上 |
 
-Redrix（HP Elite Dragonfly Chromebook 这类 Alder Lake 机型）四扬声器只有两个出声、左右声道相反、低音单元不响，对上的就是 1.0.5-1 里那两条修复。1.0.4 上改不掉：映射既不在可读字符串里，也不在返回值那条路径上，补丁改的是授权校验。遇到这类反馈先让对方跑 [`scripts/collect-audio-info.ps1`](../scripts/collect-audio-info.ps1)，看 `ACPI\MX98390` 设备数（Redrix 应为 4 个）和 `CoolStar Speaker` 端点的声道数。
+Redrix（HP Elite Dragonfly Chromebook 这类 Alder Lake 机型）四扬声器只有两个出声、左右声道相反的问题，在 1.0.5.0 里已修复，仓库从 26.12.01 起带这个版本。排查同类反馈仍可让对方跑 [`scripts/collect-audio-info.ps1`](../scripts/collect-audio-info.ps1)，看 `ACPI\MX98390` 设备数（Redrix 应为 4 个）和 `CoolStar Speaker` 端点的声道数。
 
 两个音频包的第三方镜像：
 
