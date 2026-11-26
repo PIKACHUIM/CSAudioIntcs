@@ -10,6 +10,8 @@
 | `crostouchscreen` | — | 2.9.5 | 同上 |
 | `cr50` | — | 1.0.1 | 同上 |
 
+Redrix（HP Elite Dragonfly Chromebook 这类 Alder Lake 机型）四扬声器只有两个出声、左右声道相反、低音单元不响，对上的就是 1.0.5-1 里那两条修复。1.0.4 上改不掉：映射既不在可读字符串里，也不在返回值那条路径上，补丁改的是授权校验。遇到这类反馈先让对方跑 [`scripts/collect-audio-info.ps1`](../scripts/collect-audio-info.ps1)，看 `ACPI\MX98390` 设备数（Redrix 应为 4 个）和 `CoolStar Speaker` 端点的声道数。
+
 两个音频包的第三方镜像：
 
 ```
